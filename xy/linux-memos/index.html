@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Linux Memos(备忘) - 危墙</title>
+<meta name="description" content="记录使用Linux过程中的一些小问题、小技巧。多为copy &amp; paste。" />
+<meta name="generator" content="Org Mode" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" sizes="any" href="/images/favicon-dark.svg" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/svg+xml" sizes="any" href="/images/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" href="/images/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="manifest" href="/images/site.webmanifest">
+<meta name="theme-color" content="#fdfaf4">
+<script>
+(function(){document.documentElement.classList.add('js');try{var s=localStorage.getItem('paper-theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',s||(d?'dark':'light'));}catch(e){}})();
+</script>
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/highlight.css">
+<script src="/js/main.js" defer></script>
+<script src="/js/comments.js" defer></script>
+<link rel="webmention" href="https://webmention.io/weiqiang.org/webmention">
+<link rel="pingback" href="https://webmention.io/weiqiang.org/xmlrpc">
+<link rel="alternate" type="application/atom+xml" title="危墙 · 习艺" href="/xy/index.xml">
+<meta name="keywords" content="Linux, Archlinux, Tips">
+</head>
+<body>
+<header class="site-header">
+<div class="header-inner">
+<a href="/" class="site-name"><span class="site-logo"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true" focusable="false"><rect x="2.4" y="3.2" width="9" height="4.8" rx="0.9"></rect><rect x="12.6" y="3.2" width="9" height="4.8" rx="0.9"></rect><rect x="2.4" y="9.6" width="3.6" height="4.8" rx="0.9"></rect><rect x="7.2" y="9.6" width="9" height="4.8" rx="0.9"></rect><rect x="17.4" y="9.6" width="4.2" height="4.8" rx="0.9"></rect><rect x="2.4" y="16" width="9" height="4.8" rx="0.9"></rect><rect x="12.6" y="16" width="9" height="4.8" rx="0.9"></rect></svg></span><span class="site-title-text">危墙</span></a>
+<nav class="site-nav" id="site-nav" aria-label="站点导航">
+<a href="/">首页</a>
+<a href="/zh/">手记</a>
+<a href="/about/">关于</a>
+<a href="/links/">收藏</a>
+<a href="/index.xml">订阅</a>
+<a class="nav-icon nav-icon-search" href="/search/" aria-label="搜索" title="搜索"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.8" cy="10.8" r="6.1"></circle><path d="M15.3 15.3 20 20"></path></svg></a>
+</nav>
+<nav class="mobile-nav" aria-label="快捷导航">
+<a href="/">首页</a>
+<a href="/zh/">手记</a>
+<a href="/about/">关于</a>
+<a class="nav-icon nav-icon-search" href="/search/" aria-label="搜索" title="搜索"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.8" cy="10.8" r="6.1"></circle><path d="M15.3 15.3 20 20"></path></svg></a>
+</nav>
+<button class="nav-toggle" type="button" aria-label="更多菜单" aria-expanded="false" aria-controls="nav-panel" title="更多菜单"><svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"></path></svg><svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+<nav class="nav-panel" id="nav-panel" aria-label="更多导航">
+<a href="/links/">收藏</a>
+<a href="/index.xml">订阅</a>
+<a href="/tags/">标签</a>
+</nav>
+<button class="theme-toggle" type="button" aria-label="切换主题" title="切换主题"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2.4v2.2M12 19.4v2.2M2.4 12h2.2M19.4 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"></path></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M20.5 14.6A8.6 8.6 0 0 1 9.4 3.5a8.7 8.7 0 1 0 11.1 11.1z"></path></svg></button>
+</div>
+<div class="progress" aria-hidden="true"></div>
+</header>
+<main id="content" class="content">
+<div class="post-layout">
+<article class="post">
+<header class="post-header">
+<h1 class="post-title">Linux Memos(备忘)</h1>
+<p class="post-meta">
+<time datetime="2017-07-12T00:00:00">2017-07-12</time><span>约 665 字</span>
+</p>
+</header>
+<div class="post-content">
+<p>
+使用Linux已经有段时间，都是断断续续，没有很好地将这一过程中的知识积累和更新，所以基本没有进步。年过三十，已知积累之重要，知识持续更新之难能，因此立此文件以为积累更新之用，名之曰：Memos。
+</p>
+<div id="outline-container-Linux-basic" class="outline-2">
+<h2 id="Linux-basic"><span class="section-number-2">1.</span> Linux basic<a class="heading-anchor" href="#Linux-basic" aria-label="本节链接">#</a></h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-目录操作" class="outline-3">
+<h3 id="目录操作"><span class="section-number-3">1.1.</span> 目录操作<a class="heading-anchor" href="#目录操作" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-1-1">
+<ol class="org-ol">
+<li>cd</li>
+</ol>
+
+<p>
+用来切换目录，用法：
+</p>
+<div class="org-src-container">
+<pre class="src src-nil"><code>cd (选项) (参数)
+</code></pre>
+</div>
+</div>
+</div>
+<div id="outline-container-DDE(deepin-desktop-environment)" class="outline-3">
+<h3 id="DDE(deepin-desktop-environment)"><span class="section-number-3">1.2.</span> DDE(deepin-desktop-environment)<a class="heading-anchor" href="#DDE(deepin-desktop-environment)" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-1-2">
+<ol class="org-ol">
+<li>caps ctrl swap (ctrl和caps互换)</li>
+</ol>
+<div class="org-src-container">
+<pre class="src src-shell"><code>gsettings set com.deepin.dde.keybinding.mediakey capslock <span class="org-string">""</span>
+gsettings set com.deepin.dde.keyboard layout-options <span class="org-string">"['ctrl:swapcaps']"</span>
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-一些实用工具及用法" class="outline-2">
+<h2 id="一些实用工具及用法"><span class="section-number-2">2.</span> 一些实用工具及用法<a class="heading-anchor" href="#一些实用工具及用法" aria-label="本节链接">#</a></h2>
+<div class="outline-text-2" id="text-2">
+<p>
+记录一些日常可能用到的小工具。
+</p>
+</div>
+<div id="outline-container-将-Markdown-文件转为-Org-文件" class="outline-3">
+<h3 id="将-Markdown-文件转为-Org-文件"><span class="section-number-3">2.1.</span> 将 Markdown 文件转为 Org 文件<a class="heading-anchor" href="#将-Markdown-文件转为-Org-文件" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+使用 pandoc 这个工具来转换，代码：
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><code>pandoc -f markdown -t org -o new-org-file-name.org origin-markdown-file.md
+</code></pre>
+</div>
+</div>
+</div>
+<div id="outline-container-base64解码" class="outline-3">
+<h3 id="base64解码"><span class="section-number-3">2.2.</span> base64解码<a class="heading-anchor" href="#base64解码" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+看到有博客留邮箱用的一串码，说明是要base64解码的，百度了一下，使用方法如下(macos下)：
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><code><span class="org-builtin">echo</span> <span class="org-string">"&#38656;&#35299;&#30721;&#30340;&#23383;&#31526;"</span> | base64 -D  <span class="org-comment-delimiter">#</span><span class="org-comment">&#35299;&#30721;
+</span><span class="org-builtin">echo</span> <span class="org-string">"&#38656;&#21152;&#30721;&#30340;&#23383;&#31526;"</span> | base64
+</code></pre>
+</div>
+
+<p>
+另一种方法(看到评论说有缺陷)， chromium 内核的浏览器自带，打开开发者工具， Console 下输入：
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><code><span class="org-function-name">btoa</span>(<span class="org-string">'hello,world'</span>)  <span class="org-comment-delimiter">#</span><span class="org-comment">&#32534;&#30721;
+</span>//<span class="org-string">'aGVsbG8sd29ybGQ='</span>
+<span class="org-function-name">atob</span>(<span class="org-string">'aGVsbG8sd29ybGQ='</span>)  <span class="org-comment-delimiter">#</span><span class="org-comment">&#35299;&#30721;
+</span>//<span class="org-string">'hello,world'</span>
+</code></pre>
+</div>
+
+<p>
+base64是什么：
+</p>
+<blockquote>
+<p>
+Base64是一种用64个字符来表示任意二进制数据的方法。
+</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-Mac-OS" class="outline-3">
+<h3 id="Mac-OS"><span class="section-number-3">2.3.</span> Mac OS<a class="heading-anchor" href="#Mac-OS" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+解决 .DS<sub>Store</sub> 文件问题：
+禁止生成使用下列代码
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><code>defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
+</code></pre>
+</div>
+<p>
+重新生成使用下列代码
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><code>defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool FALSE
+</code></pre>
+</div>
+
+<p>
+删除文件夹下 .DS<sub>Store</sub> 文件：
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><code>find . -name &#8216;.DS_Store&#8217; -type f -delete / find ~ -name <span class="org-string">".DS_Store"</span> -delete
+</code></pre>
+</div>
+</div>
+</div>
+<div id="outline-container-SSH-免密登录" class="outline-3">
+<h3 id="SSH-免密登录"><span class="section-number-3">2.4.</span> SSH 免密登录<a class="heading-anchor" href="#SSH-免密登录" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+SSH 登录： ssh 用户名@目标主机ip/域名，此时回车后一般需要输入密码验证通过才能登录。
+</p>
+
+<p>
+目标：本地主机 A 免密登录目标主机 B；方式：本地主机上生成公钥文件与私钥文件，传递公钥文件到目标主机，实现免密登录。
+</p>
+
+<p>
+步骤：
+</p>
+<ol class="org-ol">
+<li>本地主机上生成密钥对： <code>ssh-keygen</code> ；</li>
+<li>拷贝公钥到目标主机： <code>ssh-copy-id 目标主机ip</code> ，会在目标主机生成 <code>.ssh/authorized_keys</code> 文件；</li>
+<li>直接登录： <code>ssh 用户名@目标主机ip</code> 。</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-文本替换" class="outline-3">
+<h3 id="文本替换"><span class="section-number-3">2.5.</span> 文本替换<a class="heading-anchor" href="#文本替换" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-2-5">
+<p>
+把 org 文件中的 <code>原文本</code> 替换为 <code>现文本</code> ，使用 <code>find</code>, <code>xargs</code> 和 <code>sed</code> 实现。
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><code>find . -name <span class="org-string">"*.org"</span> | xargs sed -i <span class="org-string">'s/&#21407;&#25991;&#26412;/&#29616;&#25991;&#26412;/g'</span>
+</code></pre>
+</div>
+</div>
+</div>
+<div id="outline-container-git-相关" class="outline-3">
+<h3 id="git-相关"><span class="section-number-3">2.6.</span> git 相关<a class="heading-anchor" href="#git-相关" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-2-6">
+<p>
+创建 submodule
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><code>git submodule add &lt;submodule_url&gt; path <span class="org-comment-delimiter"># </span><span class="org-comment">git submodule add git@github.com:username/xxx.git path</span>
+</code></pre>
+</div>
+
+<p>
+获取 submodule
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><code><span class="org-builtin">cd</span> path
+git clone url --recurse-submodules
+</code></pre>
+</div>
+<p>
+或者
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><code>git submodule init
+git submodule update
+</code></pre>
+</div>
+</div>
+</div>
+<div id="outline-container-rsync-文件同步" class="outline-3">
+<h3 id="rsync-文件同步"><span class="section-number-3">2.7.</span> rsync 文件同步<a class="heading-anchor" href="#rsync-文件同步" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-2-7">
+<p>
+<a target="_blank" rel="noopener noreferrer" href="https://www.ruanyifeng.com/blog/2020/08/rsync.html">https://www.ruanyifeng.com/blog/2020/08/rsync.html</a>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell"><code>$ rsync -av --delete source/ destination
+</code></pre>
+</div>
+<p>
+将 source 文件夹内容同步到 destination 文件夹内。 <code>--delete</code> 参数会使 destination 成为 source 的一个镜像。
+</p>
+</div>
+</div>
+</div>
+
+</div>
+<footer class="post-footer">
+<div class="post-meta-row">
+<div class="post-tags">
+<a href="/tags/linux/"><span class="tag-hash" aria-hidden="true">#</span>Linux</a>
+<a href="/tags/archlinux/"><span class="tag-hash" aria-hidden="true">#</span>Archlinux</a>
+<a href="/tags/tips/"><span class="tag-hash" aria-hidden="true">#</span>Tips</a>
+</div>
+<a target="_blank" rel="noopener noreferrer" class="post-source" href="https://codeberg.org/wejan/weborg/raw/branch/main/org/xy/2017-07-12-linux-memos.org" rel="nofollow">查看 Org 源文件</a>
+</div>
+<nav class="post-nav" aria-label="上一篇与下一篇">
+<div class="post-nav-col post-nav-prev">
+<span class="post-nav-label">← 上一篇</span>
+<a href="/xy/back-to-jekyll/">纯粹书写，回归Jekyll！</a>
+</div>
+<div class="post-nav-col post-nav-next">
+<span class="post-nav-label">下一篇 →</span>
+<a href="/xy/emacs-notes/">Emacs 学习笔记</a>
+</div>
+</nav>
+<section class="post-sameday">
+<p class="post-section-label">往年今日</p>
+<ul class="rel-list">
+<li class="rel-item"><a href="/zh/2009/nanjinggui/"><time class="rel-date" datetime="2009-07-12T00:00:00">2009-07-12</time><span class="rel-sep">-</span><span class="rel-title">南京归</span></a></li>
+</ul>
+</section>
+</footer>
+<section class="comments" id="comments" data-default-tab="comments" data-litecwd-slug="/xy/linux-memos/" data-litecwd-api="https://litecwd.weiqiang.org" data-litecwd-lang="zh-CN" data-litecwd-page-size="20" data-litecwd-placeholder="雁过留痕..." data-litecwd-cdn="/js/litecwd.js" data-litecwd-theme="auto" data-litecwd-css="/css/litecwd.css" data-wm-target="https://weiqiang.org/xy/linux-memos/">
+<div class="ctabs">
+<input type="radio" class="ctab-radio" name="comment-tab" id="ct-comments" checked>
+<input type="radio" class="ctab-radio" name="comment-tab" id="ct-webmention">
+<div class="ctabs-bar">
+<label class="ctab" for="ct-comments"><span class="ctab-text">留言</span><span class="ctab-badge" data-count-comments hidden></span></label>
+<label class="ctab" for="ct-webmention"><span class="ctab-text">网络提及</span><span class="ctab-badge" data-count-webmention hidden></span></label>
+</div>
+<div class="ctabs-body">
+<section class="ctab-panel" id="panel-comments">
+<div class="litecwd-loading" id="litecwd-loading" role="status">
+<span class="litecwd-loading-text">正在加载评论</span>
+<span class="litecwd-loading-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+</div>
+<div class="litecwd-comments" id="litecwd-comments"></div>
+<noscript><p class="comments-disabled">请启用 JavaScript 以查看评论。</p></noscript>
+</section>
+<section class="ctab-panel" id="panel-webmention">
+<div id="webmentions" class="webmentions" data-target="https://weiqiang.org/xy/linux-memos/">
+<p class="wm-tip">本站支持 <a href="https://indieweb.org/Webmention" target="_blank" rel="noopener noreferrer">Webmention</a>：在自己站点写下本文链接，再把那篇帖子的地址发过来。</p>
+<form class="wm-send" action="https://webmention.io/weiqiang.org/webmention" method="post">
+<input type="hidden" name="target" value="https://weiqiang.org/xy/linux-memos/">
+<input class="wm-source" name="source" type="url" required autocomplete="off" spellcheck="false" aria-label="回应文章的地址" placeholder="回应文章的地址">
+<button type="submit">发送</button>
+</form>
+<div class="wm-reactions" hidden></div>
+<ul class="wm-list" hidden></ul>
+<p class="wm-empty" hidden>还没有收到提及。</p>
+<p class="wm-loading" hidden>正在读取提及…</p>
+<noscript><p class="wm-tip">查看已收到的提及需要 JavaScript；提交不受影响。</p></noscript>
+</div>
+</section>
+</div>
+</div>
+<p class="cm-mailto">不方便公开留言？<a href="mailto:lu@weiqiang.org?subject=%E5%9B%9E%E5%A4%8D%EF%BC%9ALinux%20Memos%28%E5%A4%87%E5%BF%98%29" rel="nofollow">写信给我</a></p>
+</section>
+</article>
+<aside class="toc" aria-label="文章目录">
+<p class="toc-label">目录</p>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#Linux-basic">1. Linux basic</a>
+<ul>
+<li><a href="#目录操作">1.1. 目录操作</a></li>
+<li><a href="#DDE(deepin-desktop-environment)">1.2. DDE(deepin-desktop-environment)</a></li>
+</ul>
+</li>
+<li><a href="#一些实用工具及用法">2. 一些实用工具及用法</a>
+<ul>
+<li><a href="#将-Markdown-文件转为-Org-文件">2.1. 将 Markdown 文件转为 Org 文件</a></li>
+<li><a href="#base64解码">2.2. base64解码</a></li>
+<li><a href="#Mac-OS">2.3. Mac OS</a></li>
+<li><a href="#SSH-免密登录">2.4. SSH 免密登录</a></li>
+<li><a href="#文本替换">2.5. 文本替换</a></li>
+<li><a href="#git-相关">2.6. git 相关</a></li>
+<li><a href="#rsync-文件同步">2.7. rsync 文件同步</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</aside>
+</div>
+</main>
+<footer class="site-footer">
+<div class="footer-inner">
+<div class="footer-info">
+<nav class="footer-nav" aria-label="页脚导航"><ul><li><a href="/zh/">手記</a></li><li><a href="/hs/">护生</a></li><li><a href="/shuji/">書集</a></li><li><a href="/xy/">习艺</a></li><li><a href="/series/">结集</a></li><li><a href="/about/">关于</a></li><li><a href="/interest/">兴趣</a></li><li><a href="/links/">收藏</a></li><li><a href="/tags/">标签</a></li><li><a href="/index.xml">订阅</a></li></ul></nav>
+<p class="footer-line footer-lastmod">本页最近更新：2017-07-12</p>
+<p class="footer-line footer-copy">© LOWEJAN, Since 2008.</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

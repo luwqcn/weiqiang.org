@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>记录第一台龙芯电脑 - 危墙</title>
+<meta name="description" content="记录我的第一台龙芯电脑，CPU为龙芯3A5000。" />
+<meta name="generator" content="Org Mode" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" sizes="any" href="/images/favicon-dark.svg" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/svg+xml" sizes="any" href="/images/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" href="/images/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="manifest" href="/images/site.webmanifest">
+<meta name="theme-color" content="#fdfaf4">
+<script>
+(function(){document.documentElement.classList.add('js');try{var s=localStorage.getItem('paper-theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',s||(d?'dark':'light'));}catch(e){}})();
+</script>
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/highlight.css">
+<script src="/js/main.js" defer></script>
+<script src="/js/comments.js" defer></script>
+<link rel="webmention" href="https://webmention.io/weiqiang.org/webmention">
+<link rel="pingback" href="https://webmention.io/weiqiang.org/xmlrpc">
+<link rel="alternate" type="application/atom+xml" title="危墙 · 手記" href="/zh/index.xml">
+<meta name="keywords" content="龙芯, 3A5000">
+</head>
+<body>
+<header class="site-header">
+<div class="header-inner">
+<a href="/" class="site-name"><span class="site-logo"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true" focusable="false"><rect x="2.4" y="3.2" width="9" height="4.8" rx="0.9"></rect><rect x="12.6" y="3.2" width="9" height="4.8" rx="0.9"></rect><rect x="2.4" y="9.6" width="3.6" height="4.8" rx="0.9"></rect><rect x="7.2" y="9.6" width="9" height="4.8" rx="0.9"></rect><rect x="17.4" y="9.6" width="4.2" height="4.8" rx="0.9"></rect><rect x="2.4" y="16" width="9" height="4.8" rx="0.9"></rect><rect x="12.6" y="16" width="9" height="4.8" rx="0.9"></rect></svg></span><span class="site-title-text">危墙</span></a>
+<nav class="site-nav" id="site-nav" aria-label="站点导航">
+<a href="/">首页</a>
+<a href="/zh/" aria-current="page">手记</a>
+<a href="/about/">关于</a>
+<a href="/links/">收藏</a>
+<a href="/index.xml">订阅</a>
+<a class="nav-icon nav-icon-search" href="/search/" aria-label="搜索" title="搜索"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.8" cy="10.8" r="6.1"></circle><path d="M15.3 15.3 20 20"></path></svg></a>
+</nav>
+<nav class="mobile-nav" aria-label="快捷导航">
+<a href="/">首页</a>
+<a href="/zh/" aria-current="page">手记</a>
+<a href="/about/">关于</a>
+<a class="nav-icon nav-icon-search" href="/search/" aria-label="搜索" title="搜索"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.8" cy="10.8" r="6.1"></circle><path d="M15.3 15.3 20 20"></path></svg></a>
+</nav>
+<button class="nav-toggle" type="button" aria-label="更多菜单" aria-expanded="false" aria-controls="nav-panel" title="更多菜单"><svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"></path></svg><svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+<nav class="nav-panel" id="nav-panel" aria-label="更多导航">
+<a href="/links/">收藏</a>
+<a href="/index.xml">订阅</a>
+<a href="/tags/">标签</a>
+</nav>
+<button class="theme-toggle" type="button" aria-label="切换主题" title="切换主题"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2.4v2.2M12 19.4v2.2M2.4 12h2.2M19.4 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"></path></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M20.5 14.6A8.6 8.6 0 0 1 9.4 3.5a8.7 8.7 0 1 0 11.1 11.1z"></path></svg></button>
+</div>
+<div class="progress" aria-hidden="true"></div>
+</header>
+<main id="content" class="content">
+<div class="post-layout">
+<article class="post">
+<header class="post-header">
+<h1 class="post-title">记录第一台龙芯电脑</h1>
+<p class="post-meta">
+<time datetime="2023-09-24T20:30:00">2023-09-24</time><span>日常</span><span>约 738 字</span>
+</p>
+</header>
+<div class="post-content">
+<p>
+我的龙芯3A5000主机自从去年12月初购入，至今快10个月了，目前正常使用中，简单记录一下配置和使用情况。平时工作中整天对着电脑，所以回家后使用电脑的场景和时间不多，只是用于简单上网、使用 WPS 编辑文档以及看看视频（B站之类），偶尔折腾会博客。
+</p>
+<div id="outline-container-硬件" class="outline-2">
+<h2 id="硬件"><span class="section-number-2">1.</span> 硬件<a class="heading-anchor" href="#硬件" aria-label="本节链接">#</a></h2>
+<div class="outline-text-2" id="text-1">
+<blockquote>
+<p>
+主板: 天创者 L5A2；
+</p>
+
+<p>
+CUP: 龙芯3A5000（板U套装）；
+</p>
+
+<p>
+GPU: 7A2000（板载，亮机）；
+</p>
+
+<p>
+内存: 光威 16GB DDR4 3200 ×2；
+</p>
+
+<p>
+硬盘: 光威悍将 512GB SSD；
+</p>
+
+<p>
+电源: 游戏悍将 金牌全模组GX550，额定550W；
+</p>
+
+<p>
+机箱: 长城本色K-13；
+</p>
+
+<p>
+显示器: 小米Redmi21.45英寸显示器。
+</p>
+</blockquote>
+
+<p>
+价格：板U1499,内存189×2，硬盘229，电源199，机箱90，显示器399，合计一共2865元。都是京东双11或折扣时购入，个人觉得价格已经不算贵了。当然，音响、键鼠之类外设，用的以前的存货，不算在里面。
+</p>
+</div>
+</div>
+<div id="outline-container-软件" class="outline-2">
+<h2 id="软件"><span class="section-number-2">2.</span> 软件<a class="heading-anchor" href="#软件" aria-label="本节链接">#</a></h2>
+<div class="outline-text-2" id="text-2">
+<blockquote>
+<p>
+操作系统: Loongnix20最新版；
+</p>
+
+<p>
+浏览器: 系统自带龙芯浏览器，非常好用；
+</p>
+
+<p>
+办公: WPS；
+</p>
+
+<p>
+即时通讯: 微信/QQ（偶尔用一下）；
+</p>
+
+<p>
+网盘: 百度网盘；
+</p>
+
+<p>
+会议: 腾讯会议（偶尔会用一下）；
+</p>
+
+<p>
+图像处理: GIMP/Shotwell（自带）；
+</p>
+
+<p>
+音乐: 网易云音乐；
+</p>
+
+<p>
+视频: 网页，本地用smplayer（自带）；
+</p>
+
+<p>
+文件管理: 系统自带。
+</p>
+</blockquote>
+
+<p>
+软件大多是系统自带的，其他要安装也简单，直接龙芯应用合作社搜索安装即可，常用的基本都有了。文本编辑用的 emacs, 但系统安装的版本太旧（26），所以自己下载编译安装了 29.1 版本。
+</p>
+
+<p>
+浏览器播放 B 站 1080P 普通视频，不开弹幕没有压力，所以看视频的需求基本满足。WPS 使用体验比 Windows 版本还要好些，因为没有广告。
+</p>
+
+<p>
+个人轻度使用的场景下，平时也没见卡顿的情况，偶尔玩个小游戏也是可以的，最近小朋友在电脑上玩 MC（版本较旧，因为自带的 Java 版本旧，也不会装新的），也是乐此不疲。我觉得作为一个普通用户，能基本满足对电脑的要求。
+</p>
+</div>
+</div>
+<div id="outline-container-期待" class="outline-2">
+<h2 id="期待"><span class="section-number-2">3.</span> 期待<a class="heading-anchor" href="#期待" aria-label="本节链接">#</a></h2>
+<div class="outline-text-2" id="text-3">
+<p>
+前段时间看到龙芯新款 CPU 3A6000 已经成功研制，测试性能非常好，与10代酷睿相当，很期待发售，准备为小朋友购一台笔记本，作为学习的主力机。希望价格能够亲民些，发售能够早些，作为年末小朋友的礼物不知道来不来得及。
+</p>
+</div>
+</div>
+
+</div>
+<footer class="post-footer">
+<div class="post-meta-row">
+<div class="post-tags">
+<a href="/tags/龙芯/"><span class="tag-hash" aria-hidden="true">#</span>龙芯</a>
+<a href="/tags/3a5000/"><span class="tag-hash" aria-hidden="true">#</span>3A5000</a>
+</div>
+<a target="_blank" rel="noopener noreferrer" class="post-source" href="https://codeberg.org/wejan/weborg/raw/branch/main/org/zh/2023-09-24-longxin-diannao.org" rel="nofollow">查看 Org 源文件</a>
+</div>
+<nav class="post-nav" aria-label="上一篇与下一篇">
+<div class="post-nav-col post-nav-prev">
+<span class="post-nav-label">← 上一篇</span>
+<a href="/zh/2023/youyong-wuyong/">有用无用——从 Org mode 使用说起</a>
+</div>
+<div class="post-nav-col post-nav-next">
+<span class="post-nav-label">下一篇 →</span>
+<a href="/zh/2023/jiuyue/">九月，九月</a>
+</div>
+</nav>
+<section class="post-related">
+<p class="post-section-label">相关文章</p>
+<ul class="rel-list">
+<li class="rel-item"><a href="/zh/2023/loongson3a6000/"><time class="rel-date" datetime="2023-11-28T19:37:00">2023-11-28</time><span class="rel-sep">-</span><span class="rel-title">龙芯最新CPU 3A6000 今天发布</span></a></li>
+<li class="rel-item"><a href="/zh/2026/loongson-3b6000m-xzj/"><time class="rel-date" datetime="2026-02-05T00:00:00">2026-02-05</time><span class="rel-sep">-</span><span class="rel-title">入手龙芯俱乐部 3b6000m 小主机</span></a></li>
+</ul>
+</section>
+</footer>
+<section class="comments" id="comments" data-default-tab="comments" data-litecwd-slug="/zh/2023/longxin-diannao/" data-litecwd-api="https://litecwd.weiqiang.org" data-litecwd-lang="zh-CN" data-litecwd-page-size="20" data-litecwd-placeholder="雁过留痕..." data-litecwd-cdn="/js/litecwd.js" data-litecwd-theme="auto" data-litecwd-css="/css/litecwd.css" data-wm-target="https://weiqiang.org/zh/2023/longxin-diannao/">
+<div class="ctabs">
+<input type="radio" class="ctab-radio" name="comment-tab" id="ct-comments" checked>
+<input type="radio" class="ctab-radio" name="comment-tab" id="ct-webmention">
+<div class="ctabs-bar">
+<label class="ctab" for="ct-comments"><span class="ctab-text">留言</span><span class="ctab-badge" data-count-comments hidden></span></label>
+<label class="ctab" for="ct-webmention"><span class="ctab-text">网络提及</span><span class="ctab-badge" data-count-webmention hidden></span></label>
+</div>
+<div class="ctabs-body">
+<section class="ctab-panel" id="panel-comments">
+<div class="litecwd-loading" id="litecwd-loading" role="status">
+<span class="litecwd-loading-text">正在加载评论</span>
+<span class="litecwd-loading-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+</div>
+<div class="litecwd-comments" id="litecwd-comments"></div>
+<noscript><p class="comments-disabled">请启用 JavaScript 以查看评论。</p></noscript>
+</section>
+<section class="ctab-panel" id="panel-webmention">
+<div id="webmentions" class="webmentions" data-target="https://weiqiang.org/zh/2023/longxin-diannao/">
+<p class="wm-tip">本站支持 <a href="https://indieweb.org/Webmention" target="_blank" rel="noopener noreferrer">Webmention</a>：在自己站点写下本文链接，再把那篇帖子的地址发过来。</p>
+<form class="wm-send" action="https://webmention.io/weiqiang.org/webmention" method="post">
+<input type="hidden" name="target" value="https://weiqiang.org/zh/2023/longxin-diannao/">
+<input class="wm-source" name="source" type="url" required autocomplete="off" spellcheck="false" aria-label="回应文章的地址" placeholder="回应文章的地址">
+<button type="submit">发送</button>
+</form>
+<div class="wm-reactions" hidden></div>
+<ul class="wm-list" hidden></ul>
+<p class="wm-empty" hidden>还没有收到提及。</p>
+<p class="wm-loading" hidden>正在读取提及…</p>
+<noscript><p class="wm-tip">查看已收到的提及需要 JavaScript；提交不受影响。</p></noscript>
+</div>
+</section>
+</div>
+</div>
+<p class="cm-mailto">不方便公开留言？<a href="mailto:lu@weiqiang.org?subject=%E5%9B%9E%E5%A4%8D%EF%BC%9A%E8%AE%B0%E5%BD%95%E7%AC%AC%E4%B8%80%E5%8F%B0%E9%BE%99%E8%8A%AF%E7%94%B5%E8%84%91" rel="nofollow">写信给我</a></p>
+</section>
+</article>
+<aside class="toc" aria-label="文章目录">
+<p class="toc-label">目录</p>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#硬件">1. 硬件</a></li>
+<li><a href="#软件">2. 软件</a></li>
+<li><a href="#期待">3. 期待</a></li>
+</ul>
+</div>
+</aside>
+</div>
+</main>
+<footer class="site-footer">
+<div class="footer-inner">
+<div class="footer-info">
+<nav class="footer-nav" aria-label="页脚导航"><ul><li><a href="/zh/">手記</a></li><li><a href="/hs/">护生</a></li><li><a href="/shuji/">書集</a></li><li><a href="/xy/">习艺</a></li><li><a href="/series/">结集</a></li><li><a href="/about/">关于</a></li><li><a href="/interest/">兴趣</a></li><li><a href="/links/">收藏</a></li><li><a href="/tags/">标签</a></li><li><a href="/index.xml">订阅</a></li></ul></nav>
+<p class="footer-line footer-lastmod">本页最近更新：2023-09-24</p>
+<p class="footer-line footer-copy">© LOWEJAN, Since 2008.</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

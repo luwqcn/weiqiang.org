@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>危墙 · 書集</title>
+<subtitle>耕读传家久，诗书继世长。采菊桑林下，江南半農夫。</subtitle>
+<link href="https://weiqiang.org/shuji/index.xml" rel="self"/>
+<link href="https://weiqiang.org/shuji/"/>
+<id>https://weiqiang.org/shuji/</id>
+<updated>2026-11-06T21:04:09+08:00</updated>
+<author><name>LOWEJAN</name></author>
+<entry>
+<title>古琴《秋风词》完整源流梳理</title>
+<link href="https://weiqiang.org/shuji/qin-003-qiufengci/"/>
+<id>https://weiqiang.org/shuji/qin-003-qiufengci/</id>
+<published>2026-10-31T09:32:00+08:00</published>
+<updated>2026-11-06T21:04:09+08:00</updated>
+<category term="古琴"/>
+<category term="秋风词"/>
+<summary>古琴曲秋风词的源流梳理。</summary>
+</entry>
+<entry>
+<title>普通人也可以做一册仿古线装书——一次不成熟的实践小结</title>
+<link href="https://weiqiang.org/shuji/zuoshu-shijian-xiaojie/"/>
+<id>https://weiqiang.org/shuji/zuoshu-shijian-xiaojie/</id>
+<published>2026-09-13T16:34:00+08:00</published>
+<updated>2026-11-03T18:33:04+08:00</updated>
+<category term="做书"/>
+<category term="桑下書集"/>
+<summary>本篇简要总结这些天来自己制作仿古线装书的经历，一作备忘，二作分享，希望可以对想自己动手做线装书的朋友有所帮助，同时也希望在尚有困惑的地方有老师能做一些指点。</summary>
+</entry>
+<entry>
+<title>余生埋首故纸堆——简记我的古籍整理历程</title>
+<link href="https://weiqiang.org/shuji/guji-zhengli-licheng/"/>
+<id>https://weiqiang.org/shuji/guji-zhengli-licheng/</id>
+<published>2026-08-24T21:29:00+08:00</published>
+<updated>2026-11-03T18:32:53+08:00</updated>
+<category term="古籍整理"/>
+<category term="桑下書集"/>
+<summary>近期工作有点烦心，业余精力也少了，整理和排版也不再有一个月前的热情，整个进度似乎陷入了沉寂。静下心来，梳理一番自己在古籍整理上的经历，算是给自己的一种鼓劲。</summary>
+</entry>
+<entry>
+<title>致敬「书格」，兼述桑下書集的愿景与短期打算</title>
+<link href="https://weiqiang.org/shuji/road-of-sangxia-shuji/"/>
+<id>https://weiqiang.org/shuji/road-of-sangxia-shuji/</id>
+<published>2026-07-21T17:21:49+08:00</published>
+<updated>2026-11-03T18:32:35+08:00</updated>
+<category term="书格"/>
+<category term="桑下書集"/>
+<category term="做书"/>
+<summary>简述对书格的理解与敬意，同时简单记录自己做桑下書集的理想与打算。</summary>
+</entry>
+<entry>
+<title>历代琴谱关于《酒狂》辑录</title>
+<link href="https://weiqiang.org/shuji/qin-001-jiukuang/"/>
+<id>https://weiqiang.org/shuji/qin-001-jiukuang/</id>
+<published>2026-06-09T20:19:30+08:00</published>
+<updated>2026-11-04T19:01:04+08:00</updated>
+<category term="酒狂"/>
+<category term="古琴"/>
+<summary>古琴曲《酒狂》历代传习摘录。</summary>
+</entry>
+<entry>
+<title>桑下书集第一次线装书制作记录</title>
+<link href="https://weiqiang.org/shuji/zhishu-xianzhuang-mengxue1/"/>
+<id>https://weiqiang.org/shuji/zhishu-xianzhuang-mengxue1/</id>
+<published>2026-06-07T00:00:00+08:00</published>
+<updated>2026-06-07T12:00:00+08:00</updated>
+<category term="做书"/>
+<summary>第一次制作线装书，《千字文》、《朱子治家格言》合本。</summary>
+</entry>
+<entry>
+<title>正氣歌 [宋]文天祥</title>
+<link href="https://weiqiang.org/shuji/zhengqige/"/>
+<id>https://weiqiang.org/shuji/zhengqige/</id>
+<published>2022-01-23T00:00:00+08:00</published>
+<updated>2022-01-23T12:00:00+08:00</updated>
+<category term="正氣歌"/>
+<summary>文文山（文天祥）正氣歌</summary>
+</entry>
+<entry>
+<title>北溪字義</title>
+<link href="https://weiqiang.org/shuji/beixiziyi/"/>
+<id>https://weiqiang.org/shuji/beixiziyi/</id>
+<published>2021-12-18T00:00:00+08:00</published>
+<updated>2021-12-18T12:00:00+08:00</updated>
+<summary>宋·陳淳，《北溪字義》，理学入门读物。</summary>
+</entry>
+<entry>
+<title>性理字训</title>
+<link href="https://weiqiang.org/shuji/xinglizixun/"/>
+<id>https://weiqiang.org/shuji/xinglizixun/</id>
+<published>2021-02-28T00:00:00+08:00</published>
+<updated>2021-02-28T12:00:00+08:00</updated>
+<category term="性理字训"/>
+<category term="文本整理"/>
+<summary>据吴笑非先生飞整理本录。笑非先生按：「传南宋程蒙斋先生端蒙撰，程达原先生若庸补辑，大明朱枫林先生又增善字一条。今多疑者，不能掩其瑜也。」</summary>
+</entry>
+<entry>
+<title>朱子治家格言</title>
+<link href="https://weiqiang.org/shuji/zhijiageyan/"/>
+<id>https://weiqiang.org/shuji/zhijiageyan/</id>
+<published>2021-02-27T00:00:00+08:00</published>
+<updated>2021-02-27T12:00:00+08:00</updated>
+<category term="治家格言"/>
+<category term="文本整理"/>
+<summary>「朱子治家格言」，洒扫应对进退，「小学」第一课，接地气之书。</summary>
+</entry>
+<entry>
+<title>读书分年日程</title>
+<link href="https://weiqiang.org/shuji/dushu-fennian-richeng/"/>
+<id>https://weiqiang.org/shuji/dushu-fennian-richeng/</id>
+<published>2020-02-28T00:00:00+08:00</published>
+<updated>2020-02-28T12:00:00+08:00</updated>
+<category term="读书分年日程"/>
+<category term="文本整理"/>
+<summary>「读书分年日程」，理学为学次第。当年读时，叹何不早日读到。今日摘之，温故知新。</summary>
+</entry>
+<entry>
+<title>医家千字文并注</title>
+<link href="https://weiqiang.org/shuji/yijiaqianziwen/"/>
+<id>https://weiqiang.org/shuji/yijiaqianziwen/</id>
+<published>2017-11-04T00:00:00+08:00</published>
+<updated>2026-11-05T07:06:04+08:00</updated>
+<category term="医家千字文"/>
+<category term="中医"/>
+<category term="古籍"/>
+<summary>《醫家千字文》并註，整理自日本京都府立医科大学附属图書館藏静观堂藏本。</summary>
+</entry>
+<entry>
+<title>醫學三字經</title>
+<link href="https://weiqiang.org/shuji/yixuesanzijing/"/>
+<id>https://weiqiang.org/shuji/yixuesanzijing/</id>
+<published>2015-12-25T00:00:00+08:00</published>
+<updated>2015-12-25T12:00:00+08:00</updated>
+<category term="醫學三字經"/>
+<category term="中醫"/>
+<summary>醫學三字經學習筆記</summary>
+</entry>
+</feed>

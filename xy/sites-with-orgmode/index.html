@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>使用 Emacs 和 Org Mode 生成的网站 - 危墙</title>
+<meta name="description" content="收集使用 Emacs 和 Org Mode 生成的网站。" />
+<meta name="generator" content="Org Mode" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" sizes="any" href="/images/favicon-dark.svg" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/svg+xml" sizes="any" href="/images/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" href="/images/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="manifest" href="/images/site.webmanifest">
+<meta name="theme-color" content="#fdfaf4">
+<script>
+(function(){document.documentElement.classList.add('js');try{var s=localStorage.getItem('paper-theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',s||(d?'dark':'light'));}catch(e){}})();
+</script>
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/highlight.css">
+<script src="/js/main.js" defer></script>
+<script src="/js/comments.js" defer></script>
+<link rel="webmention" href="https://webmention.io/weiqiang.org/webmention">
+<link rel="pingback" href="https://webmention.io/weiqiang.org/xmlrpc">
+<link rel="alternate" type="application/atom+xml" title="危墙 · 习艺" href="/xy/index.xml">
+<meta name="keywords" content="orgmode, emacs, blog">
+</head>
+<body>
+<header class="site-header">
+<div class="header-inner">
+<a href="/" class="site-name"><span class="site-logo"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true" focusable="false"><rect x="2.4" y="3.2" width="9" height="4.8" rx="0.9"></rect><rect x="12.6" y="3.2" width="9" height="4.8" rx="0.9"></rect><rect x="2.4" y="9.6" width="3.6" height="4.8" rx="0.9"></rect><rect x="7.2" y="9.6" width="9" height="4.8" rx="0.9"></rect><rect x="17.4" y="9.6" width="4.2" height="4.8" rx="0.9"></rect><rect x="2.4" y="16" width="9" height="4.8" rx="0.9"></rect><rect x="12.6" y="16" width="9" height="4.8" rx="0.9"></rect></svg></span><span class="site-title-text">危墙</span></a>
+<nav class="site-nav" id="site-nav" aria-label="站点导航">
+<a href="/">首页</a>
+<a href="/zh/">手记</a>
+<a href="/about/">关于</a>
+<a href="/links/">收藏</a>
+<a href="/index.xml">订阅</a>
+<a class="nav-icon nav-icon-search" href="/search/" aria-label="搜索" title="搜索"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.8" cy="10.8" r="6.1"></circle><path d="M15.3 15.3 20 20"></path></svg></a>
+</nav>
+<nav class="mobile-nav" aria-label="快捷导航">
+<a href="/">首页</a>
+<a href="/zh/">手记</a>
+<a href="/about/">关于</a>
+<a class="nav-icon nav-icon-search" href="/search/" aria-label="搜索" title="搜索"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.8" cy="10.8" r="6.1"></circle><path d="M15.3 15.3 20 20"></path></svg></a>
+</nav>
+<button class="nav-toggle" type="button" aria-label="更多菜单" aria-expanded="false" aria-controls="nav-panel" title="更多菜单"><svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"></path></svg><svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+<nav class="nav-panel" id="nav-panel" aria-label="更多导航">
+<a href="/links/">收藏</a>
+<a href="/index.xml">订阅</a>
+<a href="/tags/">标签</a>
+</nav>
+<button class="theme-toggle" type="button" aria-label="切换主题" title="切换主题"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2.4v2.2M12 19.4v2.2M2.4 12h2.2M19.4 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"></path></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M20.5 14.6A8.6 8.6 0 0 1 9.4 3.5a8.7 8.7 0 1 0 11.1 11.1z"></path></svg></button>
+</div>
+<div class="progress" aria-hidden="true"></div>
+</header>
+<main id="content" class="content">
+<div class="post-layout">
+<article class="post">
+<header class="post-header">
+<h1 class="post-title">使用 Emacs 和 Org Mode 生成的网站</h1>
+<p class="post-meta">
+<time datetime="2019-08-14T00:00:00">2019-08-14</time><span>约 803 字</span>
+</p>
+</header>
+<div class="post-content">
+<p>
+本页面收集使用 Emacs 和 Org Mode 生成的网站，大多通过搜索所得。
+</p>
+<div id="outline-container-中文" class="outline-2">
+<h2 id="中文"><span class="section-number-2">1.</span> 中文<a class="heading-anchor" href="#中文" aria-label="本节链接">#</a></h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>Slegtank's Blog</li>
+</ul>
+<p>
+作者的一篇文章是非常好的参考：<a target="_blank" rel="noopener noreferrer" href="https://blog.slegetank.com/blog/20170108-blogWithEmacs.html">Blog With Emacs</a>。
+</p>
+
+<ul class="org-ul">
+<li>An Amateur Programmer's Blogs</li>
+</ul>
+<p>
+看这个博客会知道什么叫积累，简简单单却厚重无比。<a target="_blank" rel="noopener noreferrer" href="https://dirtysalt.github.io/html/blogs.html">An Amateur Programmer's Blogs</a>
+</p>
+
+<ul class="org-ul">
+<li>ZCL.SPACE</li>
+</ul>
+<p>
+通信博士，很多专业的内容。<a target="_blank" rel="noopener noreferrer" href="https://zlearning.netlify.com">ZCL.SPACE</a>
+</p>
+
+<ul class="org-ul">
+<li>cig01 Home Page</li>
+</ul>
+<p>
+好读书，肯下功夫，不仅读，还做笔记。专业人士。<a target="_blank" rel="noopener noreferrer" href="http://aandds.com/archives.html">Archives</a>
+</p>
+
+<ul class="org-ul">
+<li>小过的部落格</li>
+</ul>
+<p>
+风格简洁，内容丰富。<a target="_blank" rel="noopener noreferrer" href="https://xiaoguo.net/">xiaoguo.net</a>
+</p>
+
+<ul class="org-ul">
+<li>V for Vendetta</li>
+</ul>
+<p>
+有一篇介绍博文：<a target="_blank" rel="noopener noreferrer" href="http://0x100.club/wiki_emacs/blog-test.html">Blog 的搭建及其特性</a>
+</p>
+
+<ul class="org-ul">
+<li>lu4nx@wiki(shellcodes.org)</li>
+</ul>
+<p>
+这篇博文将如何使用orgmode生成博客说明得很清楚了：<a target="_blank" rel="noopener noreferrer" href="https://www.shellcodes.org/Emacs/%E4%BD%BF%E7%94%A8Org-Mode%E7%94%9F%E6%88%90%E5%8D%9A%E5%AE%A2.html">使用 Org-Mode 生成博客</a>。
+</p>
+
+<ul class="org-ul">
+<li>编码者言</li>
+</ul>
+<p>
+关于orgmode搭建静态博客的介绍：<a target="_blank" rel="noopener noreferrer" href="https://yuyang0.github.io/articles/org-mode-dropbox-blog.html">使用org-mode与dropbox搭建静态博客</a>。
+</p>
+
+<ul class="org-ul">
+<li>stardiviner</li>
+</ul>
+<p>
+<a target="_blank" rel="noopener noreferrer" href="https://stardiviner.github.io/">stardiviner's index page</a> 
+</p>
+
+<ul class="org-ul">
+<li>珊瑚礁上的程序员</li>
+</ul>
+<p>
+<a target="_blank" rel="noopener noreferrer" href="https://blog.demokn.com/">https://blog.demokn.com/</a> 代码：<a target="_blank" rel="noopener noreferrer" href="https://github.com/demokn/blog">github</a>
+</p>
+
+<ul class="org-ul">
+<li>Mark Wallace's Wiki</li>
+</ul>
+<p>
+挺喜欢这个WIKI的简洁风格的，orgmode的确是搭建WIKI的利器。可以参考其中的文章：<a target="_blank" rel="noopener noreferrer" href="http://lotabout.me/orgwiki/how_wiki_is_built.html">本站是如何搭建的</a>。（不可访问<span class="timestamp-wrapper"><time class="timestamp" datetime="2023-09-27">&lt;2023-09-27 三&gt;</time></span>）
+</p>
+
+<ul class="org-ul">
+<li>include-yy</li>
+</ul>
+<p>
+<a target="_blank" rel="noopener noreferrer" href="https://egh0bww1.com/">https://egh0bww1.com/</a> 内容很丰富，很多分析有参考价值。
+</p>
+
+<ul class="org-ul">
+<li>JerryZhang's Blog</li>
+</ul>
+<p>
+<a target="_blank" rel="noopener noreferrer" href="https://www.zhangjiee.com/">https://www.zhangjiee.com/</a>  内容丰富，特别喜欢作者的读书笔记和回忆录。
+</p>
+
+<ul class="org-ul">
+<li>Siqing's Home</li>
+</ul>
+<p>
+<a target="_blank" rel="noopener noreferrer" href="https://smartisan.dev/">https://smartisan.dev/</a>  喜欢这个域名，回忆使用锤子手机的时光。
+</p>
+
+<ul class="org-ul">
+<li>rgb-24bit's HomePage</li>
+</ul>
+<p>
+<a target="_blank" rel="noopener noreferrer" href="https://rgb-24bit.github.io/">https://rgb-24bit.github.io/</a>
+</p>
+
+<ul class="org-ul">
+<li>Kumu's Page</li>
+</ul>
+<p>
+<a target="_blank" rel="noopener noreferrer" href="https://opskumu.com/">https://opskumu.com/</a>
+</p>
+</div>
+</div>
+<div id="outline-container-英文" class="outline-2">
+<h2 id="英文"><span class="section-number-2">2.</span> 英文<a class="heading-anchor" href="#英文" aria-label="本节链接">#</a></h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>Nicolas Petton(nicolas.petton.fr)</li>
+</ul>
+<p>
+<a target="_blank" rel="noopener noreferrer" href="https://www.gnu.org/software/emacs/">GNU Emacs</a>目前的主页出自他的手，他的主页正是我所欣赏的。最初搜索到的使用orgmode的org-publish导出html生成静态网站的正是他「<a target="_blank" rel="noopener noreferrer" href="https://nicolas.petton.fr/blog/blogging-with-org-mode.html">Blogging with orgmode</a>」。
+</p>
+
+<ul class="org-ul">
+<li>Stig Brautaset(www.brautaset.org)</li>
+</ul>
+<p>
+简洁而明快的主页，是我的想达到的，可惜他的说明看不懂。这是他关于orgmode构建博客的博文：<a target="_blank" rel="noopener noreferrer" href="https://www.brautaset.org/articles/2017/blogging-with-org-mode.html">Blogging with Org mode</a>。
+</p>
+
+<ul class="org-ul">
+<li>bastibe.de</li>
+</ul>
+<p>
+值得参考：<a target="_blank" rel="noopener noreferrer" href="https://bastibe.de/2013-11-13-blogging-with-emacs.html">Blogging with Emacs</a>
+</p>
+
+<ul class="org-ul">
+<li>Rasmus Pank Roulund(pank.eu)</li>
+</ul>
+<p>
+他的博文详细说明了使用orgmode和gitlab ci自动构建博客的过程，还给出了示例，gitlab上orgmode的page也是以他的示例为原型的。博文：<a target="_blank" rel="noopener noreferrer" href="https://pank.eu/blog/blog-setup.html">Blogging with Org</a>。
+</p>
+
+<ul class="org-ul">
+<li>loomcom.com</li>
+</ul>
+<p>
+作者对博客页作了很多hack，包括分页（pagination），很实用，可惜我仍然没看懂。参考：<a target="_blank" rel="noopener noreferrer" href="https://loomcom.com/blog/0110_emacs_blogging_for_fun_and_profit.html">Emacs Blogging for Fun and Profit</a>。（已经不再使用 Org Mode 导出。<span class="timestamp-wrapper"><time class="timestamp" datetime="2023-09-27">&lt;2023-09-27 三&gt;</time></span>）
+</p>
+
+<ul class="org-ul">
+<li>ogbe.net</li>
+</ul>
+<p>
+值得参考，也被很多人引用的一篇介绍博文：<a target="_blank" rel="noopener noreferrer" href="https://ogbe.net/blog/blogging_with_org.html">Blogging using org-mode (and nothing else)</a>。
+</p>
+</div>
+</div>
+<div id="outline-container-其他可参考" class="outline-2">
+<h2 id="其他可参考"><span class="section-number-2">3.</span> 其他可参考<a class="heading-anchor" href="#其他可参考" aria-label="本节链接">#</a></h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li><a target="_blank" rel="noopener noreferrer" href="https://caolan.org/dotfiles/emacs.html">caolan.org</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://justin.abrah.ms/emacs/orgmode_static_site_generator.html">orgmode static site genterator</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://ambrevar.xyz/blog-architecture/">A blog in pure Org/Lisp</a> 文中也列了一此使用orgmode的网站。（网站内容似乎不可见了。<span class="timestamp-wrapper"><time class="timestamp" datetime="2023-09-27">&lt;2023-09-27 三&gt;</time></span>）</li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://diego.codes/post/blogging-with-org/">Blogging with Emacs, and Emacs only</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://www.john2x.com/blog/blogging-with-orgmode.html">Blogging with Orgmode</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://thibaultmarin.github.io/blog/posts/2016-11-13-Personal_website_in_org.html">Personal website in org</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://jgkamat.gitlab.io/blog/website1.html">Creating A Blog in Org Mode</a> 抄了文中关于 prev/next 的代码。</li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://vicarie.in/posts/blogging-with-org.html">Blogging with org</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://m13o.net/201901052018.html">m13o.net</a> 这篇是日文的，介绍了使用orgmode和netlify构建博客的过程。（不可访问。<span class="timestamp-wrapper"><time class="timestamp" datetime="2023-09-27">&lt;2023-09-27 三&gt;</time></span>）</li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://taingram.org/index.html">Thomas Ingram</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://archive.casouri.co.uk/note/2018/blog-with-only-org-mode/index.html">Blog with only Org Mode</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://writepermission.com/">rw-r&ndash;r--</a> 看不出来是使用orgmode生成的。</li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://writequit.org/">:wq - Writequit</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://notes.alex-miller.co/">Alex's Slip-box</a>: Orgmode + JS</li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://systemcrafters.net/">System Crafters</a>: 定制的导出模板</li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://justin.abrah.ms/">https://justin.abrah.ms/</a> 自定义的模板</li>
+<li><a target="_blank" rel="noopener noreferrer" href="http://alhassy.com/AlBasmala">http://alhassy.com/AlBasmala</a> 有点复杂</li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://nicolasknoebber.com/">Nicolas Knoebber</a>: 非常羡慕这位的生活。</li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://gnu.re/">MATTHIAS DAVID</a>: 法文？<a target="_blank" rel="noopener noreferrer" href="https://github.com/DarkBuffalo/org-easy-blog/blob/main/org-easy-blog.el">publish.el</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://www.venikx.com/">Kevin De Baerdemaeker</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://blog.sulami.xyz/">Robin Schroer</a>: <a target="_blank" rel="noopener noreferrer" href="https://github.com/sulami/blog/blob/develop/config.el">config</a></li>
+</ul>
+</div>
+</div>
+
+</div>
+<footer class="post-footer">
+<div class="post-meta-row">
+<div class="post-tags">
+<a href="/tags/orgmode/"><span class="tag-hash" aria-hidden="true">#</span>orgmode</a>
+<a href="/tags/emacs/"><span class="tag-hash" aria-hidden="true">#</span>emacs</a>
+<a href="/tags/blog/"><span class="tag-hash" aria-hidden="true">#</span>blog</a>
+</div>
+<a target="_blank" rel="noopener noreferrer" class="post-source" href="https://codeberg.org/wejan/weborg/raw/branch/main/org/xy/2019-08-14-sites-with-orgmode.org" rel="nofollow">查看 Org 源文件</a>
+</div>
+<nav class="post-nav" aria-label="上一篇与下一篇">
+<div class="post-nav-col post-nav-prev">
+<span class="post-nav-label">← 上一篇</span>
+<a href="/xy/blogging-with-orgmode/">使用 Org Mode 写博客</a>
+</div>
+<div class="post-nav-col post-nav-next">
+<span class="post-nav-label">下一篇 →</span>
+<a href="/xy/orgmode-to-hugo/">网站从 orgmode 导出迁移至 hugo 驱动</a>
+</div>
+</nav>
+<section class="post-related">
+<p class="post-section-label">相关文章</p>
+<ul class="rel-list">
+<li class="rel-item"><a href="/xy/blogging-with-orgmode/"><time class="rel-date" datetime="2019-08-03T22:52:15">2019-08-03</time><span class="rel-sep">-</span><span class="rel-title">使用 Org Mode 写博客</span></a></li>
+<li class="rel-item"><a href="/xy/emacs-notes/"><time class="rel-date" datetime="2019-07-18T00:00:00">2019-07-18</time><span class="rel-sep">-</span><span class="rel-title">Emacs 学习笔记</span></a></li>
+<li class="rel-item"><a href="/xy/website-deployment-method/"><time class="rel-date" datetime="2026-11-12T15:38:00">2026-11-12</time><span class="rel-sep">-</span><span class="rel-title">利用 AI 智能体，回到 Orgmode 导出部署</span></a></li>
+<li class="rel-item"><a href="/xy/orgmode-to-hugo/"><time class="rel-date" datetime="2026-10-07T00:00:00">2026-10-07</time><span class="rel-sep">-</span><span class="rel-title">网站从 orgmode 导出迁移至 hugo 驱动</span></a></li>
+</ul>
+</section>
+</footer>
+<section class="comments" id="comments" data-default-tab="comments" data-litecwd-slug="/xy/sites-with-orgmode/" data-litecwd-api="https://litecwd.weiqiang.org" data-litecwd-lang="zh-CN" data-litecwd-page-size="20" data-litecwd-placeholder="雁过留痕..." data-litecwd-cdn="/js/litecwd.js" data-litecwd-theme="auto" data-litecwd-css="/css/litecwd.css" data-wm-target="https://weiqiang.org/xy/sites-with-orgmode/">
+<div class="ctabs">
+<input type="radio" class="ctab-radio" name="comment-tab" id="ct-comments" checked>
+<input type="radio" class="ctab-radio" name="comment-tab" id="ct-webmention">
+<div class="ctabs-bar">
+<label class="ctab" for="ct-comments"><span class="ctab-text">留言</span><span class="ctab-badge" data-count-comments hidden></span></label>
+<label class="ctab" for="ct-webmention"><span class="ctab-text">网络提及</span><span class="ctab-badge" data-count-webmention hidden></span></label>
+</div>
+<div class="ctabs-body">
+<section class="ctab-panel" id="panel-comments">
+<div class="litecwd-loading" id="litecwd-loading" role="status">
+<span class="litecwd-loading-text">正在加载评论</span>
+<span class="litecwd-loading-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+</div>
+<div class="litecwd-comments" id="litecwd-comments"></div>
+<noscript><p class="comments-disabled">请启用 JavaScript 以查看评论。</p></noscript>
+</section>
+<section class="ctab-panel" id="panel-webmention">
+<div id="webmentions" class="webmentions" data-target="https://weiqiang.org/xy/sites-with-orgmode/">
+<p class="wm-tip">本站支持 <a href="https://indieweb.org/Webmention" target="_blank" rel="noopener noreferrer">Webmention</a>：在自己站点写下本文链接，再把那篇帖子的地址发过来。</p>
+<form class="wm-send" action="https://webmention.io/weiqiang.org/webmention" method="post">
+<input type="hidden" name="target" value="https://weiqiang.org/xy/sites-with-orgmode/">
+<input class="wm-source" name="source" type="url" required autocomplete="off" spellcheck="false" aria-label="回应文章的地址" placeholder="回应文章的地址">
+<button type="submit">发送</button>
+</form>
+<div class="wm-reactions" hidden></div>
+<ul class="wm-list" hidden></ul>
+<p class="wm-empty" hidden>还没有收到提及。</p>
+<p class="wm-loading" hidden>正在读取提及…</p>
+<noscript><p class="wm-tip">查看已收到的提及需要 JavaScript；提交不受影响。</p></noscript>
+</div>
+</section>
+</div>
+</div>
+<p class="cm-mailto">不方便公开留言？<a href="mailto:lu@weiqiang.org?subject=%E5%9B%9E%E5%A4%8D%EF%BC%9A%E4%BD%BF%E7%94%A8%20Emacs%20%E5%92%8C%20Org%20Mode%20%E7%94%9F%E6%88%90%E7%9A%84%E7%BD%91%E7%AB%99" rel="nofollow">写信给我</a></p>
+</section>
+</article>
+<aside class="toc" aria-label="文章目录">
+<p class="toc-label">目录</p>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#中文">1. 中文</a></li>
+<li><a href="#英文">2. 英文</a></li>
+<li><a href="#其他可参考">3. 其他可参考</a></li>
+</ul>
+</div>
+</aside>
+</div>
+</main>
+<footer class="site-footer">
+<div class="footer-inner">
+<div class="footer-info">
+<nav class="footer-nav" aria-label="页脚导航"><ul><li><a href="/zh/">手記</a></li><li><a href="/hs/">护生</a></li><li><a href="/shuji/">書集</a></li><li><a href="/xy/">习艺</a></li><li><a href="/series/">结集</a></li><li><a href="/about/">关于</a></li><li><a href="/interest/">兴趣</a></li><li><a href="/links/">收藏</a></li><li><a href="/tags/">标签</a></li><li><a href="/index.xml">订阅</a></li></ul></nav>
+<p class="footer-line footer-lastmod">本页最近更新：2019-08-14</p>
+<p class="footer-line footer-copy">© LOWEJAN, Since 2008.</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,128 @@
+/* ============================================================
+   cwd.css — 给 LiteCWD 评论组件换一身纸墨衣裳
+   ============================================================
+   组件跑在 Shadow DOM 里，外部样式进不去；它自己也只开放了一组
+   CSS 变量。所以在 `weborg-litecwd-css' 里把地址指到这个文件，
+   由组件以 <link> 注入到它的 shadow root 底部 —— 同特异性、后加载，
+   正好盖掉组件默认的 GitHub 蓝。
+
+   这里全部引用站点变量（--bg / --bg-soft / --border / --accent …）：
+   自定义属性会穿透 shadow 边界继承下来，所以评论块与正文用同一张纸，
+   深浅色切换也不用重复维护两套色号。
+
+   只改变量，不碰结构：组件升级改了 DOM 也不会把这里弄坏。
+   ============================================================ */
+
+:host,
+.litecwd-comments-container {
+  /* 背景：透明，直接落在全站那张纸上，不再另起一块白色卡片 */
+  --litecwd-bg: transparent;
+  --litecwd-bg-secondary: transparent;
+  --litecwd-bg-input: var(--bg-card, #fffdf9);
+  --litecwd-bg-hover: var(--bg-soft, #f6efe3);
+  --litecwd-bg-reply: var(--bg-soft, #f6efe3);
+  --litecwd-bg-disabled: var(--bg-soft, #f6efe3);
+  --litecwd-bg-avatar: var(--bg-soft, #f6efe3);
+
+  /* 墨与线 */
+  --litecwd-text: var(--text-body, #3a332d);
+  --litecwd-text-secondary: var(--muted, #8c8279);
+  --litecwd-border: var(--border, #e7ddcd);
+  --litecwd-border-light: var(--border, #e7ddcd);
+  --litecwd-border-active: var(--accent, #b4552f);
+
+  /* 赤陶 */
+  --litecwd-primary: var(--accent, #b4552f);
+  --litecwd-primary-hover: var(--link, #9c4a28);
+
+  --litecwd-radius: 8px;
+}
+
+/* 字体跟着正文走：--font-sans 从站点继承进来 */
+
+.litecwd-comments-container {
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  background: transparent;
+}
+
+/* ---------- 字号整体调大一号 ----------
+   组件内部一律用 px 写死（正文 14 / 标题 16 / 注脚 12 / 标签 13），
+   改容器 font-size 对它没用，只能按层级逐个覆盖。
+   四档集中在下面这组变量里，以后想再调，只改这四个数。 */
+
+.litecwd-comments-container {
+  --litecwd-fs-body: 1rem;      /* 原 14px：评论正文、输入框、按钮 */
+  --litecwd-fs-title: 1.125rem; /* 原 16px：表单标题、作者名、条数 */
+  --litecwd-fs-label: 0.875rem; /* 原 13px：字段标签、分页、喜欢 */
+  --litecwd-fs-note: 0.8125rem; /* 原 12px：时间、徽标、小按钮 */
+}
+
+.litecwd-comment-content,
+.litecwd-form-input,
+.litecwd-form-textarea,
+.litecwd-reply-textarea,
+.litecwd-empty-text,
+.litecwd-loading-text,
+.litecwd-btn,
+.litecwd-load-more,
+.litecwd-error-inline,
+.litecwd-success-inline,
+.litecwd-reply-to,
+.litecwd-reply-to-author,
+.litecwd-reply-to-separator,
+.litecwd-modal-desc {
+  font-size: var(--litecwd-fs-body);
+}
+
+.litecwd-form-title,
+.litecwd-author-name,
+.litecwd-modal-title,
+.litecwd-count,
+.litecwd-comments-count {
+  font-size: var(--litecwd-fs-title);
+}
+
+.litecwd-form-label,
+.litecwd-preview-title,
+.litecwd-emotion-tab,
+.litecwd-like-button,
+.litecwd-page-btn,
+.litecwd-page-num,
+.litecwd-error-retry {
+  font-size: var(--litecwd-fs-label);
+}
+
+.litecwd-comment-time,
+.litecwd-action-btn,
+.litecwd-btn-small,
+.litecwd-admin-badge,
+.litecwd-pin-badge,
+.litecwd-comment-like-button,
+.litecwd-error-text,
+.litecwd-turnstile-error,
+.litecwd-admin-controls,
+.litecwd-btn-text {
+  font-size: var(--litecwd-fs-note);
+}
+
+/* 输入框：与站内搜索框同一副长相 */
+
+.litecwd-comments-container input,
+.litecwd-comments-container textarea {
+  background: var(--bg-card, #fffdf9);
+  border-color: var(--border-strong, #d9cdb8);
+}
+
+.litecwd-comments-container input::placeholder,
+.litecwd-comments-container textarea::placeholder {
+  color: var(--muted, #8c8279);
+}
+
+.litecwd-comments-container input:focus,
+.litecwd-comments-container textarea:focus {
+  outline: none;
+  border-color: var(--accent, #b4552f);
+  box-shadow: 0 0 0 3px var(--accent-soft, #f0dccf);
+}

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>利用 AI 智能体，回到 Orgmode 导出部署 - 危墙</title>
+<meta name="description" content="本文记录网站利用 workbuddy，回到 Orgmode 导出静态文件的过程。" />
+<meta name="generator" content="Org Mode" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" sizes="any" href="/images/favicon-dark.svg" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/svg+xml" sizes="any" href="/images/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" href="/images/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="manifest" href="/images/site.webmanifest">
+<meta name="theme-color" content="#fdfaf4">
+<script>
+(function(){document.documentElement.classList.add('js');try{var s=localStorage.getItem('paper-theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',s||(d?'dark':'light'));}catch(e){}})();
+</script>
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/highlight.css">
+<script src="/js/main.js" defer></script>
+<script src="/js/comments.js" defer></script>
+<link rel="webmention" href="https://webmention.io/weiqiang.org/webmention">
+<link rel="pingback" href="https://webmention.io/weiqiang.org/xmlrpc">
+<link rel="alternate" type="application/atom+xml" title="危墙 · 习艺" href="/xy/index.xml">
+<meta name="keywords" content="orgmode">
+</head>
+<body>
+<header class="site-header">
+<div class="header-inner">
+<a href="/" class="site-name"><span class="site-logo"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true" focusable="false"><rect x="2.4" y="3.2" width="9" height="4.8" rx="0.9"></rect><rect x="12.6" y="3.2" width="9" height="4.8" rx="0.9"></rect><rect x="2.4" y="9.6" width="3.6" height="4.8" rx="0.9"></rect><rect x="7.2" y="9.6" width="9" height="4.8" rx="0.9"></rect><rect x="17.4" y="9.6" width="4.2" height="4.8" rx="0.9"></rect><rect x="2.4" y="16" width="9" height="4.8" rx="0.9"></rect><rect x="12.6" y="16" width="9" height="4.8" rx="0.9"></rect></svg></span><span class="site-title-text">危墙</span></a>
+<nav class="site-nav" id="site-nav" aria-label="站点导航">
+<a href="/">首页</a>
+<a href="/zh/">手记</a>
+<a href="/about/">关于</a>
+<a href="/links/">收藏</a>
+<a href="/index.xml">订阅</a>
+<a class="nav-icon nav-icon-search" href="/search/" aria-label="搜索" title="搜索"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.8" cy="10.8" r="6.1"></circle><path d="M15.3 15.3 20 20"></path></svg></a>
+</nav>
+<nav class="mobile-nav" aria-label="快捷导航">
+<a href="/">首页</a>
+<a href="/zh/">手记</a>
+<a href="/about/">关于</a>
+<a class="nav-icon nav-icon-search" href="/search/" aria-label="搜索" title="搜索"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.8" cy="10.8" r="6.1"></circle><path d="M15.3 15.3 20 20"></path></svg></a>
+</nav>
+<button class="nav-toggle" type="button" aria-label="更多菜单" aria-expanded="false" aria-controls="nav-panel" title="更多菜单"><svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"></path></svg><svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+<nav class="nav-panel" id="nav-panel" aria-label="更多导航">
+<a href="/links/">收藏</a>
+<a href="/index.xml">订阅</a>
+<a href="/tags/">标签</a>
+</nav>
+<button class="theme-toggle" type="button" aria-label="切换主题" title="切换主题"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2.4v2.2M12 19.4v2.2M2.4 12h2.2M19.4 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"></path></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M20.5 14.6A8.6 8.6 0 0 1 9.4 3.5a8.7 8.7 0 1 0 11.1 11.1z"></path></svg></button>
+</div>
+<div class="progress" aria-hidden="true"></div>
+</header>
+<main id="content" class="content">
+<div class="post-layout">
+<article class="post">
+<header class="post-header">
+<h1 class="post-title">利用 AI 智能体，回到 Orgmode 导出部署</h1>
+<p class="post-meta">
+<time datetime="2026-11-12T15:38:00">2026-11-12</time><span>约 1086 字</span>
+</p>
+</header>
+<div class="post-content">
+<p>
+近段时间，書集工作暂停，业余时间花在了重构网站上。
+</p>
+
+<p>
+使用 workbuddy 似乎会上瘾，之前用它做了一个 hugo 主题，自己的需求基本能完美实现，就想着能不能再让它做一个 orgmode 导出 html 静态文件的脚本，让之前因无技术能力而没能实现的想法呈现出来。没想到，真能做到。
+</p>
+
+<p>
+结果就是目前网站的样子，样式还是用的之前 hugo 时的纸质风格主题。
+</p>
+<div id="outline-container-为什么退回" class="outline-2">
+<h2 id="为什么退回"><span class="section-number-2">1.</span> 为什么退回<a class="heading-anchor" href="#为什么退回" aria-label="本节链接">#</a></h2>
+<div class="outline-text-2" id="text-1">
+<p>
+上个月国庆期间才刚刚从 orgmode 转到 hugo, 简单作了<a href="/xy/orgmode-to-hugo/">记录</a>，那时迁移的原因是 hugo 的主题生态与 orgmode 导出站点的技术能力不足。
+</p>
+
+<p>
+而在使用 hugo 的过程中，我用了 ox-hugo 导出到 hugo 适用的 markdown 文件，也就是实际使用流程中多了一步，让自己感到有些麻烦。
+</p>
+
+<p>
+原本一篇文章一个 orgmode 文件，写完就结束了，现在使用 hugo 还要多加一步导出，操作起来不那么流畅。对于学习 ox-hugo 相关功能有点缺乏耐心。
+</p>
+
+<p>
+当然 ox-hugo 也有另一种模式，所有文章写在一个 orgmode 文件，子标题导出 markdown 文章。虽然有好处，比如一个主题的文章可以写在一起，但文章间的链接，我没怎么学会。
+</p>
+
+<p>
+总之，就是习惯了写一篇就丢的模式，转变流程后不适应。
+</p>
+</div>
+</div>
+<div id="outline-container-怎么迁回的" class="outline-2">
+<h2 id="怎么迁回的"><span class="section-number-2">2.</span> 怎么迁回的<a class="heading-anchor" href="#怎么迁回的" aria-label="本节链接">#</a></h2>
+<div class="outline-text-2" id="text-2">
+<p>
+一个偶然的机会看到 <a target="_blank" rel="noopener noreferrer" href="https://tianheg.co">tianheg</a> 的站点，发现他从 hugo 回到了纯 orgmode ，在看他的 git 仓库时感觉似乎也是通过 AI 协助的。
+</p>
+
+<p>
+所以就让 workbuddy 试了试。结果还真出人意料，真的可以的，既保留了之前手搓的 orgmode 导出 html 的功能，又增加了在 hugo 时的 prettyurl 、 tags 、 相关文章、往年今日等模块，甚至样式都能一样。
+</p>
+
+<p>
+而且，还让 workbuddy 对代码进行优化，提高了导出效率，比之我曾经手搓的快了不了，也能使用 codeberg 的 CI 功能，写完只需 git 推送，其他的一切交给机器即可。
+</p>
+
+<p>
+这是 AI 时代应有的，效率交给机器，人来呈现情感与创意。
+</p>
+</div>
+</div>
+<div id="outline-container-实现的一些功能" class="outline-2">
+<h2 id="实现的一些功能"><span class="section-number-2">3.</span> 实现的一些功能<a class="heading-anchor" href="#实现的一些功能" aria-label="本节链接">#</a></h2>
+<div class="outline-text-2" id="text-3">
+<p>
+本站本质上只有一堆 html 静态文件，与 hugo 等静态网站生成器实现的一致。相对于直接用 orgmode 的 ox-publish 导出，增加了以下功能：
+</p>
+
+<ul class="org-ul">
+<li>标签 <code>tags</code> ，取自头文件中的 <code>#+TAGS:</code> ，增加一个 <a href="/tags/">tags</a> 页面。</li>
+<li>文章页 <code>上一篇/下一篇</code> 导航， <code>相关文章</code> 与 <code>往年今日</code> 模块，显示6篇文章（如有）。</li>
+<li>评论功能，使用 <a target="_blank" rel="noopener noreferrer" href="https://cwd.js.org">cwd</a> 实现，部署在 cloudflare，速度似乎有些慢；并加了 webmention 功能，然并不不知道 webmention 有没有效果。</li>
+<li>搜索功能，似乎是 js 实现的，偶尔会加载不了，不管了，先这样吧。</li>
+<li>订阅功能，包括全站与各个分类。</li>
+</ul>
+
+<p>
+技术是没有的，能做到这个程度我已经很满意。
+</p>
+</div>
+</div>
+<div id="outline-container-纯文本记录" class="outline-2">
+<h2 id="纯文本记录"><span class="section-number-2">4.</span> 纯文本记录<a class="heading-anchor" href="#纯文本记录" aria-label="本节链接">#</a></h2>
+<div class="outline-text-2" id="text-4">
+<p>
+人老了，少了向上向前的野望，却更容易回忆往昔，一个安稳的顺畅的写作环境是很好的保障，如今终于通过 AI 智能体实现了。
+</p>
+
+<p>
+经过这次折腾，想像中的<a href="/zh/2026/plaintext-life/">纯文本</a>记录可以比较舒适地开展了。当前写博客的流程就非常简单：打开编辑器&ndash;&gt;码字&ndash;&gt;保存&ndash;&gt; Git提交。
+</p>
+
+<p>
+接下来就是文章再整理整理，把曾经的一些文字能搬的都搬上来，其中的一些错误修复，再慢慢增加点文字。将站点作为自己在网络时代的数字花园，不断积累纯文本的数字资产。
+</p>
+
+<p>
+如今，AI 的应用，已经是基本能力，所以，本篇不是技术文，但我仍然放在了「习艺」之中。
+</p>
+
+<p>
+感谢这个时代。
+</p>
+</div>
+</div>
+
+</div>
+<footer class="post-footer">
+<div class="post-meta-row">
+<div class="post-tags">
+<a href="/tags/orgmode/"><span class="tag-hash" aria-hidden="true">#</span>orgmode</a>
+</div>
+<a target="_blank" rel="noopener noreferrer" class="post-source" href="https://codeberg.org/wejan/weborg/raw/branch/main/org/xy/2026-11-12-website-deployment-method.org" rel="nofollow">查看 Org 源文件</a>
+</div>
+<nav class="post-nav" aria-label="上一篇与下一篇">
+<div class="post-nav-col post-nav-prev">
+<span class="post-nav-label">← 上一篇</span>
+<a href="/xy/orgmode-to-hugo/">网站从 orgmode 导出迁移至 hugo 驱动</a>
+</div>
+<div class="post-nav-col post-nav-next">
+<span class="post-nav-label">下一篇 →</span>
+<span class="post-nav-none">已经是最新的了</span>
+</div>
+</nav>
+<section class="post-related">
+<p class="post-section-label">相关文章</p>
+<ul class="rel-list">
+<li class="rel-item"><a href="/xy/orgmode-to-hugo/"><time class="rel-date" datetime="2026-10-07T00:00:00">2026-10-07</time><span class="rel-sep">-</span><span class="rel-title">网站从 orgmode 导出迁移至 hugo 驱动</span></a></li>
+<li class="rel-item"><a href="/xy/sites-with-orgmode/"><time class="rel-date" datetime="2019-08-14T00:00:00">2019-08-14</time><span class="rel-sep">-</span><span class="rel-title">使用 Emacs 和 Org Mode 生成的网站</span></a></li>
+<li class="rel-item"><a href="/xy/blogging-with-orgmode/"><time class="rel-date" datetime="2019-08-03T22:52:15">2019-08-03</time><span class="rel-sep">-</span><span class="rel-title">使用 Org Mode 写博客</span></a></li>
+<li class="rel-item"><a href="/xy/emacs-notes/"><time class="rel-date" datetime="2019-07-18T00:00:00">2019-07-18</time><span class="rel-sep">-</span><span class="rel-title">Emacs 学习笔记</span></a></li>
+</ul>
+</section>
+<section class="post-sameday">
+<p class="post-section-label">往年今日</p>
+<ul class="rel-list">
+<li class="rel-item"><a href="/zh/2010/zhouji20101112/"><time class="rel-date" datetime="2010-11-12T00:00:00">2010-11-12</time><span class="rel-sep">-</span><span class="rel-title">支教周记20101112</span></a></li>
+</ul>
+</section>
+</footer>
+<section class="comments" id="comments" data-default-tab="comments" data-litecwd-slug="/xy/website-deployment-method/" data-litecwd-api="https://litecwd.weiqiang.org" data-litecwd-lang="zh-CN" data-litecwd-page-size="20" data-litecwd-placeholder="雁过留痕..." data-litecwd-cdn="/js/litecwd.js" data-litecwd-theme="auto" data-litecwd-css="/css/litecwd.css" data-wm-target="https://weiqiang.org/xy/website-deployment-method/">
+<div class="ctabs">
+<input type="radio" class="ctab-radio" name="comment-tab" id="ct-comments" checked>
+<input type="radio" class="ctab-radio" name="comment-tab" id="ct-webmention">
+<div class="ctabs-bar">
+<label class="ctab" for="ct-comments"><span class="ctab-text">留言</span><span class="ctab-badge" data-count-comments hidden></span></label>
+<label class="ctab" for="ct-webmention"><span class="ctab-text">网络提及</span><span class="ctab-badge" data-count-webmention hidden></span></label>
+</div>
+<div class="ctabs-body">
+<section class="ctab-panel" id="panel-comments">
+<div class="litecwd-loading" id="litecwd-loading" role="status">
+<span class="litecwd-loading-text">正在加载评论</span>
+<span class="litecwd-loading-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+</div>
+<div class="litecwd-comments" id="litecwd-comments"></div>
+<noscript><p class="comments-disabled">请启用 JavaScript 以查看评论。</p></noscript>
+</section>
+<section class="ctab-panel" id="panel-webmention">
+<div id="webmentions" class="webmentions" data-target="https://weiqiang.org/xy/website-deployment-method/">
+<p class="wm-tip">本站支持 <a href="https://indieweb.org/Webmention" target="_blank" rel="noopener noreferrer">Webmention</a>：在自己站点写下本文链接，再把那篇帖子的地址发过来。</p>
+<form class="wm-send" action="https://webmention.io/weiqiang.org/webmention" method="post">
+<input type="hidden" name="target" value="https://weiqiang.org/xy/website-deployment-method/">
+<input class="wm-source" name="source" type="url" required autocomplete="off" spellcheck="false" aria-label="回应文章的地址" placeholder="回应文章的地址">
+<button type="submit">发送</button>
+</form>
+<div class="wm-reactions" hidden></div>
+<ul class="wm-list" hidden></ul>
+<p class="wm-empty" hidden>还没有收到提及。</p>
+<p class="wm-loading" hidden>正在读取提及…</p>
+<noscript><p class="wm-tip">查看已收到的提及需要 JavaScript；提交不受影响。</p></noscript>
+</div>
+</section>
+</div>
+</div>
+<p class="cm-mailto">不方便公开留言？<a href="mailto:lu@weiqiang.org?subject=%E5%9B%9E%E5%A4%8D%EF%BC%9A%E5%88%A9%E7%94%A8%20AI%20%E6%99%BA%E8%83%BD%E4%BD%93%EF%BC%8C%E5%9B%9E%E5%88%B0%20Orgmode%20%E5%AF%BC%E5%87%BA%E9%83%A8%E7%BD%B2" rel="nofollow">写信给我</a></p>
+</section>
+</article>
+<aside class="toc" aria-label="文章目录">
+<p class="toc-label">目录</p>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#为什么退回">1. 为什么退回</a></li>
+<li><a href="#怎么迁回的">2. 怎么迁回的</a></li>
+<li><a href="#实现的一些功能">3. 实现的一些功能</a></li>
+<li><a href="#纯文本记录">4. 纯文本记录</a></li>
+</ul>
+</div>
+</aside>
+</div>
+</main>
+<footer class="site-footer">
+<div class="footer-inner">
+<div class="footer-info">
+<nav class="footer-nav" aria-label="页脚导航"><ul><li><a href="/zh/">手記</a></li><li><a href="/hs/">护生</a></li><li><a href="/shuji/">書集</a></li><li><a href="/xy/">习艺</a></li><li><a href="/series/">结集</a></li><li><a href="/about/">关于</a></li><li><a href="/interest/">兴趣</a></li><li><a href="/links/">收藏</a></li><li><a href="/tags/">标签</a></li><li><a href="/index.xml">订阅</a></li></ul></nav>
+<p class="footer-line footer-lastmod">本页最近更新：2026-11-12</p>
+<p class="footer-line footer-copy">© LOWEJAN, Since 2008.</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

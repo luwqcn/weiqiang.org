@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>使用 Org Mode 写博客 - 危墙</title>
+<meta name="description" content="记录使用 Org Mode 写博客的几次折腾过程，并不详细。" />
+<meta name="generator" content="Org Mode" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" sizes="any" href="/images/favicon-dark.svg" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/svg+xml" sizes="any" href="/images/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" href="/images/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="manifest" href="/images/site.webmanifest">
+<meta name="theme-color" content="#fdfaf4">
+<script>
+(function(){document.documentElement.classList.add('js');try{var s=localStorage.getItem('paper-theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',s||(d?'dark':'light'));}catch(e){}})();
+</script>
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/highlight.css">
+<script src="/js/main.js" defer></script>
+<script src="/js/comments.js" defer></script>
+<link rel="webmention" href="https://webmention.io/weiqiang.org/webmention">
+<link rel="pingback" href="https://webmention.io/weiqiang.org/xmlrpc">
+<link rel="alternate" type="application/atom+xml" title="危墙 · 习艺" href="/xy/index.xml">
+<meta name="keywords" content="orgmode, 博客, emacs">
+</head>
+<body>
+<header class="site-header">
+<div class="header-inner">
+<a href="/" class="site-name"><span class="site-logo"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true" focusable="false"><rect x="2.4" y="3.2" width="9" height="4.8" rx="0.9"></rect><rect x="12.6" y="3.2" width="9" height="4.8" rx="0.9"></rect><rect x="2.4" y="9.6" width="3.6" height="4.8" rx="0.9"></rect><rect x="7.2" y="9.6" width="9" height="4.8" rx="0.9"></rect><rect x="17.4" y="9.6" width="4.2" height="4.8" rx="0.9"></rect><rect x="2.4" y="16" width="9" height="4.8" rx="0.9"></rect><rect x="12.6" y="16" width="9" height="4.8" rx="0.9"></rect></svg></span><span class="site-title-text">危墙</span></a>
+<nav class="site-nav" id="site-nav" aria-label="站点导航">
+<a href="/">首页</a>
+<a href="/zh/">手记</a>
+<a href="/about/">关于</a>
+<a href="/links/">收藏</a>
+<a href="/index.xml">订阅</a>
+<a class="nav-icon nav-icon-search" href="/search/" aria-label="搜索" title="搜索"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.8" cy="10.8" r="6.1"></circle><path d="M15.3 15.3 20 20"></path></svg></a>
+</nav>
+<nav class="mobile-nav" aria-label="快捷导航">
+<a href="/">首页</a>
+<a href="/zh/">手记</a>
+<a href="/about/">关于</a>
+<a class="nav-icon nav-icon-search" href="/search/" aria-label="搜索" title="搜索"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.8" cy="10.8" r="6.1"></circle><path d="M15.3 15.3 20 20"></path></svg></a>
+</nav>
+<button class="nav-toggle" type="button" aria-label="更多菜单" aria-expanded="false" aria-controls="nav-panel" title="更多菜单"><svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"></path></svg><svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+<nav class="nav-panel" id="nav-panel" aria-label="更多导航">
+<a href="/links/">收藏</a>
+<a href="/index.xml">订阅</a>
+<a href="/tags/">标签</a>
+</nav>
+<button class="theme-toggle" type="button" aria-label="切换主题" title="切换主题"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2.4v2.2M12 19.4v2.2M2.4 12h2.2M19.4 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"></path></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M20.5 14.6A8.6 8.6 0 0 1 9.4 3.5a8.7 8.7 0 1 0 11.1 11.1z"></path></svg></button>
+</div>
+<div class="progress" aria-hidden="true"></div>
+</header>
+<main id="content" class="content">
+<div class="post-layout">
+<article class="post">
+<header class="post-header">
+<h1 class="post-title">使用 Org Mode 写博客</h1>
+<p class="post-meta">
+<time datetime="2019-08-03T22:52:15">2019-08-03</time><span>约 1838 字</span>
+</p>
+</header>
+<div class="post-content">
+<p>
+本篇略记博客/网站生成流程。本站使用 Emacs Orgmode 导出功能生成 html 文件，使用 Artalk 实现评论功能。
+</p>
+<div id="outline-container-背景" class="outline-2">
+<h2 id="背景"><span class="section-number-2">1.</span> 背景<a class="heading-anchor" href="#背景" aria-label="本节链接">#</a></h2>
+<div class="outline-text-2" id="text-1">
+<p>
+自2016年离职后，一直静不下心，几近停止思考。翻翻以往文字，偶尔会有些感触。曾几何时，也是有一番立志，计划长久积累，此次聊记几笔，亦是作个见证。 
+</p>
+
+<p>
+写博客有些日子了，但好像都没能坚持下来。从刚开始的新浪、百度、博客大巴之类，到后来的所谓独立博客，使用 Wordpress、Typecho 搭建，域名换了又换，再到后来在 Github pages 上使用 Jekyll 搭了个简单的页面，再到今年前些时候决定重启博客，尝试了各种静态博客生成工具，最终还是选择了 Jekyll，折腾很久算是将简洁的风格确定了。但没写几篇，又改了主意。
+</p>
+
+<p>
+此次，立志好好學習。使用 Emacs 和 Org Mode 搭建了个人页面，算是从头开始。
+</p>
+</div>
+<div id="outline-container-为什么这么折腾" class="outline-3">
+<h3 id="为什么这么折腾"><span class="section-number-3">1.1.</span> 为什么这么折腾<a class="heading-anchor" href="#为什么这么折腾" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+<div id="outline-container-目标不明确" class="outline-4">
+<h4 id="目标不明确"><span class="section-number-4">1.1.1.</span> 目标不明确<a class="heading-anchor" href="#目标不明确" aria-label="本节链接">#</a></h4>
+<div class="outline-text-4" id="text-1-1-1">
+<ol class="org-ol">
+<li>心未定。虽然知道博客有助于自身进步，从很多人的经历中，都可以看出其思想脉络和心路历程。但知易行难，心未定，则几经周折，不知所措。</li>
+<li>行不恒。持之以恒实在是件难事，虽然曾经坚持了两三年的 Typecho，后来生活中的各种忙碌之后，便也能不了了之。</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-此次重启之原因" class="outline-4">
+<h4 id="此次重启之原因"><span class="section-number-4">1.1.2.</span> 此次重启之原因<a class="heading-anchor" href="#此次重启之原因" aria-label="本节链接">#</a></h4>
+<div class="outline-text-4" id="text-1-1-2">
+<p>
+实在是因为无论工作还是生活中，从日常阅读观察中，发现自身越来越不及这个时代的变迁，不及专业的能力，亦难以应对生活中的难处。不学习不足以应世事之变，不积累不足以成生活之美。
+</p>
+
+<p>
+Emacs 被称为神之编辑器，Org Mode 是其内建的功能强大的管理工具。之所以选择这样的工具，实在是因为自己喜欢这种求新求变，富于挑战。有人说学习成本异常高，在搭建的过程中我也确实感受到了，以致于有人说“尽选hard模式”，想想其实也蛮可笑的。但，这是为了坚持。
+</p>
+
+<ul class="org-ul">
+<li>凡事开头难：人生没有速成，只有不断积累，方能成就。所有文字以org文件管理，是积累的一部分，并有利于备份。</li>
+<li>坚持最重要：曾经未能做到的，不羞于启齿，亦善于总结，重要的是坚持。</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-Org-project-搭建" class="outline-2">
+<h2 id="Org-project-搭建"><span class="section-number-2">2.</span> Org project 搭建<a class="heading-anchor" href="#Org-project-搭建" aria-label="本节链接">#</a></h2>
+<div class="outline-text-2" id="text-2">
+<p>
+具体过程不再赘述，参考资料如下：
+</p>
+
+<ul class="org-ul">
+<li>org-tutorial: <a target="_blank" rel="noopener noreferrer" href="http://orgmode.org/worg/org-tutorials/org-publish-html-tutorial.html">Publish org-mode files to html</a></li>
+<li>Dayigu's Basket: <a target="_blank" rel="noopener noreferrer" href="http://dayigu.github.io/WhyUseOrgModeToWriteBlog.html">为什么用 org-mode 写 blog？</a>  （已无法访问<span class="timestamp-wrapper"><time class="timestamp" datetime="2021-02-27">&lt;2021-02-27 六&gt;</time></span>）</li>
+<li>pank.eu: <a target="_blank" rel="noopener noreferrer" href="https://pank.eu/blog/blog-setup.html">Blogging with ORG</a> <b>主要参考此篇</b> 。</li>
+</ul>
+
+<p>
+从网络中收集了部分使用 Emacs 和 Org Mode 构建的网站（博客），详见 <a href="/xy/sites-with-orgmode/">使用 Emacs 和 Org Mode 生成的网站</a>。
+</p>
+</div>
+<div id="outline-container-Deployment-部署" class="outline-3">
+<h3 id="Deployment-部署"><span class="section-number-3">2.1.</span> Deployment 部署<a class="heading-anchor" href="#Deployment-部署" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+起初直接在本地使用 M-x org-publish-all 导出 html 文件后 git push 至 Github，使用 Github pages。后来感觉麻烦，搜索之后找到 Gitlab pages，能直接自动编译后部署。 Gitlab 的好处是测试方便，缺点是速度有些慢，绑定独立域名有些欠缺。最后，找到 Netlify，与 Gitlab 一样可以自动编译部署，还自带CDN，速度快，绑定独立域名也方便，网上推荐说点几下就搞定，的确如此。
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-UPDATE" class="outline-2">
+<h2 id="UPDATE"><span class="section-number-2">3.</span> UPDATE<a class="heading-anchor" href="#UPDATE" aria-label="本节链接">#</a></h2>
+<div class="outline-text-2" id="text-3">
+<p>
+<span class="timestamp-wrapper"><time class="timestamp" datetime="2021-02-27">&lt;2021-02-27 六&gt;</time></span>
+</p>
+
+<p>
+继续折腾 Org Mode 导出，这次通过万能的 Github ，找到了一些可用的代码，实现如下功能：
+</p>
+
+<ul class="org-ul">
+<li>类似博客的 Index 页面，通过自定义 sitemap-format 实现；</li>
+
+<li>以文件夹来分类，每个分类下自动生成 index 页面，通过 auto-sitemap 来实现，虽然比较弱智，但够用；</li>
+
+<li>博客内容集中在 content 文件夹下，与其他如 image, CSS 之类文件分开，看起来比较简单些，目前目录结构类似如下：</li>
+</ul>
+
+<pre class="example" id="org23a4449">
+├── README.org
+├── assets
+│   ├── css/
+│   ├── favicon.ico
+│   └── images/
+├── content
+│   ├── about.org
+│   ├── blog/
+│   ├── index.org
+├── publish.el
+├── templates
+</pre>
+
+<ul class="org-ul">
+<li><code>Blog</code> 分类下生成 rss.xml 文件，可用于 RSS 订阅；</li>
+
+<li>生成最新文章列表并通过 <code>include</code> 添加到主页内，实现「最近更新」栏目。</li>
+</ul>
+
+<p>
+<code>assets</code> 放置静态文件， <code>content</code> 放置 org 文件， <code>templates</code> 放置 header/footer 等随时可变更的文件（类似于模板）了， <code>publish.el</code> 为 emacs 用以导出 html 文件的代码。大致就是以上这些，另外借用了 <a target="_blank" rel="noopener noreferrer" href="https://github.com/gongzhitaao/orgcss">ORGCSS</a> 的配色风格，最终就是网站现在的样子了。
+</p>
+
+<p>
+<b>特别说明：</b> 每个 Org 文件的 Front Matter 必须包含 <code>#+DESCRIPTION</code> 和 <code>#+KEYWORDS</code> ，如果没有的话 blog 的 Index 页会显示 nil 。
+</p>
+</div>
+<div id="outline-container-Export" class="outline-3">
+<h3 id="Export"><span class="section-number-3">3.1.</span> Export<a class="heading-anchor" href="#Export" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+<i>publish.el</i> 文件是用来导出 html 的，详见<a target="_blank" rel="noopener noreferrer" href="https://github.com/lowejan/orgsitedemo/blob/main/publish.el">这里</a>。在 Github 上放了一个 <a target="_blank" rel="noopener noreferrer" href="https://github.com/lowejan/orgsitedemo">Demo</a> 可供参考。
+</p>
+
+<p>
+在项目文件夹下使用如下命令（也是在 Netlify 中配置的 Build command）：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell"><code>emacs --batch --no-init-file --load publish.el --funcall org-publish-all
+</code></pre>
+</div>
+
+<p>
+当前文件夹中的 public 文件夹内即为导出的 html 文件。
+</p>
+</div>
+</div>
+<div id="outline-container-Update" class="outline-3">
+<h3 id="Update"><span class="section-number-3">3.2.</span> Update<a class="heading-anchor" href="#Update" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+<span class="timestamp-wrapper"><time class="timestamp" datetime="2021-03-07">&lt;2021-03-07 日&gt;</time></span>: 使用 Github Actions 导出 html 文件至 gh-pages 分支，通过 <a target="_blank" rel="noopener noreferrer" href="https://vercel.com">Vercel</a> 部署。
+</p>
+
+<p>
+<span class="timestamp-wrapper"><time class="timestamp" datetime="2021-03-13">&lt;2021-03-13 六&gt;</time></span>: 使用 Cloudflare Pages 直接抓取 Github 仓库部署，速度似乎要快了些。
+</p>
+
+<p>
+<span class="timestamp-wrapper"><time class="timestamp" datetime="2021-11-28">&lt;2021-11-28 日&gt;</time></span>: Orgmode 更新后，<a target="_blank" rel="noopener noreferrer" href="https://pages.cloudflare.com/">Cloudflare Pages</a> 构建失败，尝试后发现本地是没有问题的，找不到原因也解决不了，重新使用 <a target="_blank" rel="noopener noreferrer" href="https://docs.github.com/en/actions">Github Actions</a> 自动发布 html 文件到新的仓库，再使用 Cloudflare Pages 部署，算是比较顺利。顺便这周末把10年开始留存至今的org域名转到了 Cloudflare ，本来在阿里云的，结果找不到，查了很久发现要转到阿里云国际了，折腾了不少时间。
+</p>
+
+<p>
+<span class="timestamp-wrapper"><time class="timestamp" datetime="2021-12-25">&lt;2021-12-25 六&gt;</time></span>: 评论系统调整为 Twikoo, 按官方教程申请了 MongoDB 并部署到 Vercel 上。
+</p>
+
+<p>
+<span class="timestamp-wrapper"><time class="timestamp" datetime="2022-01-01">&lt;2022-01-01 六&gt;</time></span>: Github repo 设置为 public（内容 content 文件夹放在私有 repo 内），使用 Github Actions 导出 html 文件至 gh-pages 分支，再部署到 Vercel 上。同时，更改评论系统为 Waline 。
+</p>
+
+<p>
+<span class="timestamp-wrapper"><time class="timestamp" datetime="2023-07-25">&lt;2023-07-25 二&gt;</time></span>: 一年余未有记录，想重启时发现 Github 经常抽风，甚是恼人，遂转移至 Gitlab 并直接使用 Gitlab Pages 构建，自己浏览速度尚可。
+</p>
+
+<p>
+<span class="timestamp-wrapper"><time class="timestamp" datetime="2023-09-30">&lt;2023-09-30 六&gt;</time></span>: 目前工作流为：本地通过 Emacs Orgmode 导出 html 文件，部署至局域网 nginx 服务器，通过 Cloudflare Tunnels 内网穿透实现公网访问。日志栏内每篇文章增加“上一篇、下一篇”功能，复制的<a target="_blank" rel="noopener noreferrer" href="https://jgkamat.gitlab.io/blog/website1.html">jgkamat</a>的代码，不懂 elisp，改了一个多小时居然成功，但效率一般，导出一篇目测需要1秒（龙芯3A5000电脑），但于我而言无甚影响。
+</p>
+</div>
+</div>
+</div>
+
+</div>
+<footer class="post-footer">
+<div class="post-meta-row">
+<div class="post-tags">
+<a href="/tags/orgmode/"><span class="tag-hash" aria-hidden="true">#</span>orgmode</a>
+<a href="/tags/博客/"><span class="tag-hash" aria-hidden="true">#</span>博客</a>
+<a href="/tags/emacs/"><span class="tag-hash" aria-hidden="true">#</span>emacs</a>
+</div>
+<a target="_blank" rel="noopener noreferrer" class="post-source" href="https://codeberg.org/wejan/weborg/raw/branch/main/org/xy/2019-08-03-blogging-with-orgmode.org" rel="nofollow">查看 Org 源文件</a>
+</div>
+<nav class="post-nav" aria-label="上一篇与下一篇">
+<div class="post-nav-col post-nav-prev">
+<span class="post-nav-label">← 上一篇</span>
+<a href="/xy/emacs-notes/">Emacs 学习笔记</a>
+</div>
+<div class="post-nav-col post-nav-next">
+<span class="post-nav-label">下一篇 →</span>
+<a href="/xy/sites-with-orgmode/">使用 Emacs 和 Org Mode 生成的网站</a>
+</div>
+</nav>
+<section class="post-related">
+<p class="post-section-label">相关文章</p>
+<ul class="rel-list">
+<li class="rel-item"><a href="/xy/sites-with-orgmode/"><time class="rel-date" datetime="2019-08-14T00:00:00">2019-08-14</time><span class="rel-sep">-</span><span class="rel-title">使用 Emacs 和 Org Mode 生成的网站</span></a></li>
+<li class="rel-item"><a href="/xy/emacs-notes/"><time class="rel-date" datetime="2019-07-18T00:00:00">2019-07-18</time><span class="rel-sep">-</span><span class="rel-title">Emacs 学习笔记</span></a></li>
+<li class="rel-item"><a href="/xy/website-deployment-method/"><time class="rel-date" datetime="2026-11-12T15:38:00">2026-11-12</time><span class="rel-sep">-</span><span class="rel-title">利用 AI 智能体，回到 Orgmode 导出部署</span></a></li>
+<li class="rel-item"><a href="/xy/orgmode-to-hugo/"><time class="rel-date" datetime="2026-10-07T00:00:00">2026-10-07</time><span class="rel-sep">-</span><span class="rel-title">网站从 orgmode 导出迁移至 hugo 驱动</span></a></li>
+<li class="rel-item"><a href="/zh/2026/why-named-weiqiang/"><time class="rel-date" datetime="2026-11-14T22:12:00">2026-11-14</time><span class="rel-sep">-</span><span class="rel-title">为什么取名为「危墙」</span></a></li>
+<li class="rel-item"><a href="/zh/2026/meanings-of-liferecording/"><time class="rel-date" datetime="2026-10-24T15:51:46">2026-10-24</time><span class="rel-sep">-</span><span class="rel-title">文字记录的意义</span></a></li>
+</ul>
+</section>
+<section class="post-sameday">
+<p class="post-section-label">往年今日</p>
+<ul class="rel-list">
+<li class="rel-item"><a href="/zh/2013/rush-into-the-city/"><time class="rel-date" datetime="2013-08-03T00:00:00">2013-08-03</time><span class="rel-sep">-</span><span class="rel-title">鲤鱼跳龙门</span></a></li>
+</ul>
+</section>
+</footer>
+<section class="comments" id="comments" data-default-tab="comments" data-litecwd-slug="/xy/blogging-with-orgmode/" data-litecwd-api="https://litecwd.weiqiang.org" data-litecwd-lang="zh-CN" data-litecwd-page-size="20" data-litecwd-placeholder="雁过留痕..." data-litecwd-cdn="/js/litecwd.js" data-litecwd-theme="auto" data-litecwd-css="/css/litecwd.css" data-wm-target="https://weiqiang.org/xy/blogging-with-orgmode/">
+<div class="ctabs">
+<input type="radio" class="ctab-radio" name="comment-tab" id="ct-comments" checked>
+<input type="radio" class="ctab-radio" name="comment-tab" id="ct-webmention">
+<div class="ctabs-bar">
+<label class="ctab" for="ct-comments"><span class="ctab-text">留言</span><span class="ctab-badge" data-count-comments hidden></span></label>
+<label class="ctab" for="ct-webmention"><span class="ctab-text">网络提及</span><span class="ctab-badge" data-count-webmention hidden></span></label>
+</div>
+<div class="ctabs-body">
+<section class="ctab-panel" id="panel-comments">
+<div class="litecwd-loading" id="litecwd-loading" role="status">
+<span class="litecwd-loading-text">正在加载评论</span>
+<span class="litecwd-loading-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+</div>
+<div class="litecwd-comments" id="litecwd-comments"></div>
+<noscript><p class="comments-disabled">请启用 JavaScript 以查看评论。</p></noscript>
+</section>
+<section class="ctab-panel" id="panel-webmention">
+<div id="webmentions" class="webmentions" data-target="https://weiqiang.org/xy/blogging-with-orgmode/">
+<p class="wm-tip">本站支持 <a href="https://indieweb.org/Webmention" target="_blank" rel="noopener noreferrer">Webmention</a>：在自己站点写下本文链接，再把那篇帖子的地址发过来。</p>
+<form class="wm-send" action="https://webmention.io/weiqiang.org/webmention" method="post">
+<input type="hidden" name="target" value="https://weiqiang.org/xy/blogging-with-orgmode/">
+<input class="wm-source" name="source" type="url" required autocomplete="off" spellcheck="false" aria-label="回应文章的地址" placeholder="回应文章的地址">
+<button type="submit">发送</button>
+</form>
+<div class="wm-reactions" hidden></div>
+<ul class="wm-list" hidden></ul>
+<p class="wm-empty" hidden>还没有收到提及。</p>
+<p class="wm-loading" hidden>正在读取提及…</p>
+<noscript><p class="wm-tip">查看已收到的提及需要 JavaScript；提交不受影响。</p></noscript>
+</div>
+</section>
+</div>
+</div>
+<p class="cm-mailto">不方便公开留言？<a href="mailto:lu@weiqiang.org?subject=%E5%9B%9E%E5%A4%8D%EF%BC%9A%E4%BD%BF%E7%94%A8%20Org%20Mode%20%E5%86%99%E5%8D%9A%E5%AE%A2" rel="nofollow">写信给我</a></p>
+</section>
+</article>
+<aside class="toc" aria-label="文章目录">
+<p class="toc-label">目录</p>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#背景">1. 背景</a>
+<ul>
+<li><a href="#为什么这么折腾">1.1. 为什么这么折腾</a></li>
+</ul>
+</li>
+<li><a href="#Org-project-搭建">2. Org project 搭建</a>
+<ul>
+<li><a href="#Deployment-部署">2.1. Deployment 部署</a></li>
+</ul>
+</li>
+<li><a href="#UPDATE">3. UPDATE</a>
+<ul>
+<li><a href="#Export">3.1. Export</a></li>
+<li><a href="#Update">3.2. Update</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</aside>
+</div>
+</main>
+<footer class="site-footer">
+<div class="footer-inner">
+<div class="footer-info">
+<nav class="footer-nav" aria-label="页脚导航"><ul><li><a href="/zh/">手記</a></li><li><a href="/hs/">护生</a></li><li><a href="/shuji/">書集</a></li><li><a href="/xy/">习艺</a></li><li><a href="/series/">结集</a></li><li><a href="/about/">关于</a></li><li><a href="/interest/">兴趣</a></li><li><a href="/links/">收藏</a></li><li><a href="/tags/">标签</a></li><li><a href="/index.xml">订阅</a></li></ul></nav>
+<p class="footer-line footer-lastmod">本页最近更新：2026-11-04</p>
+<p class="footer-line footer-copy">© LOWEJAN, Since 2008.</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>大数据应用对银行金融统计的影响分析 - 危墙</title>
+<meta name="description" content="本文简述大数据应用在银行金融统计中的运用与影响。" />
+<meta name="generator" content="Org Mode" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" sizes="any" href="/images/favicon-dark.svg" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/svg+xml" sizes="any" href="/images/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" href="/images/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="manifest" href="/images/site.webmanifest">
+<meta name="theme-color" content="#fdfaf4">
+<script>
+(function(){document.documentElement.classList.add('js');try{var s=localStorage.getItem('paper-theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',s||(d?'dark':'light'));}catch(e){}})();
+</script>
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/highlight.css">
+<script src="/js/main.js" defer></script>
+<script src="/js/comments.js" defer></script>
+<link rel="webmention" href="https://webmention.io/weiqiang.org/webmention">
+<link rel="pingback" href="https://webmention.io/weiqiang.org/xmlrpc">
+<link rel="alternate" type="application/atom+xml" title="危墙 · 手記" href="/zh/index.xml">
+<meta name="keywords" content="银行">
+</head>
+<body>
+<header class="site-header">
+<div class="header-inner">
+<a href="/" class="site-name"><span class="site-logo"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true" focusable="false"><rect x="2.4" y="3.2" width="9" height="4.8" rx="0.9"></rect><rect x="12.6" y="3.2" width="9" height="4.8" rx="0.9"></rect><rect x="2.4" y="9.6" width="3.6" height="4.8" rx="0.9"></rect><rect x="7.2" y="9.6" width="9" height="4.8" rx="0.9"></rect><rect x="17.4" y="9.6" width="4.2" height="4.8" rx="0.9"></rect><rect x="2.4" y="16" width="9" height="4.8" rx="0.9"></rect><rect x="12.6" y="16" width="9" height="4.8" rx="0.9"></rect></svg></span><span class="site-title-text">危墙</span></a>
+<nav class="site-nav" id="site-nav" aria-label="站点导航">
+<a href="/">首页</a>
+<a href="/zh/" aria-current="page">手记</a>
+<a href="/about/">关于</a>
+<a href="/links/">收藏</a>
+<a href="/index.xml">订阅</a>
+<a class="nav-icon nav-icon-search" href="/search/" aria-label="搜索" title="搜索"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.8" cy="10.8" r="6.1"></circle><path d="M15.3 15.3 20 20"></path></svg></a>
+</nav>
+<nav class="mobile-nav" aria-label="快捷导航">
+<a href="/">首页</a>
+<a href="/zh/" aria-current="page">手记</a>
+<a href="/about/">关于</a>
+<a class="nav-icon nav-icon-search" href="/search/" aria-label="搜索" title="搜索"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.8" cy="10.8" r="6.1"></circle><path d="M15.3 15.3 20 20"></path></svg></a>
+</nav>
+<button class="nav-toggle" type="button" aria-label="更多菜单" aria-expanded="false" aria-controls="nav-panel" title="更多菜单"><svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"></path></svg><svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+<nav class="nav-panel" id="nav-panel" aria-label="更多导航">
+<a href="/links/">收藏</a>
+<a href="/index.xml">订阅</a>
+<a href="/tags/">标签</a>
+</nav>
+<button class="theme-toggle" type="button" aria-label="切换主题" title="切换主题"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2.4v2.2M12 19.4v2.2M2.4 12h2.2M19.4 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"></path></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M20.5 14.6A8.6 8.6 0 0 1 9.4 3.5a8.7 8.7 0 1 0 11.1 11.1z"></path></svg></button>
+</div>
+<div class="progress" aria-hidden="true"></div>
+</header>
+<main id="content" class="content">
+<div class="post-layout">
+<article class="post">
+<header class="post-header">
+<h1 class="post-title">大数据应用对银行金融统计的影响分析</h1>
+<p class="post-meta">
+<time datetime="2015-06-29T23:40:00">2015-06-29</time><span>约 3121 字</span>
+</p>
+</header>
+<div class="post-content">
+<p>
+随着网络和信息技术的发展，物联网、云计算、移动互联网、车联网、手机、平板电脑、个人电脑，都成为各种电子信息的来源和汇集，使人类社会进入“大数据”时代。
+</p>
+
+<p>
+对于“大数据”，研究机构Gartner给出了这样的定义：“大数据”是需要新处理模式才能具有更强的决策力、洞察发现力和流程优化能力的海量、高增长率和多样化的信息资产。
+</p>
+
+<p>
+根据维基百科的定义，大数据是指无法在可承受的时间范围内用常规软件工具进行捕捉、管理和处理的数据集合。
+</p>
+
+<p>
+在维克托·迈尔-舍恩伯格及肯尼斯·库克耶编写的《大数据时代》中，大数据指不用随机分析法（抽样调查）这样的捷径，而采用所有数据进行分析处理。大数据的4V特点：Volume（大量）、Velocity（高速）、Variety（多样）、Value（价值）
+</p>
+<div id="outline-container-一、商业银行的大数据应用" class="outline-2">
+<h2 id="一、商业银行的大数据应用"><span class="section-number-2">1.</span> 一、商业银行的大数据应用<a class="heading-anchor" href="#一、商业银行的大数据应用" aria-label="本节链接">#</a></h2>
+<div class="outline-text-2" id="text-1">
+<p>
+大数据首先起源于IT行业，随着计算机技术的发展而兴起。随着各行业逐渐电子化、信息化后，大数据的应用开始普及，大数据将成就一个巨大的产业。
+</p>
+
+<p>
+技术研究和咨询公司Gartner发布的一份关于大数据的报告预计到2016年全球在大数据方面的总花费将达到2320亿美元。中国大数据应用市场在2016年有望达到百亿规模。而政府、电信、银行将是最先使用大数据工具的行业。
+</p>
+
+<p>
+目前，商业银行在大数据应用上已经开始渗透在客户营销、风险管理、内部控制等方方面面，主要有四点：
+</p>
+
+<p>
+（一）风险管理：银行经营的是风险，任何一家商业银行都需要准确地评估风险，而大数据的应用就能使银行通过对交易数据的分析，基于模拟市场行为、评估用户和潜在用户，来确定风险和泄露，从而能够有效地评估信贷风险。
+</p>
+
+<p>
+（二）营销服务：分为客户分析、客户服务、产品设计。
+</p>
+
+<p>
+1、客户分析。因开发新客户比留住老客户的成本要高，大数据技术可以通过对客户的行为分析和识别来帮助银行留住他们的客户。那些客户反馈、投诉、需求等信息将对银行对目标客户的分析更加精准，从而更好地服务其基础客户和存量客户。
+</p>
+
+<p>
+2、客户服务。使客户满意是银行服务的基本目标，大数据的应用使银行能提前预测用户需求，便于快速地解决问题。通过对客服中心数据分析，提供了更多客户需求信息，能够快速了解客户，从而确保服务有效性，并提供交叉销售的可能和成功率。
+</p>
+
+<p>
+3、产品设计。大数据的应用能让银行对客户需求的分析更加细微，使银行能够更有效地提供有针对性的定制化产品和个性化服务。这些更加个性化的产品能带来更高的接受度，提高客户的满意度，从而创造出更高的利润和更好的客户保有率。
+</p>
+
+<p>
+（三）经营管理：基于企业内外部运营、管理和交互数据分析，借助大数据平台，分析企业经营和管理绩效。通过对企业内外部交易和历史数据，实时或准实时预测和分析欺诈、洗钱等非法行为，遵从法规和监管要求，降低经营风险。
+</p>
+
+<p>
+这些应用，都是基于对商业银行交易或客户数据的分析使用，而金融统计的基础，也是对既有数据的分析运用。大数据应用的出现，对金融统计而言，具有强有力的推动作用。
+</p>
+</div>
+</div>
+<div id="outline-container-二、银行金融统计中大数据应用情况" class="outline-2">
+<h2 id="二、银行金融统计中大数据应用情况"><span class="section-number-2">2.</span> 二、银行金融统计中大数据应用情况<a class="heading-anchor" href="#二、银行金融统计中大数据应用情况" aria-label="本节链接">#</a></h2>
+<div class="outline-text-2" id="text-2">
+<p>
+在2013年全国统计工作会议上，国家统计局局长马建堂指出：“大数据时代”的来临，对统计数据的生产方式带来了很大的挑战。利用海量数据并对其进行标准化处理，发掘数据宝库，是银行统计部门应对改革发展的机遇。
+</p>
+
+<p>
+大数据时代对金融统计的影响有两点，一是对数据准确性的影响，大数据化的采集方式，减少了数据采集的中间环节和人工处理，有助于提高数据及时性和准确性，并降低银行机构的统计成本，也有助于减少对金融统计数据的质疑；二是将有助于提高金融统计分析质量，建立在大数据基础之上的统计，不再是对数据的简单汇总分类和对比，而是在原始数据基础上的加工处理，通过多维度的整理分析，寻找因果联系，使统计分析成果对决策层更具有指导意义。
+</p>
+
+<p>
+现阶段，在银行统计监管部门的指导下，各商业银行都已经建立起统一的金融统计指标，数据标准体系逐步完善，经过各方努力，确保各银行机构数据源中数据口径的一致性，便于更进一步的统计分析。
+</p>
+
+<p>
+在此基础上，商业银行一般都已经通过自建或外包，建立起统一的数据源，并根据监管机构统计口径的要求，进行数据清理，建立了全行统一的统计分析系统，由统一口径取数报送。数据源的建立是进行大数据分析运用的前提，一些先进银行已经在大数据应用中取得了良好的效益，提高了金融统计的质量和效率，减少了人力成本，也有助于为营销、管理提供优质的分析材料。
+</p>
+</div>
+</div>
+<div id="outline-container-三、大数据应用对银行金融统计的影响" class="outline-2">
+<h2 id="三、大数据应用对银行金融统计的影响"><span class="section-number-2">3.</span> 三、大数据应用对银行金融统计的影响<a class="heading-anchor" href="#三、大数据应用对银行金融统计的影响" aria-label="本节链接">#</a></h2>
+<div class="outline-text-2" id="text-3">
+<p>
+大数据的应用对银行金融统计的影响和效用是显而易见的。
+</p>
+
+<p>
+（一）数据源的统一也就是数据的集中，显著提高了金融统计的质量。当前，金融统计由两条线进行，一是基层金融机构向所在地人行报送数据，再由人行逐级上报；二是金融机构系统内逐级上报至总行后由总行向人总行报送。在传统金融统计方式下，由于金融机构数据不集中统一，会因手工统计、临时调整、工作失误等原因导致上报上级行和报人行数据的不一致，从而在人总行层面导致最终两条线上报数据完全不同，不利于统计数据对经济决策的指导作用。在金融统计大数据应用下，商业银行数据由分散走向集中，各级机构报送口径一致，各银行报送口径也逐步趋于一致，使各类统计数据在纵向、横向上都可比较，有利于得到较为真实可靠的统计分析结果。
+</p>
+
+<p>
+（二）显著提高金融统计的效率和人力成本。通过数据集中和统计信息系统建设，在大数据应用的支持下，各种统计报表、统计分析都可以通过系统自动生成，无需再由统计人员手工统计数据，再集中整理分类报送，统计人员只需要将生成的报表进行一定的核对，确保系统出数无误即可。一般而言，在系统科目设置、统计口径未变的情况下，经由系统生成的报表数据经过检验后是不会出错的，可靠性比人工处理要高很多。同时，由于系统自动化程度的提高，统计人员可以有更多的时间来做其他事情，不用再将很多工作时间运用于数据的获取、整理、分析上，提高了银行机构人员利用率，节省人力成本。
+</p>
+
+<p>
+（三）显著提高统计分析的质量，有助于形成精细化管理。有高质量的统计数据和统计报表支撑，统计分析报告可以在多维、深度、广度上进展得更深入，通过图表进行数据对比，从而为营销人员、管理人员提供更可靠、更直观、更深入、更具参考价值的分析报告，在银行营销、管理上提出更合理的建议，提高银行精细化管理水平。
+</p>
+
+<p>
+当然，金融统计上大数据的应用，也存在一定的困难和风险。
+</p>
+
+<p>
+数据标准和统计口径的一致性需要保证，这是大数据分析的基础，而银行因业务的复杂和管理的需要，往往有几十个甚至上百个各式各样的信息系统，这对银行数据收集、数据整理、数据分析都有很高的要求，也是银行数据治理中的难点。
+</p>
+
+<p>
+数据的高度集中，也对数据信息系统的可靠性要求更高，因为一旦大数据核心应用出错，各类依赖于此的数据应用子系统将无法运作，这将对银行造成较大的系统性风险，信息风险、数据管理将是未来银行风险管理的重要一环。
+</p>
+</div>
+</div>
+<div id="outline-container-四、总结" class="outline-2">
+<h2 id="四、总结"><span class="section-number-2">4.</span> 四、总结<a class="heading-anchor" href="#四、总结" aria-label="本节链接">#</a></h2>
+<div class="outline-text-2" id="text-4">
+<p>
+银行作为数据密集型行业之一，无论是数据积累、数据质量还是数据分析，都有着其他行业无法比拟的优势，运用大数据提升经营管理水平成了银行发展的必由之路。而金融统计作为与银行数据最为接近的方面，必须深受大数据应用的影响。下面以杭州银行为例作简要说明。
+</p>
+
+<p>
+杭州银行最主要的源数据系统有会计系统、信贷管理系统、国际结算系统、资金系统、人力资源系统等，这些是与全行各类业务和管理活动直接相关的。在未进行数据集中之前，很多系统数据都是重复或不一致的，经过数据治理和数据优化，将这些系统数据统一纳入全行的数据仓库，统一数据标准，并以此为基础建立各类统计分析系统。
+</p>
+
+<p>
+目前建立在数据仓库之上的统计相关系统主要有统计分析系统、多维数据分析系统、管理驾驶仓等。通过这些系统，我们做到了：一、大多数统计报表自动生成；二、各类分析数据自助取数；三、基础的统计指标、管理指标定期展示。
+</p>
+
+<p>
+金融统计作为银行大数据应用的前沿阵地，必然会对银行各类业务的发展带来重大影响。
+</p>
+</div>
+</div>
+
+</div>
+<footer class="post-footer">
+<div class="post-meta-row">
+<div class="post-tags">
+<a href="/tags/银行/"><span class="tag-hash" aria-hidden="true">#</span>银行</a>
+</div>
+<a target="_blank" rel="noopener noreferrer" class="post-source" href="https://codeberg.org/wejan/weborg/raw/branch/main/org/zh/2015-06-29-bigdata-financial-stats.org" rel="nofollow">查看 Org 源文件</a>
+</div>
+<nav class="post-nav" aria-label="上一篇与下一篇">
+<div class="post-nav-col post-nav-prev">
+<span class="post-nav-label">← 上一篇</span>
+<a href="/zh/2015/visit-to-zhenqian-classic-school/">昆山蓁谦学堂行纪</a>
+</div>
+<div class="post-nav-col post-nav-next">
+<span class="post-nav-label">下一篇 →</span>
+<a href="/zh/2015/internet-small-banks/">互联网+时代对中小银行的机遇和挑战</a>
+</div>
+</nav>
+<section class="post-related">
+<p class="post-section-label">相关文章</p>
+<ul class="rel-list">
+<li class="rel-item"><a href="/zh/2015/internet-small-banks/"><time class="rel-date" datetime="2015-07-05T13:19:00">2015-07-05</time><span class="rel-sep">-</span><span class="rel-title">互联网+时代对中小银行的机遇和挑战</span></a></li>
+<li class="rel-item"><a href="/zh/2015/human-resource-thoughts/"><time class="rel-date" datetime="2015-05-27T09:10:00">2015-05-27</time><span class="rel-sep">-</span><span class="rel-title">人是企业最重要的资产</span></a></li>
+<li class="rel-item"><a href="/zh/2016/quitting-the-bank-and-why-how/"><time class="rel-date" datetime="2016-06-30T00:00:00">2016-06-30</time><span class="rel-sep">-</span><span class="rel-title">毕业八年，从银行转身，为了什么、想做什么</span></a></li>
+<li class="rel-item"><a href="/zh/2011/small-business-city-banks/"><time class="rel-date" datetime="2011-12-14T19:53:00">2011-12-14</time><span class="rel-sep">-</span><span class="rel-title">城商行小企业业务的机遇与风险</span></a></li>
+</ul>
+</section>
+</footer>
+<section class="comments" id="comments" data-default-tab="comments" data-litecwd-slug="/zh/2015/bigdata-financial-stats/" data-litecwd-api="https://litecwd.weiqiang.org" data-litecwd-lang="zh-CN" data-litecwd-page-size="20" data-litecwd-placeholder="雁过留痕..." data-litecwd-cdn="/js/litecwd.js" data-litecwd-theme="auto" data-litecwd-css="/css/litecwd.css" data-wm-target="https://weiqiang.org/zh/2015/bigdata-financial-stats/">
+<div class="ctabs">
+<input type="radio" class="ctab-radio" name="comment-tab" id="ct-comments" checked>
+<input type="radio" class="ctab-radio" name="comment-tab" id="ct-webmention">
+<div class="ctabs-bar">
+<label class="ctab" for="ct-comments"><span class="ctab-text">留言</span><span class="ctab-badge" data-count-comments hidden></span></label>
+<label class="ctab" for="ct-webmention"><span class="ctab-text">网络提及</span><span class="ctab-badge" data-count-webmention hidden></span></label>
+</div>
+<div class="ctabs-body">
+<section class="ctab-panel" id="panel-comments">
+<div class="litecwd-loading" id="litecwd-loading" role="status">
+<span class="litecwd-loading-text">正在加载评论</span>
+<span class="litecwd-loading-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+</div>
+<div class="litecwd-comments" id="litecwd-comments"></div>
+<noscript><p class="comments-disabled">请启用 JavaScript 以查看评论。</p></noscript>
+</section>
+<section class="ctab-panel" id="panel-webmention">
+<div id="webmentions" class="webmentions" data-target="https://weiqiang.org/zh/2015/bigdata-financial-stats/">
+<p class="wm-tip">本站支持 <a href="https://indieweb.org/Webmention" target="_blank" rel="noopener noreferrer">Webmention</a>：在自己站点写下本文链接，再把那篇帖子的地址发过来。</p>
+<form class="wm-send" action="https://webmention.io/weiqiang.org/webmention" method="post">
+<input type="hidden" name="target" value="https://weiqiang.org/zh/2015/bigdata-financial-stats/">
+<input class="wm-source" name="source" type="url" required autocomplete="off" spellcheck="false" aria-label="回应文章的地址" placeholder="回应文章的地址">
+<button type="submit">发送</button>
+</form>
+<div class="wm-reactions" hidden></div>
+<ul class="wm-list" hidden></ul>
+<p class="wm-empty" hidden>还没有收到提及。</p>
+<p class="wm-loading" hidden>正在读取提及…</p>
+<noscript><p class="wm-tip">查看已收到的提及需要 JavaScript；提交不受影响。</p></noscript>
+</div>
+</section>
+</div>
+</div>
+<p class="cm-mailto">不方便公开留言？<a href="mailto:lu@weiqiang.org?subject=%E5%9B%9E%E5%A4%8D%EF%BC%9A%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%BA%94%E7%94%A8%E5%AF%B9%E9%93%B6%E8%A1%8C%E9%87%91%E8%9E%8D%E7%BB%9F%E8%AE%A1%E7%9A%84%E5%BD%B1%E5%93%8D%E5%88%86%E6%9E%90" rel="nofollow">写信给我</a></p>
+</section>
+</article>
+<aside class="toc" aria-label="文章目录">
+<p class="toc-label">目录</p>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#一、商业银行的大数据应用">1. 一、商业银行的大数据应用</a></li>
+<li><a href="#二、银行金融统计中大数据应用情况">2. 二、银行金融统计中大数据应用情况</a></li>
+<li><a href="#三、大数据应用对银行金融统计的影响">3. 三、大数据应用对银行金融统计的影响</a></li>
+<li><a href="#四、总结">4. 四、总结</a></li>
+</ul>
+</div>
+</aside>
+</div>
+</main>
+<footer class="site-footer">
+<div class="footer-inner">
+<div class="footer-info">
+<nav class="footer-nav" aria-label="页脚导航"><ul><li><a href="/zh/">手記</a></li><li><a href="/hs/">护生</a></li><li><a href="/shuji/">書集</a></li><li><a href="/xy/">习艺</a></li><li><a href="/series/">结集</a></li><li><a href="/about/">关于</a></li><li><a href="/interest/">兴趣</a></li><li><a href="/links/">收藏</a></li><li><a href="/tags/">标签</a></li><li><a href="/index.xml">订阅</a></li></ul></nav>
+<p class="footer-line footer-lastmod">本页最近更新：2026-11-12</p>
+<p class="footer-line footer-copy">© LOWEJAN, Since 2008.</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

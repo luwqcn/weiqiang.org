@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>危墙 · 习艺</title>
+<subtitle>耕读传家久，诗书继世长。采菊桑林下，江南半農夫。</subtitle>
+<link href="https://weiqiang.org/xy/index.xml" rel="self"/>
+<link href="https://weiqiang.org/xy/"/>
+<id>https://weiqiang.org/xy/</id>
+<updated>2026-11-12T17:09:50+08:00</updated>
+<author><name>LOWEJAN</name></author>
+<entry>
+<title>利用 AI 智能体，回到 Orgmode 导出部署</title>
+<link href="https://weiqiang.org/xy/website-deployment-method/"/>
+<id>https://weiqiang.org/xy/website-deployment-method/</id>
+<published>2026-11-12T15:38:00+08:00</published>
+<updated>2026-11-12T17:09:50+08:00</updated>
+<category term="orgmode"/>
+<summary>本文记录网站利用 workbuddy，回到 Orgmode 导出静态文件的过程。</summary>
+</entry>
+<entry>
+<title>网站从 orgmode 导出迁移至 hugo 驱动</title>
+<link href="https://weiqiang.org/xy/orgmode-to-hugo/"/>
+<id>https://weiqiang.org/xy/orgmode-to-hugo/</id>
+<published>2026-10-07T00:00:00+08:00</published>
+<updated>2026-11-01T12:59:14+08:00</updated>
+<category term="hugo"/>
+<category term="orgmode"/>
+<summary>利用国庆假期把 orgmode 站点迁移至 hugo 驱动，简单记录。</summary>
+</entry>
+<entry>
+<title>使用 Emacs 和 Org Mode 生成的网站</title>
+<link href="https://weiqiang.org/xy/sites-with-orgmode/"/>
+<id>https://weiqiang.org/xy/sites-with-orgmode/</id>
+<published>2019-08-14T00:00:00+08:00</published>
+<updated>2019-08-14T12:00:00+08:00</updated>
+<category term="orgmode"/>
+<category term="emacs"/>
+<category term="blog"/>
+<summary>收集使用 Emacs 和 Org Mode 生成的网站。</summary>
+</entry>
+<entry>
+<title>使用 Org Mode 写博客</title>
+<link href="https://weiqiang.org/xy/blogging-with-orgmode/"/>
+<id>https://weiqiang.org/xy/blogging-with-orgmode/</id>
+<published>2019-08-03T22:52:15+08:00</published>
+<updated>2026-11-04T18:56:32+08:00</updated>
+<category term="orgmode"/>
+<category term="博客"/>
+<category term="emacs"/>
+<summary>记录使用 Org Mode 写博客的几次折腾过程，并不详细。</summary>
+</entry>
+<entry>
+<title>Emacs 学习笔记</title>
+<link href="https://weiqiang.org/xy/emacs-notes/"/>
+<id>https://weiqiang.org/xy/emacs-notes/</id>
+<published>2019-07-18T00:00:00+08:00</published>
+<updated>2019-07-18T12:00:00+08:00</updated>
+<category term="emacs"/>
+<category term="orgmode"/>
+<summary>Articles and notes for learning GNU Emacs and orgmode.</summary>
+</entry>
+<entry>
+<title>Linux Memos(备忘)</title>
+<link href="https://weiqiang.org/xy/linux-memos/"/>
+<id>https://weiqiang.org/xy/linux-memos/</id>
+<published>2017-07-12T00:00:00+08:00</published>
+<updated>2017-07-12T12:00:00+08:00</updated>
+<category term="Linux"/>
+<category term="Archlinux"/>
+<category term="Tips"/>
+<summary>记录使用Linux过程中的一些小问题、小技巧。多为copy &amp; paste。</summary>
+</entry>
+<entry>
+<title>纯粹书写，回归Jekyll！</title>
+<link href="https://weiqiang.org/xy/back-to-jekyll/"/>
+<id>https://weiqiang.org/xy/back-to-jekyll/</id>
+<published>2017-02-07T00:00:00+08:00</published>
+<updated>2017-02-07T12:00:00+08:00</updated>
+<category term="生活"/>
+<category term="博客"/>
+<summary>记我的博客之旅，书写才是主题和目的。</summary>
+</entry>
+</feed>

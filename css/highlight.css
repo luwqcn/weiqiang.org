@@ -1,0 +1,86 @@
+/* ==========================================================================
+   weborg · highlight.css
+   ox-html 用 htmlize 把源码块拆成 <span class="org-xxx">。
+   class 名是 face 名去掉 font-lock- 前缀和 -face 后缀：
+   font-lock-keyword-face -> .org-keyword
+   这里写死一套配色，不依赖构建机当前的 Emacs 主题，
+   换机器、换主题重建，产出的高亮都一致。
+
+   配色往纸墨那边靠：关键字用赤陶、字符串用橄榄、函数名用靛青，
+   跟 main.css 的 --code-bg 是一个调子，不用 tango 那套高饱和。
+   ========================================================================== */
+
+.org-keyword              { color: #9c4a28; font-weight: bold; }
+.org-builtin              { color: #8c3b3b; }
+.org-string               { color: #5f6f33; }
+.org-comment              { color: #a09486; font-style: italic; }
+.org-comment-delimiter    { color: #a09486; font-style: italic; }
+.org-doc                  { color: #a09486; font-style: italic; }
+.org-doc-markup           { color: #a09486; }
+.org-function-name        { color: #2f5d7c; font-weight: bold; }
+.org-function-call        { color: #2f5d7c; }
+.org-variable-name        { color: #3a332d; }
+.org-variable-use         { color: #3a332d; }
+.org-type                 { color: #5f6f33; font-weight: bold; }
+.org-constant             { color: #8c3b3b; }
+.org-number               { color: #6f4a80; }
+.org-operator             { color: #b4552f; }
+.org-warning              { color: #b4552f; font-weight: bold; }
+.org-negation-char        { color: #b4552f; }
+.org-preprocessor         { color: #8c3b3b; }
+.org-regexp               { color: #8c3b3b; }
+.org-regexp-grouping-backslash   { font-weight: bold; }
+.org-regexp-grouping-construct   { font-weight: bold; }
+.org-property-name        { color: #8c6d1f; }
+.org-property-use         { color: #8c6d1f; }
+.org-punctuation          { color: #6b6259; }
+.org-bracket              { color: #6b6259; }
+.org-delimiter            { color: #6b6259; }
+.org-misc-punctuation     { color: #6b6259; }
+.org-escape               { color: #8c3b3b; }
+.org-key-binding          { color: #9c4a28; }
+.org-elisp-special-form   { color: #9c4a28; }
+.org-elisp-macro          { color: #9c4a28; }
+.org-elisp-function       { color: #2f5d7c; }
+.org-elisp-symbol-role    { color: #a09486; }
+.org-elisp-binding-variable       { color: #3a332d; }
+.org-elisp-special-variable-declaration { color: #8c3b3b; }
+.org-elisp-feature        { color: #5f6f33; }
+.org-elisp-constant       { color: #8c3b3b; }
+.org-elisp-major-mode-name { color: #2f5d7c; }
+
+/* 暗色：同一个色相，提到能读的亮度 */
+[data-theme="dark"] .org-keyword            { color: #e08a5f; }
+[data-theme="dark"] .org-builtin            { color: #e59a9a; }
+[data-theme="dark"] .org-string             { color: #a8bd7a; }
+[data-theme="dark"] .org-comment            { color: #8a7f71; }
+[data-theme="dark"] .org-comment-delimiter  { color: #8a7f71; }
+[data-theme="dark"] .org-doc                { color: #8a7f71; }
+[data-theme="dark"] .org-doc-markup         { color: #8a7f71; }
+[data-theme="dark"] .org-function-name      { color: #8db8d8; }
+[data-theme="dark"] .org-function-call      { color: #8db8d8; }
+[data-theme="dark"] .org-variable-name      { color: #d8cfc1; }
+[data-theme="dark"] .org-variable-use       { color: #d8cfc1; }
+[data-theme="dark"] .org-type               { color: #a8bd7a; }
+[data-theme="dark"] .org-constant           { color: #e59a9a; }
+[data-theme="dark"] .org-number             { color: #c3a0d6; }
+[data-theme="dark"] .org-operator           { color: #e0a074; }
+[data-theme="dark"] .org-warning            { color: #e0a074; }
+[data-theme="dark"] .org-negation-char      { color: #e0a074; }
+[data-theme="dark"] .org-preprocessor       { color: #e59a9a; }
+[data-theme="dark"] .org-regexp             { color: #e59a9a; }
+[data-theme="dark"] .org-property-name      { color: #dcc283; }
+[data-theme="dark"] .org-property-use       { color: #dcc283; }
+[data-theme="dark"] .org-punctuation        { color: #9a9082; }
+[data-theme="dark"] .org-bracket            { color: #9a9082; }
+[data-theme="dark"] .org-delimiter          { color: #9a9082; }
+[data-theme="dark"] .org-misc-punctuation   { color: #9a9082; }
+[data-theme="dark"] .org-escape             { color: #e59a9a; }
+[data-theme="dark"] .org-key-binding        { color: #e08a5f; }
+[data-theme="dark"] .org-elisp-special-form { color: #e08a5f; }
+[data-theme="dark"] .org-elisp-macro        { color: #e08a5f; }
+[data-theme="dark"] .org-elisp-function     { color: #8db8d8; }
+[data-theme="dark"] .org-elisp-symbol-role  { color: #8a7f71; }
+[data-theme="dark"] .org-elisp-feature      { color: #a8bd7a; }
+[data-theme="dark"] .org-elisp-constant     { color: #e59a9a; }
+[data-theme="dark"] .org-elisp-major-mode-name { color: #8db8d8; }

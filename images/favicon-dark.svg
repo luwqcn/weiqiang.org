@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+<title>危墙</title>
+<g transform="translate(6.0000,6.0000) scale(2.166667)" fill="#e08a5f">
+<rect x="2.4" y="3.2" width="9.0" height="4.8" rx="0.9"/>
+<rect x="12.6" y="3.2" width="9.0" height="4.8" rx="0.9"/>
+<rect x="2.4" y="9.6" width="3.6" height="4.8" rx="0.9"/>
+<rect x="7.2" y="9.6" width="9.0" height="4.8" rx="0.9"/>
+<rect x="17.4" y="9.6" width="4.2" height="4.8" rx="0.9"/>
+<rect x="2.4" y="16.0" width="9.0" height="4.8" rx="0.9"/>
+<rect x="12.6" y="16.0" width="9.0" height="4.8" rx="0.9"/>
+</g></svg>
