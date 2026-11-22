@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>危墙 · 手記</title>
+<subtitle>耕读传家久，诗书继世长。采菊桑林下，江南半農夫。</subtitle>
+<link href="https://weiqiang.org/zh/index.xml" rel="self"/>
+<link href="https://weiqiang.org/zh/"/>
+<id>https://weiqiang.org/zh/</id>
+<updated>2026-11-22T21:23:17+08:00</updated>
+<author><name>LOWEJAN</name></author>
+<entry>
+<title>用 WorkBuddy 造了个 RSS 线上阅读器 feedfinder</title>
+<link href="https://weiqiang.org/zh/2026/feedfinder/"/>
+<id>https://weiqiang.org/zh/2026/feedfinder/</id>
+<published>2026-11-22T20:22:00+08:00</published>
+<updated>2026-11-22T21:23:17+08:00</updated>
+<category term="RSS"/>
+<category term="feedfinder"/>
+<category term="博客"/>
+<summary>本文简单记录使用 WorkBuddy 设计制作一款 RSS 阅读器（线上）的始末。 平时空闲了，喜欢浏览一些独立博客，特别是生活类的，能看到不同的人生经历，能开阔眼界，也可算是对平淡生活的一点有益调剂。
+找过一些 RSS 阅读器的 APP，要么是不跨平台，要么是用着不习惯，也就不了了</summary>
+</entry>
+<entry>
+<title>失去了写长文的能力</title>
+<link href="https://weiqiang.org/zh/2026/ability-to-write-long-pieces/"/>
+<id>https://weiqiang.org/zh/2026/ability-to-write-long-pieces/</id>
+<published>2026-11-18T22:37:00+08:00</published>
+<updated>2026-11-18T22:37:12+08:00</updated>
+<category term="写作"/>
+<category term="博客"/>
+<summary>本文总结博主本人写作长文能力的渐至丧失，思考如何恢复或者说收获写作的能力。 这段时间整理自己的博客，发现一个非常让人沮丧的事实：写不了长文。
+看看数据就很明显，430多篇博文，仅45万字，篇均1000字出头，但这个字数统计的是字符，去掉标点，篇均必然不到1000字。这意味着，</summary>
+</entry>
+<entry>
+<title>中年人学古琴（一）</title>
+<link href="https://weiqiang.org/zh/2026/guqin-learning-1/"/>
+<id>https://weiqiang.org/zh/2026/guqin-learning-1/</id>
+<published>2026-11-15T22:31:00+08:00</published>
+<updated>2026-11-15T22:31:29+08:00</updated>
+<category term="古琴"/>
+<category term="兴趣"/>
+<summary>本文记录一个40多岁的中年人学习古琴第一周的经历。 第一次听说「古琴」这个乐器，已经有二十年了。
+那个时候还在念大学，上网流行的是 BBS，在某个汉服论坛1上看到一位前辈着深衣、弹古琴，而他学弹古琴的原因是《礼记・曲礼》上的一句话：
+君无故，玉不去身；</summary>
+</entry>
+<entry>
+<title>为什么取名为「危墙」</title>
+<link href="https://weiqiang.org/zh/2026/why-named-weiqiang/"/>
+<id>https://weiqiang.org/zh/2026/why-named-weiqiang/</id>
+<published>2026-11-14T22:12:00+08:00</published>
+<updated>2026-11-14T22:12:00+08:00</updated>
+<category term="博客"/>
+<category term="危墙"/>
+<summary>本文简述本站取名为「危墙」的缘由，与来龙去脉。 首页上挂着这么一句「为什么更名危墙呢？且等以后说明吧」，却一直没有任何说明，总感觉有点「作」，于是花点时间，梳理一下，也是给自己的一个回答。
+1. 取名缘由#
+多年前浏览到谢益辉大佬的个人主页，看到他</summary>
+</entry>
+<entry>
+<title>利用 AI 智能体，回到 Orgmode 导出部署</title>
+<link href="https://weiqiang.org/zh/2026/website-deployment-method/"/>
+<id>https://weiqiang.org/zh/2026/website-deployment-method/</id>
+<published>2026-11-12T15:38:00+08:00</published>
+<updated>2026-11-15T18:04:02+08:00</updated>
+<category term="orgmode"/>
+<category term="博客"/>
+<summary>本文记录网站利用 workbuddy，回到 Orgmode 导出静态文件的过程。 近段时间，書集工作暂停，业余时间花在了重构网站上。
+使用 workbuddy 似乎会上瘾，之前用它做了一个 hugo 主题，自己的需求基本能完美实现，就想着能不能再让它做一个 orgmode 导出 h</summary>
+</entry>
+<entry>
+<title>为五斗米折腰</title>
+<link href="https://weiqiang.org/zh/2026/five-dous-of-rice/"/>
+<id>https://weiqiang.org/zh/2026/five-dous-of-rice/</id>
+<published>2026-11-05T22:01:00+08:00</published>
+<updated>2026-11-06T20:24:52+08:00</updated>
+<category term="随笔"/>
+<category term="生活"/>
+<summary>记录一点点生活的无奈。 十六年前，我对自己说「君臣以义合，不合则去」，年轻的傲气不受折，于是一走了之，一路向西，原本计划去川西，而后在湖南永州的山村里落了脚。
+十年前，身体承受到了极限，在工作职位上升时，垮了下来，无奈离去，</summary>
+</entry>
+<entry>
+<title>男怕入错行</title>
+<link href="https://weiqiang.org/zh/2026/career-selection/"/>
+<id>https://weiqiang.org/zh/2026/career-selection/</id>
+<published>2026-11-04T19:26:00+08:00</published>
+<updated>2026-11-04T20:44:54+08:00</updated>
+<category term="随笔"/>
+<category term="择业"/>
+<summary>俗话说：男怕入错行，对择业的一点思考。 常听一句话：「男怕入错行」。这是句俗语，能够流传下来，必然有一定的道理。这句话还有后一句是「女怕嫁错郎」，今天不谈婚嫁，只聊前一句，即「择业」。
+如今男女平权，除某些特殊行业有性别要求外，大多数常见行</summary>
+</entry>
+<entry>
+<title>纯文本生活</title>
+<link href="https://weiqiang.org/zh/2026/plaintext-life/"/>
+<id>https://weiqiang.org/zh/2026/plaintext-life/</id>
+<published>2026-11-03T22:41:00+08:00</published>
+<updated>2026-11-03T22:48:03+08:00</updated>
+<category term="纯文本"/>
+<category term="极简"/>
+<summary>记录纯文本的相关理念及实践。 大概十多年前，折腾博客的时候接触到了静态博客生成器（SSG），随之而来的是认识了 markdown, 既而又了解到了 orgmode, 当读到 Orgmode 主页那句 Your life in pl</summary>
+</entry>
+<entry>
+<title>古琴《秋风词》完整源流梳理</title>
+<link href="https://weiqiang.org/zh/2026/qin-003-qiufengci/"/>
+<id>https://weiqiang.org/zh/2026/qin-003-qiufengci/</id>
+<published>2026-10-31T09:32:00+08:00</published>
+<updated>2026-11-15T18:07:25+08:00</updated>
+<category term="古琴"/>
+<category term="秋风词"/>
+<summary>古琴曲秋风词的源流梳理。 1. 一、诗词与琴曲分开讲#
+1.1. 1. 文字部分（歌词）#
+前半段出自唐代李白《三五七言》：
+秋风清，秋月明。落叶聚还散，寒鸦栖复惊。相思相见知何日，此时此夜难为情。
+后半段为清代、民国琴家搜集</summary>
+</entry>
+<entry>
+<title>庶民如何过上美好生活</title>
+<link href="https://weiqiang.org/zh/2026/wonderful-life/"/>
+<id>https://weiqiang.org/zh/2026/wonderful-life/</id>
+<published>2026-10-29T22:14:56+08:00</published>
+<updated>2026-10-29T22:14:56+08:00</updated>
+<category term="写作"/>
+<category term="生活"/>
+<category term="反思"/>
+<summary>看了《松弛感》这篇文章，想到了一个普通人如何才能过上「美好生活」。 前两天偶然间读到涛叔的一篇文章：松弛感，对比了自己的前半生，颇有感触。
+想到了一个话题：一个普通人如何才能过上所谓的「美好生活」。
+涛叔在文中说自己是典型的寒门子弟，看其描述，其实他的家庭也说不上「门</summary>
+</entry>
+<entry>
+<title>文字记录的意义</title>
+<link href="https://weiqiang.org/zh/2026/meanings-of-liferecording/"/>
+<id>https://weiqiang.org/zh/2026/meanings-of-liferecording/</id>
+<published>2026-10-24T15:51:46+08:00</published>
+<updated>2026-10-24T15:51:46+08:00</updated>
+<category term="文字"/>
+<category term="博客"/>
+<category term="生活"/>
+<summary>梳理曾经的博客文字，心绪复杂，记录一点感想 这段时间梳理并重新部署了网站，顺便将曾经的文字稍稍整理了一番。利用 hugo 的 series 功能做了几个合集，一个是毕业到 2015 年间的牢骚文字，一个是 2010 年间的支教文字，一个是近期在</summary>
+</entry>
+<entry>
+<title>网站从 orgmode 导出迁移至 hugo 驱动</title>
+<link href="https://weiqiang.org/zh/2026/orgmode-to-hugo/"/>
+<id>https://weiqiang.org/zh/2026/orgmode-to-hugo/</id>
+<published>2026-10-07T00:00:00+08:00</published>
+<updated>2026-11-15T18:04:46+08:00</updated>
+<category term="hugo"/>
+<category term="orgmode"/>
+<category term="博客"/>
+<summary>利用国庆假期把 orgmode 站点迁移至 hugo 驱动，简单记录。 这个国庆假没有外出，家里蹲。就花了点时间把 orgmode 站点迁移至 hugo 。
+迁移的想法已经有点久了，但因为没有什么技术能力，一直没有动手。现在不一样了，智能体能力已经足够，所以用 workb</summary>
+</entry>
+<entry>
+<title>普通人也可以做一册仿古线装书——一次不成熟的实践小结</title>
+<link href="https://weiqiang.org/zh/2026/zuoshu-shijian-xiaojie/"/>
+<id>https://weiqiang.org/zh/2026/zuoshu-shijian-xiaojie/</id>
+<published>2026-09-13T16:34:00+08:00</published>
+<updated>2026-11-16T22:10:28+08:00</updated>
+<category term="做书"/>
+<category term="桑下書集"/>
+<summary>本篇简要总结这些天来自己制作仿古线装书的经历，一作备忘，二作分享，希望可以对想自己动手做线装书的朋友有所帮助，同时也希望在尚有困惑的地方有老师能做一些指点。 本篇简要总结这些天来自己制作仿古线装书的经历，一作备忘，二作分享，希望可以对想自己动手做线装书的朋友有所帮助，同时也希望在尚有困惑的地方有老师能做一些指点。
+普通人要做一册仿古线装书，以我的实践来看，</summary>
+</entry>
+<entry>
+<title>余生埋首故纸堆——简记我的古籍整理历程</title>
+<link href="https://weiqiang.org/zh/2026/guji-zhengli-licheng/"/>
+<id>https://weiqiang.org/zh/2026/guji-zhengli-licheng/</id>
+<published>2026-08-24T21:29:00+08:00</published>
+<updated>2026-11-16T22:10:28+08:00</updated>
+<category term="古籍整理"/>
+<category term="桑下書集"/>
+<summary>近期工作有点烦心，业余精力也少了，整理和排版也不再有一个月前的热情，整个进度似乎陷入了沉寂。静下心来，梳理一番自己在古籍整理上的经历，算是给自己的一种鼓劲。 近期工作有点烦心，业余精力也少了，整理和排版也不再有一个月前的热情，整个进度似乎陷入了沉寂。
+静下心来，梳理一番自己在古籍整理上的经历，算是给自己的一种鼓劲。
+1. 缘起#
+回到2023年，无意间刷到</summary>
+</entry>
+<entry>
+<title>致敬「书格」，兼述桑下書集的愿景与短期打算</title>
+<link href="https://weiqiang.org/zh/2026/road-of-sangxia-shuji/"/>
+<id>https://weiqiang.org/zh/2026/road-of-sangxia-shuji/</id>
+<published>2026-07-21T17:21:49+08:00</published>
+<updated>2026-11-16T22:10:27+08:00</updated>
+<category term="书格"/>
+<category term="桑下書集"/>
+<category term="做书"/>
+<summary>简述对书格的理解与敬意，同时简单记录自己做桑下書集的理想与打算。 或许是时间到了，今年非常明确地知晓了自己内心想要追求的「事业」，姑且称作事业吧。这是桑下書集的开始。下面简单记录源起及一些不成熟的想法，以作备忘。
+1. 致敬书格#
+我也不记得自己从什么时候开始收集电</summary>
+</entry>
+<entry>
+<title>二十五六年，竟只在眨眼间</title>
+<link href="https://weiqiang.org/zh/2026/time-goes-fast/"/>
+<id>https://weiqiang.org/zh/2026/time-goes-fast/</id>
+<published>2026-07-07T21:39:41+08:00</published>
+<updated>2026-07-07T21:39:41+08:00</updated>
+<category term="生活"/>
+<summary>翻出老照片、老物件，翻看曾经的文字，人生已过半，只剩感慨。 从未想过，时间会过得这么快，二十五六年，也只在眨眼之间。
+因为单位要求补档案材料，匆匆赶回乡下，翻出了陈年旧物。有儿时的照片，有中学时代的荣誉，有老同学的信件，也有自己的日记本。
+瞬间回到过去。
+那一</summary>
+</entry>
+<entry>
+<title>人生无意义</title>
+<link href="https://weiqiang.org/zh/2026/rensheng-yiyi/"/>
+<id>https://weiqiang.org/zh/2026/rensheng-yiyi/</id>
+<published>2026-07-05T00:00:00+08:00</published>
+<updated>2026-07-05T12:00:00+08:00</updated>
+<category term="生活"/>
+<summary>当意识到人生无意义，接下来该怎么选择，怎么处世 前两天，二伯母离世，六十多岁，在现今，很年轻的岁数。
+是病逝的，得了癌症。我得知她生病还是在年初，那会刚做了手术，去伯伯家看望了她，据说是舌癌，在半山的肿瘤医院割了两刀，说话有些不利索，但精气神还可以</summary>
+</entry>
+<entry>
+<title>历代琴谱关于《酒狂》辑录</title>
+<link href="https://weiqiang.org/zh/2026/qin-001-jiukuang/"/>
+<id>https://weiqiang.org/zh/2026/qin-001-jiukuang/</id>
+<published>2026-06-09T20:19:30+08:00</published>
+<updated>2026-11-04T19:01:04+08:00</updated>
+<category term="酒狂"/>
+<category term="古琴"/>
+<summary>古琴曲《酒狂》历代传习摘录。 古琴曲《酒狂》相传为魏晋时期「竹林七贤」之一的阮籍所作，是古琴乐史上极具代表性的作品之一。该曲最早见于明朱权《神奇秘谱》，明清代有传习，下面辑录琴谱所传。（未完成）
+1. 神奇秘谱#
+明・朱权，142</summary>
+</entry>
+<entry>
+<title>桑下书集第一次线装书制作记录</title>
+<link href="https://weiqiang.org/zh/2026/zhishu-xianzhuang-mengxue1/"/>
+<id>https://weiqiang.org/zh/2026/zhishu-xianzhuang-mengxue1/</id>
+<published>2026-06-07T00:00:00+08:00</published>
+<updated>2026-11-16T22:10:27+08:00</updated>
+<category term="做书"/>
+<summary>第一次制作线装书，《千字文》、《朱子治家格言》合本。 很早以前，对繁体竖排的本子有一种无理由的偏爱，所以购入了不少中华书局、上古、浙古等等出版社的古籍整理本。
+后来，在接触到宣纸、线装的本子的时候，这种似乎骨子里自带的熟悉感与渴望，到达顶峰。
+可惜，线装</summary>
+</entry>
+<entry>
+<title>五一散记</title>
+<link href="https://weiqiang.org/zh/2026/wuyi-sanji/"/>
+<id>https://weiqiang.org/zh/2026/wuyi-sanji/</id>
+<published>2026-05-05T00:00:00+08:00</published>
+<updated>2026-05-05T12:00:00+08:00</updated>
+<category term="五一"/>
+<summary>2026年五一假期，随记以作备忘。 今年整个人比较消沉，出行的兴致缺缺，散去了去年购新车后的那股冲劲。所以，五一没有什么像样的出行，权作散记。
+1号，带娃回乡下住了一晚，时隔好久再一次体验到了乡村的宁静夜晚。恰逢望月，静静观望圆月东升，</summary>
+</entry>
+<entry>
+<title>依然是乡下让人心安</title>
+<link href="https://weiqiang.org/zh/2026/fdrz-260404/"/>
+<id>https://weiqiang.org/zh/2026/fdrz-260404/</id>
+<published>2026-04-04T00:00:00+08:00</published>
+<updated>2026-04-04T12:00:00+08:00</updated>
+<category term="日志"/>
+<summary>所幸，村里父母安好，村里还有老房未倒。有人说，城里有房，村里有家，确实如此。 2026年4月4日 周六 多云 清明夜
+今天回乡下过清明，扫墓。
+虽然刚到清明，似是已是暮春。很多花儿都快谢了，比如油菜花，大片的金黄变得稀疏了，比如李花桃花，都快落尽。
+乡下的气息太让人熟悉了，夹杂</summary>
+</entry>
+<entry>
+<title>80后中年人的选择，是无从选择</title>
+<link href="https://weiqiang.org/zh/2026/fdrz-260403/"/>
+<id>https://weiqiang.org/zh/2026/fdrz-260403/</id>
+<published>2026-04-03T00:00:00+08:00</published>
+<updated>2026-04-03T12:00:00+08:00</updated>
+<category term="日志"/>
+<summary>人生哪有什么可以选择。 2026年4月3日 周五 雨
+今天读到一文，文中说如今的80后，消费上回归悦己，职业上回归手艺，家庭上回归自己，对曾经的价值体系展开了重构。
+似乎在说，曾经的80后，都是有钱消费的，都是城市白领在公司</summary>
+</entry>
+<entry>
+<title>张雪是个「真人」</title>
+<link href="https://weiqiang.org/zh/2026/fdrz-260402/"/>
+<id>https://weiqiang.org/zh/2026/fdrz-260402/</id>
+<published>2026-04-02T00:00:00+08:00</published>
+<updated>2026-04-02T12:00:00+08:00</updated>
+<category term="日志"/>
+<summary>不止于张雪逆风而起的传奇人生，更多的是他能给很多人带来启发，带来向上的力量。 2026年4月1日 周三 多云
+中午看到一篇《南风窗》写张雪从贫困山村一个「问题少年」，逆天改命登顶世界的励志故事。
+从追着记者上电视，创业坚持做机车发动机，种种经历都证明了文中的这句话：「当一个普通</summary>
+</entry>
+<entry>
+<title>时间真的有点不够用了</title>
+<link href="https://weiqiang.org/zh/2026/fdrz-260331/"/>
+<id>https://weiqiang.org/zh/2026/fdrz-260331/</id>
+<published>2026-03-31T00:00:00+08:00</published>
+<updated>2026-03-31T12:00:00+08:00</updated>
+<category term="日志"/>
+<summary>要在业余，把身体与学习都兼顾好，是件不容易的事。 2026年3月31日 周二 雨
+3月的最后一天，有点忙，各种乱七八糟的事。然后又有新的事接踵而来，就感觉时间不够用了。
+正好今天看到一则消息，说招行的董事长将其核心竞争力举例为「下午5点后员工很少准点</summary>
+</entry>
+<entry>
+<title>少焦虑，不内耗，关注身心协调，持续学习，静待改善</title>
+<link href="https://weiqiang.org/zh/2026/less-anxiety/"/>
+<id>https://weiqiang.org/zh/2026/less-anxiety/</id>
+<published>2026-03-30T00:00:00+08:00</published>
+<updated>2026-11-16T22:10:27+08:00</updated>
+<category term="日志"/>
+<summary>一切的基础皆由身体，所以我把锻炼放在第一，其次是学习，终身学习。 2026年3月30日 周一 阴、雨 晚间大风
+今天与一位同事聊天，他在一个月前提了离职，但到现在还没办下来，所以话中可以听出对我司的愤怒与无奈。
+他说都一个多月了，工作交接都没人来接，领导就是想拖着让</summary>
+</entry>
+<entry>
+<title>过好每个周末，许自己一个期待的未来</title>
+<link href="https://weiqiang.org/zh/2026/fdrz-26032829/"/>
+<id>https://weiqiang.org/zh/2026/fdrz-26032829/</id>
+<published>2026-03-29T00:00:00+08:00</published>
+<updated>2026-03-29T12:00:00+08:00</updated>
+<category term="日志"/>
+<summary>周末就是我上进的劫。 2026年3月28日 周六 晴
+周六，重拾英语的第七天，记日志的第六天。在周末要维持自律，是个考验。
+工作日上班期间，可以跟着有工作节奏走，虽然经常会被突然的会议培训之类的挤占个人时间，但反倒能让自己</summary>
+</entry>
+<entry>
+<title>人生过半，还是找不到自己</title>
+<link href="https://weiqiang.org/zh/2026/fdrz-260327/"/>
+<id>https://weiqiang.org/zh/2026/fdrz-260327/</id>
+<published>2026-03-27T00:00:00+08:00</published>
+<updated>2026-03-27T12:00:00+08:00</updated>
+<category term="日志"/>
+<summary>不断问自己：到底要过怎样的人生呢。 2026年3月27日 周五 雨转多云
+早上上班，下雨，但快到公司时已经不下了，于是在公司听到这样的对话：「A：下雨了吗？我过来时没下啊。B：下了啊，我从XX过来，还在下呢。」哪怕是在同一个地方，也有不</summary>
+</entry>
+<entry>
+<title>当张雪「风」吹到了牛马心口</title>
+<link href="https://weiqiang.org/zh/2026/fdrz-260326/"/>
+<id>https://weiqiang.org/zh/2026/fdrz-260326/</id>
+<published>2026-03-26T00:00:00+08:00</published>
+<updated>2026-03-26T12:00:00+08:00</updated>
+<category term="日志"/>
+<summary>只能卷自己，把自己卷死了。 2026年3月26日 周四 阴
+晚上去地市开会，回来晚了，早早记点个人觉得有意思的吧。
+上午和某分管领导外出，因为同龄，有些共同话题，聊起了张雪峰。
+领导直言看到这个消息时的震惊，说「感觉自己胸口也有</summary>
+</entry>
+<entry>
+<title>我还是选择龟缩着看看世界变化</title>
+<link href="https://weiqiang.org/zh/2026/fdrz-260325/"/>
+<id>https://weiqiang.org/zh/2026/fdrz-260325/</id>
+<published>2026-03-25T00:00:00+08:00</published>
+<updated>2026-03-25T12:00:00+08:00</updated>
+<category term="日志"/>
+<summary>与其「英年早逝」，我还是选择龟缩着看看世界变化。 2026年3月25日 周三 多云
+今天最大的震惊是张雪峰猝死。早上趁空刷了XHS，见到了这个消息，还是昨天的事。为什么震惊？因为年龄，因为同龄。所以今天从生活开始吧。
+生活：
+重点依然是健康相关，特别</summary>
+</entry>
+<entry>
+<title>勇敢的人会先享受人生吗</title>
+<link href="https://weiqiang.org/zh/2026/fdrz-260324/"/>
+<id>https://weiqiang.org/zh/2026/fdrz-260324/</id>
+<published>2026-03-24T00:00:00+08:00</published>
+<updated>2026-03-24T12:00:00+08:00</updated>
+<category term="日志"/>
+<summary>总是在想，是不是勇敢地跳出舒适区，会有不一样的人生？ 2026年3月24日，周二，雨
+接下来，从学习、生活、工作等方面做一点简单记录和复盘。
+学习：
+英语精听1.5遍，一遍是2个小时，所以今天听了3个小时。早上大概45分钟，中午45分钟，晚上1小时。原本</summary>
+</entry>
+</feed>

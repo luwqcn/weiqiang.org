@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FeedFinder - 危墙</title>
+<meta name="description" content="FeedFinder, 订阅自己喜欢阅读的博客。" />
+<meta name="generator" content="Org Mode" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" sizes="any" href="/images/favicon-dark.svg" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/svg+xml" sizes="any" href="/images/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" href="/images/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="manifest" href="/images/site.webmanifest">
+<meta name="theme-color" content="#fdfaf4">
+<script>
+(function(){document.documentElement.classList.add('js');try{var s=localStorage.getItem('paper-theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',s||(d?'dark':'light'));}catch(e){}})();
+</script>
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/highlight.css">
+<script src="/js/main.js" defer></script>
+<script src="/js/comments.js" defer></script>
+<link rel="webmention" href="https://webmention.io/weiqiang.org/webmention">
+<link rel="pingback" href="https://webmention.io/weiqiang.org/xmlrpc">
+<meta name="keywords" content="博客, 阅读">
+</head>
+<body>
+<header class="site-header">
+<div class="header-inner">
+<a href="/" class="site-name"><span class="site-logo"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true" focusable="false"><rect x="2.4" y="3.2" width="9" height="4.8" rx="0.9"></rect><rect x="12.6" y="3.2" width="9" height="4.8" rx="0.9"></rect><rect x="2.4" y="9.6" width="3.6" height="4.8" rx="0.9"></rect><rect x="7.2" y="9.6" width="9" height="4.8" rx="0.9"></rect><rect x="17.4" y="9.6" width="4.2" height="4.8" rx="0.9"></rect><rect x="2.4" y="16" width="9" height="4.8" rx="0.9"></rect><rect x="12.6" y="16" width="9" height="4.8" rx="0.9"></rect></svg></span><span class="site-title-text">危墙</span></a>
+<nav class="site-nav" id="site-nav" aria-label="站点导航">
+<a href="/">首页</a>
+<a href="/zh/">手记</a>
+<a href="/about/">关于</a>
+<a href="/links/">收藏</a>
+<a href="/index.xml">订阅</a>
+<a class="nav-icon nav-icon-search" href="/search/" aria-label="搜索" title="搜索"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.8" cy="10.8" r="6.1"></circle><path d="M15.3 15.3 20 20"></path></svg></a>
+</nav>
+<nav class="mobile-nav" aria-label="快捷导航">
+<a href="/">首页</a>
+<a href="/zh/">手记</a>
+<a href="/about/">关于</a>
+<a class="nav-icon nav-icon-search" href="/search/" aria-label="搜索" title="搜索"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.8" cy="10.8" r="6.1"></circle><path d="M15.3 15.3 20 20"></path></svg></a>
+</nav>
+<button class="nav-toggle" type="button" aria-label="更多菜单" aria-expanded="false" aria-controls="nav-panel" title="更多菜单"><svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"></path></svg><svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+<nav class="nav-panel" id="nav-panel" aria-label="更多导航">
+<a href="/links/">收藏</a>
+<a href="/index.xml">订阅</a>
+<a href="/tags/">标签</a>
+</nav>
+<button class="theme-toggle" type="button" aria-label="切换主题" title="切换主题"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2.4v2.2M12 19.4v2.2M2.4 12h2.2M19.4 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"></path></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M20.5 14.6A8.6 8.6 0 0 1 9.4 3.5a8.7 8.7 0 1 0 11.1 11.1z"></path></svg></button>
+</div>
+<div class="progress" aria-hidden="true"></div>
+</header>
+<main id="content" class="content">
+<div class="post-layout">
+<article class="post post-page">
+<header class="post-header">
+<h1 class="post-title">FeedFinder</h1>
+</header>
+<div class="post-content">
+<div id="outline-container-独立博客" class="outline-2">
+<h2 id="独立博客"><span class="section-number-2">1.</span> 独立博客<a class="heading-anchor" href="#独立博客" aria-label="本节链接">#</a></h2>
+<div class="outline-text-2" id="text-1">
+<p>
+收集以生活、随笔、阅读等主题文章为主的博客，观人生百态。订阅地址皆从网站公开渠道获取，如有不便请通过<a href="mailto:lu@weiqiang.org">邮件</a>联系删除。
+</p>
+</div>
+<div id="outline-container-[[https:yihui.org][谢益辉]]" class="outline-3">
+<h3 id="[[https:yihui.org][谢益辉]]"><span class="section-number-3">1.1.</span> <a target="_blank" rel="noopener noreferrer" href="https://yihui.org">谢益辉</a><a class="heading-anchor" href="#[[https:yihui.org][谢益辉]]" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+大佬，善诗文。
+</p>
+</div>
+</div>
+<div id="outline-container-[[https:freemind.pluskid.org][Free-Mind]]" class="outline-3">
+<h3 id="[[https:freemind.pluskid.org][Free-Mind]]"><span class="section-number-3">1.2.</span> <a target="_blank" rel="noopener noreferrer" href="https://freemind.pluskid.org">Free Mind</a><a class="heading-anchor" href="#[[https:freemind.pluskid.org][Free-Mind]]" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+张驰原，大佬，技术为多。
+</p>
+</div>
+</div>
+<div id="outline-container-[[https:hongtaoh.comcn][郝鸿涛]]" class="outline-3">
+<h3 id="[[https:hongtaoh.comcn][郝鸿涛]]"><span class="section-number-3">1.3.</span> <a target="_blank" rel="noopener noreferrer" href="https://hongtaoh.com/cn/">郝鸿涛</a><a class="heading-anchor" href="#[[https:hongtaoh.comcn][郝鸿涛]]" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+计算机博士，有随笔有技术教程，能学到不少。
+</p>
+</div>
+</div>
+<div id="outline-container-[[https:xianmin.org][贤民]]" class="outline-3">
+<h3 id="[[https:xianmin.org][贤民]]"><span class="section-number-3">1.4.</span> <a target="_blank" rel="noopener noreferrer" href="https://xianmin.org">贤民</a><a class="heading-anchor" href="#[[https:xianmin.org][贤民]]" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+自学计算机技术的榜样。
+</p>
+</div>
+</div>
+<div id="outline-container-[[https:xinsenz.com][星辰茶话]]" class="outline-3">
+<h3 id="[[https:xinsenz.com][星辰茶话]]"><span class="section-number-3">1.5.</span> <a target="_blank" rel="noopener noreferrer" href="https://xinsenz.com">星辰茶话</a>&nbsp;&nbsp;&nbsp<span class="tag"><span class="80_">80后</span></span><a class="heading-anchor" href="#[[https:xinsenz.com][星辰茶话]]" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+一位80后的博客，生活方式。
+</p>
+</div>
+</div>
+<div id="outline-container-[[https:liuz.cn][刘郎阁]]" class="outline-3">
+<h3 id="[[https:liuz.cn][刘郎阁]]"><span class="section-number-3">1.6.</span> <a target="_blank" rel="noopener noreferrer" href="https://liuz.cn">刘郎阁</a><a class="heading-anchor" href="#[[https:liuz.cn][刘郎阁]]" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-1-6">
+<p>
+生活与技术类文章。
+</p>
+</div>
+</div>
+<div id="outline-container-[[https:lhcy.org][林海草原]]" class="outline-3">
+<h3 id="[[https:lhcy.org][林海草原]]"><span class="section-number-3">1.7.</span> <a target="_blank" rel="noopener noreferrer" href="https://lhcy.org">林海草原</a><a class="heading-anchor" href="#[[https:lhcy.org][林海草原]]" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-1-7">
+<p>
+文字真诚。
+</p>
+</div>
+</div>
+<div id="outline-container-[[https:yayu.net][雅余]]" class="outline-3">
+<h3 id="[[https:yayu.net][雅余]]"><span class="section-number-3">1.8.</span> <a target="_blank" rel="noopener noreferrer" href="https://yayu.net">雅余</a><a class="heading-anchor" href="#[[https:yayu.net][雅余]]" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-1-8">
+<p>
+生活方式，极简，影像。
+</p>
+</div>
+</div>
+<div id="outline-container-[[https:shitao5.org][吴诗涛]]" class="outline-3">
+<h3 id="[[https:shitao5.org][吴诗涛]]"><span class="section-number-3">1.9.</span> <a target="_blank" rel="noopener noreferrer" href="https://shitao5.org">吴诗涛</a><a class="heading-anchor" href="#[[https:shitao5.org][吴诗涛]]" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-1-9">
+<p>
+嘉兴人，极自律。
+</p>
+</div>
+</div>
+<div id="outline-container-[[https:tao.zz.ac][涛叔]]" class="outline-3">
+<h3 id="[[https:tao.zz.ac][涛叔]]"><span class="section-number-3">1.10.</span> <a target="_blank" rel="noopener noreferrer" href="https://tao.zz.ac">涛叔</a><a class="heading-anchor" href="#[[https:tao.zz.ac][涛叔]]" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-1-10">
+<p>
+技术为主，但偶尔一篇生活文，能给人不少启发。
+</p>
+</div>
+</div>
+<div id="outline-container-[[https:lms.im][LMS]]" class="outline-3">
+<h3 id="[[https:lms.im][LMS]]"><span class="section-number-3">1.11.</span> <a target="_blank" rel="noopener noreferrer" href="https://lms.im">LMS</a>&nbsp;&nbsp;&nbsp<span class="tag"><span class="80_">80后</span></span><a class="heading-anchor" href="#[[https:lms.im][LMS]]" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-1-11">
+<p>
+80后博主，很早就关注了。
+</p>
+</div>
+</div>
+<div id="outline-container-[[https:liangmouyin.com][梁三川]]" class="outline-3">
+<h3 id="[[https:liangmouyin.com][梁三川]]"><span class="section-number-3">1.12.</span> <a target="_blank" rel="noopener noreferrer" href="https://liangmouyin.com">梁三川</a><a class="heading-anchor" href="#[[https:liangmouyin.com][梁三川]]" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-1-12">
+<p>
+原名梁某银，日更，文笔不错。
+</p>
+</div>
+</div>
+<div id="outline-container-[[https:cuixiping.com][崔话记]]" class="outline-3">
+<h3 id="[[https:cuixiping.com][崔话记]]"><span class="section-number-3">1.13.</span> <a target="_blank" rel="noopener noreferrer" href="https://cuixiping.com">崔话记</a>&nbsp;&nbsp;&nbsp<span class="tag"><span class="80_">80后</span></span><a class="heading-anchor" href="#[[https:cuixiping.com][崔话记]]" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-1-13">
+<p>
+老博客，内容丰富，温度深度兼具。
+</p>
+</div>
+</div>
+<div id="outline-container-[[https:weiwenchao.com][魏文超]]" class="outline-3">
+<h3 id="[[https:weiwenchao.com][魏文超]]"><span class="section-number-3">1.14.</span> <a target="_blank" rel="noopener noreferrer" href="https://weiwenchao.com">魏文超</a>&nbsp;&nbsp;&nbsp<span class="tag"><span class="80_">80后</span></span><a class="heading-anchor" href="#[[https:weiwenchao.com][魏文超]]" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-1-14">
+<p>
+生活记录，常有灵光一闪。
+</p>
+</div>
+</div>
+<div id="outline-container-[[http:versky.com][静水流渊]]" class="outline-3">
+<h3 id="[[http:versky.com][静水流渊]]"><span class="section-number-3">1.15.</span> <a target="_blank" rel="noopener noreferrer" href="http://versky.com">静水流渊</a>&nbsp;&nbsp;&nbsp<span class="tag"><span class="80_">80后</span></span><a class="heading-anchor" href="#[[http:versky.com][静水流渊]]" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-1-15">
+<p>
+刚开始独立博客时的一位博友，更新至今。
+</p>
+</div>
+</div>
+<div id="outline-container-[[https:taxodium.ink][Taxodium]]" class="outline-3">
+<h3 id="[[https:taxodium.ink][Taxodium]]"><span class="section-number-3">1.16.</span> <a target="_blank" rel="noopener noreferrer" href="https://taxodium.ink">Taxodium</a><a class="heading-anchor" href="#[[https:taxodium.ink][Taxodium]]" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-1-16">
+<p>
+技术、日常，emacs,等等，内容颇有质量。
+</p>
+</div>
+</div>
+<div id="outline-container-[[https:zhoutian.com][周天记]]" class="outline-3">
+<h3 id="[[https:zhoutian.com][周天记]]"><span class="section-number-3">1.17.</span> <a target="_blank" rel="noopener noreferrer" href="https://zhoutian.com">周天记</a><a class="heading-anchor" href="#[[https:zhoutian.com][周天记]]" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-1-17">
+<p>
+满心，90后，生活类博客。
+</p>
+</div>
+</div>
+<div id="outline-container-[[https:me.xu19.com][我是军爸]]" class="outline-3">
+<h3 id="[[https:me.xu19.com][我是军爸]]"><span class="section-number-3">1.18.</span> <a target="_blank" rel="noopener noreferrer" href="https://me.xu19.com">我是军爸</a>&nbsp;&nbsp;&nbsp<span class="tag"><span class="80_">80后</span></span><a class="heading-anchor" href="#[[https:me.xu19.com][我是军爸]]" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-1-18">
+<p>
+军爸，从事单片机编程教育行业。
+</p>
+</div>
+</div>
+<div id="outline-container-[[https:vind.ink][风·墨]]" class="outline-3">
+<h3 id="[[https:vind.ink][风·墨]]"><span class="section-number-3">1.19.</span> <a target="_blank" rel="noopener noreferrer" href="https://vind.ink">风·墨</a><a class="heading-anchor" href="#[[https:vind.ink][风·墨]]" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-1-19">
+<p>
+摄影、音乐、博客、生活。
+</p>
+</div>
+</div>
+<div id="outline-container-[[https:www.pgoj.top][平哥偶记]]" class="outline-3">
+<h3 id="[[https:www.pgoj.top][平哥偶记]]"><span class="section-number-3">1.20.</span> <a target="_blank" rel="noopener noreferrer" href="https://www.pgoj.top">平哥偶记</a><a class="heading-anchor" href="#[[https:www.pgoj.top][平哥偶记]]" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-1-20">
+<p>
+博客历程长，文字耐读。
+</p>
+</div>
+</div>
+<div id="outline-container-[[https:www.mrhe.net][飞絮落叶雪]]" class="outline-3">
+<h3 id="[[https:www.mrhe.net][飞絮落叶雪]]"><span class="section-number-3">1.21.</span> <a target="_blank" rel="noopener noreferrer" href="https://www.mrhe.net">飞絮落叶雪</a><a class="heading-anchor" href="#[[https:www.mrhe.net][飞絮落叶雪]]" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-1-21">
+<p>
+中年大叔老何。
+</p>
+</div>
+</div>
+<div id="outline-container-[[https:www.zhyok.cn][秋記]]" class="outline-3">
+<h3 id="[[https:www.zhyok.cn][秋記]]"><span class="section-number-3">1.22.</span> <a target="_blank" rel="noopener noreferrer" href="https://www.zhyok.cn">秋記</a>&nbsp;&nbsp;&nbsp<span class="tag"><span class="80_">80后</span></span><a class="heading-anchor" href="#[[https:www.zhyok.cn][秋記]]" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-1-22">
+<p>
+一个叛逆的八零后日常博客。
+</p>
+</div>
+</div>
+<div id="outline-container-[[https:synyan.cn][旅行漫记]]" class="outline-3">
+<h3 id="[[https:synyan.cn][旅行漫记]]"><span class="section-number-3">1.23.</span> <a target="_blank" rel="noopener noreferrer" href="https://synyan.cn">旅行漫记</a><a class="heading-anchor" href="#[[https:synyan.cn][旅行漫记]]" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-1-23">
+<p>
+摄影、旅行、博物馆，20多年老博客，阅之可增见闻。
+</p>
+</div>
+</div>
+<div id="outline-container-[[https:www.iyuren.com][山野愚人居]]" class="outline-3">
+<h3 id="[[https:www.iyuren.com][山野愚人居]]"><span class="section-number-3">1.24.</span> <a target="_blank" rel="noopener noreferrer" href="https://www.iyuren.com">山野愚人居</a>&nbsp;&nbsp;&nbsp<span class="tag"><span class="80_">80后</span></span><a class="heading-anchor" href="#[[https:www.iyuren.com][山野愚人居]]" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-1-24">
+<p>
+80后，文字朴实，值得一读。
+</p>
+</div>
+</div>
+<div id="outline-container-[[https:zhujay.com][朱小呆]]" class="outline-3">
+<h3 id="[[https:zhujay.com][朱小呆]]"><span class="section-number-3">1.25.</span> <a target="_blank" rel="noopener noreferrer" href="https://zhujay.com">朱小呆</a><a class="heading-anchor" href="#[[https:zhujay.com][朱小呆]]" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-1-25">
+<p>
+朱小呆，记录生活、分享美好。
+</p>
+</div>
+</div>
+<div id="outline-container-[[https:zhou.ge][忆往事]]" class="outline-3">
+<h3 id="[[https:zhou.ge][忆往事]]"><span class="section-number-3">1.26.</span> <a target="_blank" rel="noopener noreferrer" href="https://zhou.ge">忆往事</a>&nbsp;&nbsp;&nbsp<span class="tag"><span class="80_">80后</span></span><a class="heading-anchor" href="#[[https:zhou.ge][忆往事]]" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-1-26">
+<p>
+周哥，80后，客家人。
+</p>
+</div>
+</div>
+<div id="outline-container-[[https:www.3v.hk][允赫先森'sBlog]]" class="outline-3">
+<h3 id="[[https:www.3v.hk][允赫先森'sBlog]]"><span class="section-number-3">1.27.</span> <a target="_blank" rel="noopener noreferrer" href="https://www.3v.hk">允赫先森'sBlog</a>&nbsp;&nbsp;&nbsp<span class="tag"><span class="80_">80后</span></span><a class="heading-anchor" href="#[[https:www.3v.hk][允赫先森'sBlog]]" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-1-27">
+<p>
+允赫先森，80后自由职业者。
+</p>
+</div>
+</div>
+<div id="outline-container-[[https:xyzbz.cn][子夜松声]]" class="outline-3">
+<h3 id="[[https:xyzbz.cn][子夜松声]]"><span class="section-number-3">1.28.</span> <a target="_blank" rel="noopener noreferrer" href="https://xyzbz.cn">子夜松声</a><a class="heading-anchor" href="#[[https:xyzbz.cn][子夜松声]]" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-1-28">
+<p>
+网友小宋，生活博客。
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-博客聚集" class="outline-2">
+<h2 id="博客聚集"><span class="section-number-2">2.</span> 博客聚集<a class="heading-anchor" href="#博客聚集" aria-label="本节链接">#</a></h2>
+<div class="outline-text-2" id="text-2">
+<p>
+阅读各博客聚集的精选文章。
+</p>
+</div>
+<div id="outline-container-[[https:www.foreverblog.cn][十年之约]]" class="outline-3">
+<h3 id="[[https:www.foreverblog.cn][十年之约]]"><span class="section-number-3">2.1.</span> <a target="_blank" rel="noopener noreferrer" href="https://www.foreverblog.cn">十年之约</a><a class="heading-anchor" href="#[[https:www.foreverblog.cn][十年之约]]" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+最早加入的博客聚集项目，2026年改版后增加了很多功能，订阅每日推荐文章。
+</p>
+</div>
+</div>
+<div id="outline-container-[[https:www.boyouquan.com][博友圈]]" class="outline-3">
+<h3 id="[[https:www.boyouquan.com][博友圈]]"><span class="section-number-3">2.2.</span> <a target="_blank" rel="noopener noreferrer" href="https://www.boyouquan.com">博友圈</a><a class="heading-anchor" href="#[[https:www.boyouquan.com][博友圈]]" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+博客人的朋友圈，功能也推多，订阅一个推荐文章。
+</p>
+</div>
+</div>
+<div id="outline-container-[[https:ruae.com][万界书简]]" class="outline-3">
+<h3 id="[[https:ruae.com][万界书简]]"><span class="section-number-3">2.3.</span> <a target="_blank" rel="noopener noreferrer" href="https://ruae.com">万界书简</a><a class="heading-anchor" href="#[[https:ruae.com][万界书简]]" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+把博主称作写信人，一篇文章称作一封书简，还挺有意思。
+</p>
+</div>
+</div>
+</div>
+
+</div>
+<footer class="post-footer">
+<div class="post-meta-row">
+<a target="_blank" rel="noopener noreferrer" class="post-source" href="https://codeberg.org/wejan/weborg/raw/branch/main/org/ff.org" rel="nofollow">查看 Org 源文件</a>
+</div>
+</footer>
+</article>
+<aside class="toc" aria-label="文章目录">
+<p class="toc-label">目录</p>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#独立博客">1. 独立博客</a>
+<ul>
+<li><a href="#[[https:yihui.org][谢益辉]]">1.1. 谢益辉</a></li>
+<li><a href="#[[https:freemind.pluskid.org][Free-Mind]]">1.2. Free Mind</a></li>
+<li><a href="#[[https:hongtaoh.comcn][郝鸿涛]]">1.3. 郝鸿涛</a></li>
+<li><a href="#[[https:xianmin.org][贤民]]">1.4. 贤民</a></li>
+<li><a href="#[[https:xinsenz.com][星辰茶话]]">1.5. 星辰茶话&nbsp;&nbsp;&nbsp<span class="tag"><span class="80_">80后</span></span></a></li>
+<li><a href="#[[https:liuz.cn][刘郎阁]]">1.6. 刘郎阁</a></li>
+<li><a href="#[[https:lhcy.org][林海草原]]">1.7. 林海草原</a></li>
+<li><a href="#[[https:yayu.net][雅余]]">1.8. 雅余</a></li>
+<li><a href="#[[https:shitao5.org][吴诗涛]]">1.9. 吴诗涛</a></li>
+<li><a href="#[[https:tao.zz.ac][涛叔]]">1.10. 涛叔</a></li>
+<li><a href="#[[https:lms.im][LMS]]">1.11. LMS&nbsp;&nbsp;&nbsp<span class="tag"><span class="80_">80后</span></span></a></li>
+<li><a href="#[[https:liangmouyin.com][梁三川]]">1.12. 梁三川</a></li>
+<li><a href="#[[https:cuixiping.com][崔话记]]">1.13. 崔话记&nbsp;&nbsp;&nbsp<span class="tag"><span class="80_">80后</span></span></a></li>
+<li><a href="#[[https:weiwenchao.com][魏文超]]">1.14. 魏文超&nbsp;&nbsp;&nbsp<span class="tag"><span class="80_">80后</span></span></a></li>
+<li><a href="#[[http:versky.com][静水流渊]]">1.15. 静水流渊&nbsp;&nbsp;&nbsp<span class="tag"><span class="80_">80后</span></span></a></li>
+<li><a href="#[[https:taxodium.ink][Taxodium]]">1.16. Taxodium</a></li>
+<li><a href="#[[https:zhoutian.com][周天记]]">1.17. 周天记</a></li>
+<li><a href="#[[https:me.xu19.com][我是军爸]]">1.18. 我是军爸&nbsp;&nbsp;&nbsp<span class="tag"><span class="80_">80后</span></span></a></li>
+<li><a href="#[[https:vind.ink][风·墨]]">1.19. 风·墨</a></li>
+<li><a href="#[[https:www.pgoj.top][平哥偶记]]">1.20. 平哥偶记</a></li>
+<li><a href="#[[https:www.mrhe.net][飞絮落叶雪]]">1.21. 飞絮落叶雪</a></li>
+<li><a href="#[[https:www.zhyok.cn][秋記]]">1.22. 秋記&nbsp;&nbsp;&nbsp<span class="tag"><span class="80_">80后</span></span></a></li>
+<li><a href="#[[https:synyan.cn][旅行漫记]]">1.23. 旅行漫记</a></li>
+<li><a href="#[[https:www.iyuren.com][山野愚人居]]">1.24. 山野愚人居&nbsp;&nbsp;&nbsp<span class="tag"><span class="80_">80后</span></span></a></li>
+<li><a href="#[[https:zhujay.com][朱小呆]]">1.25. 朱小呆</a></li>
+<li><a href="#[[https:zhou.ge][忆往事]]">1.26. 忆往事&nbsp;&nbsp;&nbsp<span class="tag"><span class="80_">80后</span></span></a></li>
+<li><a href="#[[https:www.3v.hk][允赫先森'sBlog]]">1.27. 允赫先森'sBlog&nbsp;&nbsp;&nbsp<span class="tag"><span class="80_">80后</span></span></a></li>
+<li><a href="#[[https:xyzbz.cn][子夜松声]]">1.28. 子夜松声</a></li>
+</ul>
+</li>
+<li><a href="#博客聚集">2. 博客聚集</a>
+<ul>
+<li><a href="#[[https:www.foreverblog.cn][十年之约]]">2.1. 十年之约</a></li>
+<li><a href="#[[https:www.boyouquan.com][博友圈]]">2.2. 博友圈</a></li>
+<li><a href="#[[https:ruae.com][万界书简]]">2.3. 万界书简</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</aside>
+</div>
+</main>
+<footer class="site-footer">
+<div class="footer-inner">
+<div class="footer-info">
+<nav class="footer-nav" aria-label="页脚导航"><ul><li><a href="/zh/">手記</a></li><li><a href="/guji/">古籍</a></li><li><a href="/hs/">护生</a></li><li><a href="/shuji/">書集</a></li><li><a href="/zhijiao/">支教</a></li><li><a href="/bc/">本草</a></li><li><a href="/tech/">技术</a></li><li><a href="/yue/">樂記</a></li><li><a href="/about/">关于</a></li><li><a href="/interest/">兴趣</a></li><li><a href="/links/">收藏</a></li><li><a href="/tags/">标签</a></li></ul></nav>
+<p class="footer-line footer-lastmod">本页最近更新: 2026-11-22 · 本站文章共 434 篇，累计 455863 字。</p>
+<p class="footer-line footer-copy">© LOWEJAN, Since 2008.</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

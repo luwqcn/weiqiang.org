@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>用 WorkBuddy 造了个 RSS 线上阅读器 feedfinder - 危墙</title>
+<meta name="description" content="本文简单记录使用 WorkBuddy 设计制作一款 RSS 阅读器（线上）的始末。" />
+<meta name="generator" content="Org Mode" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" sizes="any" href="/images/favicon-dark.svg" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/svg+xml" sizes="any" href="/images/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" href="/images/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="manifest" href="/images/site.webmanifest">
+<meta name="theme-color" content="#fdfaf4">
+<script>
+(function(){document.documentElement.classList.add('js');try{var s=localStorage.getItem('paper-theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',s||(d?'dark':'light'));}catch(e){}})();
+</script>
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/highlight.css">
+<script src="/js/main.js" defer></script>
+<script src="/js/comments.js" defer></script>
+<link rel="webmention" href="https://webmention.io/weiqiang.org/webmention">
+<link rel="pingback" href="https://webmention.io/weiqiang.org/xmlrpc">
+<link rel="alternate" type="application/atom+xml" title="危墙 · 手記" href="/zh/index.xml">
+<meta name="keywords" content="RSS, feedfinder, 博客">
+</head>
+<body>
+<header class="site-header">
+<div class="header-inner">
+<a href="/" class="site-name"><span class="site-logo"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true" focusable="false"><rect x="2.4" y="3.2" width="9" height="4.8" rx="0.9"></rect><rect x="12.6" y="3.2" width="9" height="4.8" rx="0.9"></rect><rect x="2.4" y="9.6" width="3.6" height="4.8" rx="0.9"></rect><rect x="7.2" y="9.6" width="9" height="4.8" rx="0.9"></rect><rect x="17.4" y="9.6" width="4.2" height="4.8" rx="0.9"></rect><rect x="2.4" y="16" width="9" height="4.8" rx="0.9"></rect><rect x="12.6" y="16" width="9" height="4.8" rx="0.9"></rect></svg></span><span class="site-title-text">危墙</span></a>
+<nav class="site-nav" id="site-nav" aria-label="站点导航">
+<a href="/">首页</a>
+<a href="/zh/" aria-current="page">手记</a>
+<a href="/about/">关于</a>
+<a href="/links/">收藏</a>
+<a href="/index.xml">订阅</a>
+<a class="nav-icon nav-icon-search" href="/search/" aria-label="搜索" title="搜索"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.8" cy="10.8" r="6.1"></circle><path d="M15.3 15.3 20 20"></path></svg></a>
+</nav>
+<nav class="mobile-nav" aria-label="快捷导航">
+<a href="/">首页</a>
+<a href="/zh/" aria-current="page">手记</a>
+<a href="/about/">关于</a>
+<a class="nav-icon nav-icon-search" href="/search/" aria-label="搜索" title="搜索"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.8" cy="10.8" r="6.1"></circle><path d="M15.3 15.3 20 20"></path></svg></a>
+</nav>
+<button class="nav-toggle" type="button" aria-label="更多菜单" aria-expanded="false" aria-controls="nav-panel" title="更多菜单"><svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"></path></svg><svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+<nav class="nav-panel" id="nav-panel" aria-label="更多导航">
+<a href="/links/">收藏</a>
+<a href="/index.xml">订阅</a>
+<a href="/tags/">标签</a>
+</nav>
+<button class="theme-toggle" type="button" aria-label="切换主题" title="切换主题"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2.4v2.2M12 19.4v2.2M2.4 12h2.2M19.4 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"></path></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M20.5 14.6A8.6 8.6 0 0 1 9.4 3.5a8.7 8.7 0 1 0 11.1 11.1z"></path></svg></button>
+</div>
+<div class="progress" aria-hidden="true"></div>
+</header>
+<main id="content" class="content">
+<div class="post-layout">
+<article class="post">
+<header class="post-header">
+<h1 class="post-title">用 WorkBuddy 造了个 RSS 线上阅读器 feedfinder</h1>
+<p class="post-meta">
+<time datetime="2026-11-22T20:22:00">2026-11-22</time><span>收录于<a class="post-series" href="/tech/">「技术」</a></span><span>约 1101 字</span>
+</p>
+</header>
+<div class="post-content">
+<p>
+平时空闲了，喜欢浏览一些独立博客，特别是生活类的，能看到不同的人生经历，能开阔眼界，也可算是对平淡生活的一点有益调剂。
+</p>
+
+<p>
+找过一些 RSS 阅读器的 APP，要么是不跨平台，要么是用着不习惯，也就不了了之。
+</p>
+
+<p>
+后来准备把常看的博客放在<a href="/links/">收藏</a><sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup>里，如果看到不错的博客，慢慢增加这个列表，站点只要能打开，浏览起来也方便。但有个问题，这样并不知道哪个网站更新了。
+</p>
+
+<p>
+也可以从博客聚集站看，其实这是当前常用的看博客的方式了。方便是方便，但因为聚集站点博客过多，有些并非自己想看的，信息过于驳杂了，且通常缺少筛选功能。
+</p>
+
+<p>
+所以想着，能不能自己参考这样的站点，做一个线上的 RSS 订阅阅读功能，RSS 源靠自己手工维护，只列自己感兴趣的博客，这样自己每天只要打开一个网页，就可以看到关注的博客最新更新的文章，如果想留言评论，点开对方博客就可以了，相当方便。
+</p>
+
+<p>
+于是把功能需求告诉了 WorkBuddy, 只花了很短的时间，一个基本满足当前我自己博客阅读需要的轮子造好了，我把这个命名为 <code>feedfinder</code>, 命名学的 <a target="_blank" rel="noopener noreferrer" href="https://bf.zzxworld.com">BlogFinder</a>, 主要是自己常浏览。
+</p>
+<div id="outline-container-功能与实现" class="outline-2">
+<h2 id="功能与实现"><span class="section-number-2">1.</span> 功能与实现<a class="heading-anchor" href="#功能与实现" aria-label="本节链接">#</a></h2>
+<div class="outline-text-2" id="text-1">
+<p>
+主要功能就是一个静态的 RSS 聚合阅读站，通过一个 orgmode 源文件，定期抓取 RSS 源更新，展示近两天内的博客文章。为什么选了两天内更新的文章，因为当前列表源数量不多，且应该也不会太多，如果一天的话，可能会一篇文章都没有。所以为了有文章看，还加了三个聚合站的订阅源。
+</p>
+</div>
+<div id="outline-container-订阅源" class="outline-3">
+<h3 id="订阅源"><span class="section-number-3">1.1.</span> 订阅源<a class="heading-anchor" href="#订阅源" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+源文件是用 orgmode 文件来维护的，命名为 <code>ff.org</code>, 在本站中作为一个独立页面存在，可以浏览这里<sup><a id="fnr.2" class="footref" href="#fn.2" role="doc-backlink">2</a></sup>，格式比较简单，一个标题一个博客，标题下用 <code>:properties:</code> 添加订阅源，是否订阅，更新时间等信息，比如：
+</p>
+<pre class="example" id="org306aaf7">
+** [[https://weiqiang.org][危墙]]
+:PROPERTIES:
+:URL: https://weiqiang.org/index.xml
+:ENABLED: yes
+:INTERVAL: 14400
+:END:
+</pre>
+<p>
+也可以在标题后面加 <code>:tag:</code> 标签，会作为一个分类展示，目前只对一些同龄的博客加了 <code>80后</code> 的标签。
+</p>
+</div>
+</div>
+<div id="outline-container-实现方式" class="outline-3">
+<h3 id="实现方式"><span class="section-number-3">1.2.</span> 实现方式<a class="heading-anchor" href="#实现方式" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-1-2">
+<blockquote>
+<p>
+技术栈：Python（feedparser + httpx）+ SQLite 存状态 + 静态 HTML/JS/CSS，GitHub Actions 定时跑，wrangler 直传 Cloudflare Pages。无后端、无数据库服务。
+</p>
+</blockquote>
+
+<p>
+这一段是 WorkBuddy 描述的，对于技术我并不懂，这个过程中我所做的操作就是建一个 Github 仓库，建一个 Cloudflare Pages 项目，然后把 Pages 项目的 API 设置到了 Github 仓库的 Actions Secret 里。
+</p>
+
+<p>
+每次我更新 <code>ff.org</code> 文件，推送到 Github 仓库后，Actions 会自动构建一次，如果有新文章，会将构建产物上传到 Pages，站点就能实时看到更新。还有个机制是，定期（目前设了 4 小时）读取 RSS 源，如果有新文章，也会构建上传一次。
+</p>
+</div>
+</div>
+<div id="outline-container-视觉样式" class="outline-3">
+<h3 id="视觉样式"><span class="section-number-3">1.3.</span> 视觉样式<a class="heading-anchor" href="#视觉样式" aria-label="本节链接">#</a></h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+全是 WorkBuddy 做的，包括 logo 图标也是，我就要求了一个，配色与博客相似。最终的成品就如下图（链接就不放了）：
+</p>
+
+
+<figure id="org2da3ec3">
+<img src="/images/202611/feedfinder.webp" alt="feedfinder.webp">
+
+<figcaption><span class="figure-number">&#22270;1&nbsp; </span>feedfinder 截图</figcaption>
+</figure>
+
+<p>
+这只是个小玩具，满足了自己的一个小需求，哪怕可能并不完善，但自己用用足矣。确实很感慨，如今 AI 在一些领域，实实在在地给予了能力提升，让原本只能干瞪眼的我，有了更多折腾的乐趣。
+</p>
+
+<p>
+当然，要感谢像 Cloudflare, Github 这样的提供免费基础设施的公司，让折腾有了用武之地。
+</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">&#33050;&#27880;: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+博客的 <code>links</code> 页面，目前放了一些收藏的独立博客链接，偶尔会点进去看看。 
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2" role="doc-backlink">2</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+本站 <code>ff</code> 页面，<a href="https://weiqiang.org/ff/">https://weiqiang.org/ff/</a>。 
+</p></div></div>
+
+
+</div>
+</div>
+</div>
+<footer class="post-footer">
+<div class="post-meta-row">
+<div class="post-tags">
+<a href="/tags/rss/"><span class="tag-hash" aria-hidden="true">#</span>RSS</a>
+<a href="/tags/feedfinder/"><span class="tag-hash" aria-hidden="true">#</span>feedfinder</a>
+<a href="/tags/博客/"><span class="tag-hash" aria-hidden="true">#</span>博客</a>
+</div>
+<a target="_blank" rel="noopener noreferrer" class="post-source" href="https://codeberg.org/wejan/weborg/raw/branch/main/org/zh/2026-11-22-feedfinder.org" rel="nofollow">查看 Org 源文件</a>
+</div>
+<nav class="post-nav post-nav-series" aria-label="上一篇与下一篇">
+<div class="post-nav-col post-nav-prev">
+<span class="post-nav-label">← 上一篇</span>
+<a href="/zh/2026/website-deployment-method/">利用 AI 智能体，回到 Orgmode 导出部署</a>
+</div>
+<div class="post-nav-series-badge">
+<a class="series-chip" href="/tech/">技术 · 8 / 8</a>
+<span class="series-badge-hint">返回目录</span>
+</div>
+<div class="post-nav-col post-nav-next">
+<span class="post-nav-label">下一篇 →</span>
+<span class="post-nav-none">已经是最新的了</span>
+</div>
+</nav>
+<section class="post-related">
+<p class="post-section-label">相关文章</p>
+<ul class="rel-list">
+<li class="rel-item"><a href="/zh/2026/ability-to-write-long-pieces/"><time class="rel-date" datetime="2026-11-18T22:37:00">2026-11-18</time><span class="rel-sep">-</span><span class="rel-title">失去了写长文的能力</span></a></li>
+<li class="rel-item"><a href="/zh/2026/why-named-weiqiang/"><time class="rel-date" datetime="2026-11-14T22:12:00">2026-11-14</time><span class="rel-sep">-</span><span class="rel-title">为什么取名为「危墙」</span></a></li>
+<li class="rel-item"><a href="/zh/2026/website-deployment-method/"><time class="rel-date" datetime="2026-11-12T15:38:00">2026-11-12</time><span class="rel-sep">-</span><span class="rel-title">利用 AI 智能体，回到 Orgmode 导出部署</span></a></li>
+<li class="rel-item"><a href="/zh/2026/meanings-of-liferecording/"><time class="rel-date" datetime="2026-10-24T15:51:46">2026-10-24</time><span class="rel-sep">-</span><span class="rel-title">文字记录的意义</span></a></li>
+<li class="rel-item"><a href="/zh/2026/orgmode-to-hugo/"><time class="rel-date" datetime="2026-10-07T00:00:00">2026-10-07</time><span class="rel-sep">-</span><span class="rel-title">网站从 orgmode 导出迁移至 hugo 驱动</span></a></li>
+<li class="rel-item"><a href="/zh/2019/blogging-with-orgmode/"><time class="rel-date" datetime="2019-08-03T22:52:15">2019-08-03</time><span class="rel-sep">-</span><span class="rel-title">使用 Org Mode 写博客</span></a></li>
+</ul>
+</section>
+<section class="post-sameday">
+<p class="post-section-label">往年今日</p>
+<ul class="rel-list">
+<li class="rel-item"><a href="/zh/2016/zhusha/"><time class="rel-date" datetime="2016-11-22T11:23:00">2016-11-22</time><span class="rel-sep">-</span><span class="rel-title">本草学习笔记：朱砂</span></a></li>
+<li class="rel-item"><a href="/zh/2010/riji20101122/"><time class="rel-date" datetime="2010-11-22T00:00:00">2010-11-22</time><span class="rel-sep">-</span><span class="rel-title">支教日记20101122</span></a></li>
+<li class="rel-item"><a href="/zh/2009/zhoumo-liushuizhang/"><time class="rel-date" datetime="2009-11-22T00:00:00">2009-11-22</time><span class="rel-sep">-</span><span class="rel-title">周末流水账</span></a></li>
+</ul>
+</section>
+</footer>
+<section class="comments" id="comments" data-default-tab="comments" data-litecwd-slug="/zh/2026/feedfinder/" data-litecwd-api="https://litecwd.weiqiang.org" data-litecwd-lang="zh-CN" data-litecwd-page-size="20" data-litecwd-placeholder="雁过留痕..." data-litecwd-cdn="/js/litecwd.js" data-litecwd-theme="auto" data-litecwd-css="/css/litecwd.css" data-wm-target="https://weiqiang.org/zh/2026/feedfinder/">
+<div class="ctabs">
+<input type="radio" class="ctab-radio" name="comment-tab" id="ct-comments" checked>
+<input type="radio" class="ctab-radio" name="comment-tab" id="ct-webmention">
+<div class="ctabs-bar">
+<label class="ctab" for="ct-comments"><span class="ctab-text">留言</span><span class="ctab-badge" data-count-comments hidden></span></label>
+<label class="ctab" for="ct-webmention"><span class="ctab-text">网络提及</span><span class="ctab-badge" data-count-webmention hidden></span></label>
+</div>
+<div class="ctabs-body">
+<section class="ctab-panel" id="panel-comments">
+<div class="litecwd-loading" id="litecwd-loading" role="status">
+<span class="litecwd-loading-text">正在加载评论</span>
+<span class="litecwd-loading-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+</div>
+<div class="litecwd-comments" id="litecwd-comments"></div>
+<noscript><p class="comments-disabled">请启用 JavaScript 以查看评论。</p></noscript>
+</section>
+<section class="ctab-panel" id="panel-webmention">
+<div id="webmentions" class="webmentions" data-target="https://weiqiang.org/zh/2026/feedfinder/">
+<p class="wm-tip">本站支持 <a href="https://indieweb.org/Webmention" target="_blank" rel="noopener noreferrer">Webmention</a>：在自己站点写下本文链接，再把那篇帖子的地址发过来。</p>
+<form class="wm-send" action="https://webmention.io/weiqiang.org/webmention" method="post">
+<input type="hidden" name="target" value="https://weiqiang.org/zh/2026/feedfinder/">
+<input class="wm-source" name="source" type="url" required autocomplete="off" spellcheck="false" aria-label="回应文章的地址" placeholder="回应文章的地址">
+<button type="submit">发送</button>
+</form>
+<div class="wm-reactions" hidden></div>
+<ul class="wm-list" hidden></ul>
+<p class="wm-empty" hidden>还没有收到提及。</p>
+<p class="wm-loading" hidden>正在读取提及…</p>
+<noscript><p class="wm-tip">查看已收到的提及需要 JavaScript；提交不受影响。</p></noscript>
+</div>
+</section>
+</div>
+</div>
+<p class="cm-mailto">不方便公开留言？<a href="mailto:lu@weiqiang.org?subject=%E5%9B%9E%E5%A4%8D%EF%BC%9A%E7%94%A8%20WorkBuddy%20%E9%80%A0%E4%BA%86%E4%B8%AA%20RSS%20%E7%BA%BF%E4%B8%8A%E9%98%85%E8%AF%BB%E5%99%A8%20feedfinder" rel="nofollow">写信给我</a></p>
+</section>
+</article>
+<aside class="toc" aria-label="文章目录">
+<p class="toc-label">目录</p>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#功能与实现">1. 功能与实现</a>
+<ul>
+<li><a href="#订阅源">1.1. 订阅源</a></li>
+<li><a href="#实现方式">1.2. 实现方式</a></li>
+<li><a href="#视觉样式">1.3. 视觉样式</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</aside>
+</div>
+</main>
+<footer class="site-footer">
+<div class="footer-inner">
+<div class="footer-info">
+<nav class="footer-nav" aria-label="页脚导航"><ul><li><a href="/zh/">手記</a></li><li><a href="/guji/">古籍</a></li><li><a href="/hs/">护生</a></li><li><a href="/shuji/">書集</a></li><li><a href="/zhijiao/">支教</a></li><li><a href="/bc/">本草</a></li><li><a href="/tech/">技术</a></li><li><a href="/yue/">樂記</a></li><li><a href="/about/">关于</a></li><li><a href="/interest/">兴趣</a></li><li><a href="/links/">收藏</a></li><li><a href="/tags/">标签</a></li></ul></nav>
+<p class="footer-line footer-lastmod">本页最近更新: 2026-11-22 · 本站文章共 434 篇，累计 455863 字。</p>
+<p class="footer-line footer-copy">© LOWEJAN, Since 2008.</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

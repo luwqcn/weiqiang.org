@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>危墙 · 技术</title>
+<subtitle>耕读传家久，诗书继世长。采菊桑林下，江南半農夫。</subtitle>
+<link href="https://weiqiang.org/tech/index.xml" rel="self"/>
+<link href="https://weiqiang.org/tech/"/>
+<id>https://weiqiang.org/tech/</id>
+<updated>2026-11-22T21:23:17+08:00</updated>
+<author><name>LOWEJAN</name></author>
+<entry>
+<title>用 WorkBuddy 造了个 RSS 线上阅读器 feedfinder</title>
+<link href="https://weiqiang.org/zh/2026/feedfinder/"/>
+<id>https://weiqiang.org/zh/2026/feedfinder/</id>
+<published>2026-11-22T20:22:00+08:00</published>
+<updated>2026-11-22T21:23:17+08:00</updated>
+<category term="RSS"/>
+<category term="feedfinder"/>
+<category term="博客"/>
+<summary>本文简单记录使用 WorkBuddy 设计制作一款 RSS 阅读器（线上）的始末。 平时空闲了，喜欢浏览一些独立博客，特别是生活类的，能看到不同的人生经历，能开阔眼界，也可算是对平淡生活的一点有益调剂。
+找过一些 RSS 阅读器的 APP，要么是不跨平台，要么是用着不习惯，也就不了了</summary>
+</entry>
+<entry>
+<title>利用 AI 智能体，回到 Orgmode 导出部署</title>
+<link href="https://weiqiang.org/zh/2026/website-deployment-method/"/>
+<id>https://weiqiang.org/zh/2026/website-deployment-method/</id>
+<published>2026-11-12T15:38:00+08:00</published>
+<updated>2026-11-15T18:04:02+08:00</updated>
+<category term="orgmode"/>
+<category term="博客"/>
+<summary>本文记录网站利用 workbuddy，回到 Orgmode 导出静态文件的过程。 近段时间，書集工作暂停，业余时间花在了重构网站上。
+使用 workbuddy 似乎会上瘾，之前用它做了一个 hugo 主题，自己的需求基本能完美实现，就想着能不能再让它做一个 orgmode 导出 h</summary>
+</entry>
+<entry>
+<title>网站从 orgmode 导出迁移至 hugo 驱动</title>
+<link href="https://weiqiang.org/zh/2026/orgmode-to-hugo/"/>
+<id>https://weiqiang.org/zh/2026/orgmode-to-hugo/</id>
+<published>2026-10-07T00:00:00+08:00</published>
+<updated>2026-11-15T18:04:46+08:00</updated>
+<category term="hugo"/>
+<category term="orgmode"/>
+<category term="博客"/>
+<summary>利用国庆假期把 orgmode 站点迁移至 hugo 驱动，简单记录。 这个国庆假没有外出，家里蹲。就花了点时间把 orgmode 站点迁移至 hugo 。
+迁移的想法已经有点久了，但因为没有什么技术能力，一直没有动手。现在不一样了，智能体能力已经足够，所以用 workb</summary>
+</entry>
+<entry>
+<title>使用 Emacs 和 Org Mode 生成的网站</title>
+<link href="https://weiqiang.org/zh/2019/sites-with-orgmode/"/>
+<id>https://weiqiang.org/zh/2019/sites-with-orgmode/</id>
+<published>2019-08-14T00:00:00+08:00</published>
+<updated>2026-11-15T18:03:39+08:00</updated>
+<category term="orgmode"/>
+<category term="emacs"/>
+<category term="blog"/>
+<summary>收集使用 Emacs 和 Org Mode 生成的网站。 本页面收集使用 Emacs 和 Org Mode 生成的网站，大多通过搜索所得。
+1. 中文#
+Slegtank&#39;s Blog
+作者的一篇文章是非常好的参考：Blog With Emacs。
+An A</summary>
+</entry>
+<entry>
+<title>使用 Org Mode 写博客</title>
+<link href="https://weiqiang.org/zh/2019/blogging-with-orgmode/"/>
+<id>https://weiqiang.org/zh/2019/blogging-with-orgmode/</id>
+<published>2019-08-03T22:52:15+08:00</published>
+<updated>2026-11-15T18:03:16+08:00</updated>
+<category term="orgmode"/>
+<category term="博客"/>
+<category term="emacs"/>
+<summary>记录使用 Org Mode 写博客的几次折腾过程，并不详细。 本篇略记博客/网站生成流程。本站使用 Emacs Orgmode 导出功能生成 html 文件，使用 Artalk 实现评论功能。
+1. 背景#
+自2016年离职后，一直静不下心，几近停止思考。翻翻以</summary>
+</entry>
+<entry>
+<title>Emacs 学习笔记</title>
+<link href="https://weiqiang.org/zh/2019/emacs-notes/"/>
+<id>https://weiqiang.org/zh/2019/emacs-notes/</id>
+<published>2019-07-18T00:00:00+08:00</published>
+<updated>2026-11-19T21:45:09+08:00</updated>
+<category term="emacs"/>
+<category term="orgmode"/>
+<summary>1. Emacs tutorial 学习笔记#
+Learn emacs from tutorial. 学习emacs从内置指南开始。
+1.1. useful commands 快捷键#
+记录常用快捷键</summary>
+</entry>
+<entry>
+<title>Linux Memos(备忘)</title>
+<link href="https://weiqiang.org/zh/2017/linux-memos/"/>
+<id>https://weiqiang.org/zh/2017/linux-memos/</id>
+<published>2017-07-12T00:00:00+08:00</published>
+<updated>2026-11-15T18:02:09+08:00</updated>
+<category term="Linux"/>
+<category term="Archlinux"/>
+<category term="Tips"/>
+<summary>记录使用Linux过程中的一些小问题、小技巧。多为copy &amp; paste。 使用Linux已经有段时间，都是断断续续，没有很好地将这一过程中的知识积累和更新，所以基本没有进步。年过三十，已知积累之重要，知识持续更新之难能，因此立此文件以为积累更新之用，名之曰：Memos。
+1</summary>
+</entry>
+<entry>
+<title>纯粹书写，回归Jekyll！</title>
+<link href="https://weiqiang.org/zh/2017/back-to-jekyll/"/>
+<id>https://weiqiang.org/zh/2017/back-to-jekyll/</id>
+<published>2017-02-07T00:00:00+08:00</published>
+<updated>2026-11-15T18:04:30+08:00</updated>
+<category term="Jekyll"/>
+<category term="博客"/>
+<summary>记我的博客之旅，书写才是主题和目的。 这几个月，业余时间花费比较多的是折腾 博客 ，以致于连「读本草」都放下了。说来惭愧，年岁至此，精力已明显不济，却还在做这类体力活，足见一颗 不安定 的心。这是修行不够，仍要坚持。
+1. 说说过程#
+早</summary>
+</entry>
+</feed>

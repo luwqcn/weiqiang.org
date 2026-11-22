@@ -1,0 +1,183 @@
+/* ============================================================
+   cwd.css — 给 LiteCWD 评论组件换一身纸墨衣裳
+   ============================================================
+   组件跑在 Shadow DOM 里，外部样式进不去；它自己也只开放了一组
+   CSS 变量。所以在 `weborg-litecwd-css' 里把地址指到这个文件，
+   由组件以 <link> 注入到它的 shadow root 底部 —— 同特异性、后加载，
+   正好盖掉组件默认的 GitHub 蓝。
+
+   这里全部引用站点变量（--bg / --bg-soft / --border / --accent …）：
+   自定义属性会穿透 shadow 边界继承下来，所以评论块与正文用同一张纸，
+   深浅色切换也不用重复维护两套色号。
+
+   只改变量，不碰结构：组件升级改了 DOM 也不会把这里弄坏。
+   ============================================================ */
+
+:host,
+.litecwd-comments-container {
+  /* 背景：透明，直接落在全站那张纸上，不再另起一块白色卡片 */
+  --litecwd-bg: transparent;
+  --litecwd-bg-secondary: transparent;
+  --litecwd-bg-input: var(--bg-card, #fffdf9);
+  --litecwd-bg-hover: var(--bg-soft, #f6efe3);
+  --litecwd-bg-reply: var(--bg-soft, #f6efe3);
+  --litecwd-bg-disabled: var(--bg-soft, #f6efe3);
+  --litecwd-bg-avatar: var(--bg-soft, #f6efe3);
+
+  /* 墨与线 */
+  --litecwd-text: var(--text-body, #3a332d);
+  --litecwd-text-secondary: var(--muted, #8c8279);
+  --litecwd-border: var(--border, #e7ddcd);
+  --litecwd-border-light: var(--border, #e7ddcd);
+  --litecwd-border-active: var(--accent, #b4552f);
+
+  /* 赤陶 */
+  --litecwd-primary: var(--accent, #b4552f);
+  --litecwd-primary-hover: var(--link, #9c4a28);
+
+  --litecwd-radius: 8px;
+}
+
+/* 字体跟着正文走：--font-sans 从站点继承进来 */
+
+.litecwd-comments-container {
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  background: transparent;
+}
+
+/* ---------- 字号整体调大一号 ----------
+   组件内部一律用 px 写死（正文 14 / 标题 16 / 注脚 12 / 标签 13），
+   改容器 font-size 对它没用，只能按层级逐个覆盖。
+   四档集中在下面这组变量里，以后想再调，只改这四个数。 */
+
+.litecwd-comments-container {
+  --litecwd-fs-body: 1rem;      /* 原 14px：评论正文、输入框、按钮 */
+  --litecwd-fs-title: 1.125rem; /* 原 16px：表单标题、作者名、条数 */
+  --litecwd-fs-label: 0.875rem; /* 原 13px：字段标签、分页、喜欢 */
+  --litecwd-fs-note: 0.8125rem; /* 原 12px：时间、徽标、小按钮 */
+}
+
+.litecwd-comment-content,
+.litecwd-form-input,
+.litecwd-form-textarea,
+.litecwd-reply-textarea,
+.litecwd-empty-text,
+.litecwd-loading-text,
+.litecwd-btn,
+.litecwd-load-more,
+.litecwd-error-inline,
+.litecwd-success-inline,
+.litecwd-reply-to,
+.litecwd-reply-to-author,
+.litecwd-reply-to-separator,
+.litecwd-modal-desc {
+  font-size: var(--litecwd-fs-body);
+}
+
+.litecwd-form-title,
+.litecwd-author-name,
+.litecwd-modal-title,
+.litecwd-count,
+.litecwd-comments-count {
+  font-size: var(--litecwd-fs-title);
+}
+
+.litecwd-form-label,
+.litecwd-preview-title,
+.litecwd-emotion-tab,
+.litecwd-like-button,
+.litecwd-page-btn,
+.litecwd-page-num,
+.litecwd-error-retry {
+  font-size: var(--litecwd-fs-label);
+}
+
+.litecwd-comment-time,
+.litecwd-action-btn,
+.litecwd-btn-small,
+.litecwd-admin-badge,
+.litecwd-pin-badge,
+.litecwd-comment-like-button,
+.litecwd-error-text,
+.litecwd-turnstile-error,
+.litecwd-admin-controls,
+.litecwd-btn-text {
+  font-size: var(--litecwd-fs-note);
+}
+
+/* 输入框：与站内搜索框同一副长相 */
+
+.litecwd-comments-container input,
+.litecwd-comments-container textarea {
+  background: var(--bg-card, #fffdf9);
+  border-color: var(--border-strong, #d9cdb8);
+}
+
+.litecwd-comments-container input::placeholder,
+.litecwd-comments-container textarea::placeholder {
+  color: var(--muted, #8c8279);
+}
+
+/* 组件内置样式会在聚焦时把 placeholder 藏掉（color: transparent，怕和光标
+   重叠）。这里改回可见：点进输入框、光标闪烁时提示文字仍留着，等真正输入
+   内容才被顶掉——符合「选中不消失、输入才消失」的预期。 */
+.litecwd-comments-container input:focus::placeholder,
+.litecwd-comments-container textarea:focus::placeholder {
+  color: var(--muted, #8c8279);
+}
+
+.litecwd-comments-container input:focus,
+.litecwd-comments-container textarea:focus {
+  outline: none;
+  border-color: var(--accent, #b4552f);
+  box-shadow: 0 0 0 3px var(--accent-soft, #f0dccf);
+}
+
+/* ---------- 「提交留言」按钮：跟网络提及的「发送」按钮一个样 ----------
+   发送按钮（.wm-send button）是：0.5rem 1.1rem 内边距、0.95rem 字、
+   accent 实心底 + 1px accent 描边、6px 圆角。
+   组件默认的 .litecwd-btn 是 height 2.25rem、.25rem 圆角、字重 600，
+   这里把它们拉平到发送按钮的观感。 */
+
+.litecwd-btn.litecwd-btn-primary {
+  height: auto;
+  padding: 0.5rem 1.1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border: 1px solid var(--litecwd-primary);
+  border-radius: 6px;
+}
+
+.litecwd-btn.litecwd-btn-primary:hover:not(:disabled) {
+  opacity: 0.88;
+  background: var(--litecwd-primary);
+  border-color: var(--litecwd-primary);
+}
+
+/* ---------- 手机端：评论两级字号对齐文章正文 ----------
+   组件内置样式把评论正文写成 var(--litecwd-font-size, 1.1875rem) ≈ 19px，
+   窄屏 @media screen and (max-width:600px) 又写死 1.125rem ≈ 18px；
+   作者名默认也是 1.125rem = 18px。而站点手机文章正文是
+   1.0625rem = 17px——两级都比正文大，评论作为附属内容不该压过正文。
+   这里收成：
+     作者名   1.0625rem = 17px，与文章正文同级。组件里
+               .litecwd-author-name 本来就是 600 字重 + 更深的 --text，
+               靠字重和颜色区分就够，不必再靠字号大出一号。
+     评论正文 1rem      = 16px，比正文小一档，与输入框同级。
+   窄屏规则把 p / li 也写死了，三个选择器都要留；必须带 !important：
+   外部 <link> 与组件内置 <style> 同特异性，加载顺序不保证。
+   rem 在组件里锚根元素 16px，与站点 --fs-body 不是一套基准。
+   时间、回复引用、输入框、按钮、标签仍按组件/站点原值不动。 */
+@media (max-width: 640px) {
+  .litecwd-author-name {
+    font-size: 1.0625rem !important; /* 17px，与手机文章正文同级 */
+  }
+
+  .litecwd-comment-content,
+  .litecwd-comment-content p,
+  .litecwd-comment-content li {
+    font-size: 1rem !important; /* 16px，比正文小一档，与输入框同级 */
+  }
+}
